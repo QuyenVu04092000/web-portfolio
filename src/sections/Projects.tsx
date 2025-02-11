@@ -41,7 +41,6 @@ const portfolioProjects = [
       { title: "Enhanced user experience by 40%" },
       { title: "Improved site speed by 50%" },
       { title: "Increased mobile traffic by 35%" },
-      { title: "Accessing by account: hmsoong, password:1 for experience" },
     ],
     link: "https://psa-cms.mltechsoft.com",
     image: psa,
@@ -103,7 +102,7 @@ export const ProjectsSection = () => {
                   <Image
                     src={project.image}
                     alt={project.title}
-                    className="mt-8 -mb-4 md:-mb-0 lg:mt-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none rounded-xl"
+                    className="mt-8 -mb-4 md:-mb-0 lg:mt-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none rounded-xl md:max-h-[365px] md:w-full"
                   />
                 </div>
               </div>

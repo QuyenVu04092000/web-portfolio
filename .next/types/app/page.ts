@@ -1,4 +1,4 @@
-// File: /Users/quyenvu/Desktop/desk/frontend-tribe-single-page-dev-portfolio-resource-bundle/starter-template/src/app/page.tsx
+// File: /Users/quyenvu/Desktop/desk/web-portfolio/src/app/page.tsx
 import * as entry from '../../../src/app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

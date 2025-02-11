@@ -9,8 +9,8 @@ import { TapeSection } from "@/sections/Tape";
 export default function Home() {
   return (
     <div>
-      <Header />
-      <HeroSection  />
+      <Header activeId="home" />
+      <HeroSection />
       <ProjectsSection />
       <TapeSection />
       <AboutSection />

@@ -30,6 +30,9 @@ const config: Config = {
         "ping-large": "ping-large 1s ease-in-out infinite",
         "move-left": "move-left 1s linear infinite",
         "move-right": "move-right 1s linear infinite",
+        "move-left-image": "move-left 30s linear infinite", // Adjusted time for smoother, slower movement
+        "move-right-image": "move-right 30s linear infinite", // Adjusted time
+        "move-to-top": "move-to-top 1s linear",
       },
       keyframes: {
         "ping-large": {
@@ -43,15 +46,23 @@ const config: Config = {
             transform: "translateX(0%)",
           },
           "100%": {
-            transform: "translateX(-50%)",
+            transform: "translateX(-100%)",
           },
         },
         "move-right": {
           "0%": {
-            transform: "translateX(-50%)",
+            transform: "translateX(-100%)",
           },
           "100%": {
             transform: "translateX(0%)",
+          },
+        },
+        "move-to-top": {
+          "0%": {
+            transform: "translateY(0%)",
+          },
+          "100%": {
+            transform: "translateY(-100%)",
           },
         },
       },

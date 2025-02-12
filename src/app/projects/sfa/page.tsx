@@ -4,7 +4,7 @@ import React, { useRef } from "react";
 import { Header } from "@/sections/Header";
 import sfa_bg from "@/assets/images/sfa.png";
 import Image from "next/image";
-import { slideInFromBottom } from "../../../../../utils/motion";
+import { slideInFromBottom } from "../../../../utils/motion";
 import { motion, useInView } from "framer-motion";
 export default function SFA() {
   const ref = useRef(null);

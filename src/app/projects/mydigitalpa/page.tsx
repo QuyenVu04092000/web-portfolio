@@ -2,11 +2,11 @@
 
 import React, { useRef } from "react";
 import { Header } from "@/sections/Header";
-import psa_bg from "@/assets/images/psa_bg.png";
+import mydigitalpa from "@/assets/images/mydigitalpa.png";
 import Image from "next/image";
-import { slideInFromBottom } from "../../../../../utils/motion";
+import { slideInFromBottom } from "../../../../utils/motion";
 import { motion, useInView } from "framer-motion";
-export default function Psa_cms() {
+export default function Mydigitalpa() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
   const contentRef = useRef(null);
@@ -26,7 +26,8 @@ export default function Psa_cms() {
         >
           <div className="my-8">
             <h1 className="font-serif px-4 text-3xl md:text-5xl text-left tracking-wide mb-8">
-              Building PSA-CMS: A Robust Content Management System for Pilots
+              Building MydigitalPA: Empowering Pilots with Efficient License
+              Management and Job Tracking
             </h1>
             <div className="flex sm:flex-col md:flex-row lg:flex-row items-start justify-start md:gap-8 lg:gap-8 sm:gap-2">
               <div>
@@ -48,7 +49,7 @@ export default function Psa_cms() {
                   className={`py-2 rounded-full px-4 transition-all text-lg text-white hover:bg-white/20
             `}
                 >
-                  Front-end Developer
+                  Mobile Developer
                 </p>
               </div>
               <div>
@@ -71,12 +72,12 @@ export default function Psa_cms() {
                 className={`py-2 px-4 rounded-full transition-all text-lg text-white hover:bg-white/20
             `}
               >
-                ReactJS, React-Redux
+                MQTT, Swift
               </p>
             </div>
           </div>
           <Image
-            src={psa_bg}
+            src={mydigitalpa}
             alt="vdental"
             className="w-full h-full object-cover rounded-3xl"
           />
@@ -92,75 +93,72 @@ export default function Psa_cms() {
               Introduction
             </h1>
             <p className="text-white/60 px-4 text-lg md:text-xl">
-              In the maritime industry, efficient management of pilot operations
-              is crucial for smooth and safe vessel navigation.{" "}
-              <span className="text-white/100">PSA-CMS</span> was developed as a{" "}
-              <span className="text-white/100">
-                content management system (CMS)
-              </span>{" "}
-              tailored for PSA International, one of the world&apos;s leading
-              port operators.
+              In the maritime industry, pilots play a critical role in ensuring
+              safe navigation and efficient operations at ports. MydigitalPA is
+              a mobile application designed specifically for PSA
+              International&apos;s pilots, helping them streamline and manage
+              their license upgrading process, stay on top of job tasks, receive
+              real-time news updates, and get instant notifications. The app is
+              not only tailored to pilots but also provides an admin panel for
+              managing pilots, jobs, news, and sending notifications.
             </p>
             <p className="text-white/60 px-4 text-lg md:text-xl mt-4">
-              The system serves as the backbone for managing pilot information
-              and delivering essential content to pilots via their mobile app.
-              It includes features such as news updates, vessel details, and
-              operational data, ensuring that pilots receive real-time, accurate
-              information to enhance decision-making and safety.
-            </p>
-            <p className="text-white/60 px-4 text-lg md:text-xl mt-4">
-              This project required seamless integration between PSA&apos;s
-              existing infrastructure and a modern web-based CMS. Working
-              closely with PSA&apos;s team, I contributed to building a
-              scalable, user-friendly system using{" "}
-              <span className="text-white/100">ReactJS and React-Redux</span>{" "}
-              for state management.
+              The application integrates MQTT, a lightweight messaging protocol,
+              for real-time communication between the mobile app and the server,
+              ensuring pilots are always up to date with the latest information.
+              Swift was used to build the iOS app, providing a native and
+              responsive experience for the users.
             </p>
           </div>
           <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
           <div className="my-8">
             <h1 className="font-serif px-4 text-3xl md:text-5xl text-left  tracking-wide mb-8">
-              Key Features of PSA
+              Key Features of MydigitalPA
             </h1>
             <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide mb-8">
-              📋 Pilot Information Management
+              🎓 License Management
             </h1>
             <p className="text-white/60 px-4 text-lg md:text-xl">
-              The system provides a centralized database to store and manage
-              pilot records, ensuring that authorized personnel can access and
-              update critical information in real time.
+              Pilots can easily track their license upgrading process, view
+              required tasks, and receive reminders about key milestones. This
+              feature ensures pilots stay on top of their professional
+              development and comply with regulatory requirements.
             </p>
             <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide my-8">
-              📰 News & Updates for Pilots
+              📋 Job Management
             </h1>
             <p className="text-white/60 px-4 text-lg md:text-xl">
-              A built-in news module allows PSA to publish and manage updates
-              relevant to pilots, including operational changes, regulatory
-              notices, and weather alerts.
+              The app provides a detailed list of jobs for pilots to complete,
+              including deadlines, vessel details, and operational instructions.
+              Pilots can mark tasks as completed and receive updates when new
+              tasks are assigned.
             </p>
             <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide my-8">
-              🚢 Vessel & Port Information
+              📰 News Feed
             </h1>
             <p className="text-white/60 px-4 text-lg md:text-xl">
-              Pilots can access detailed vessel data, including specifications,
-              schedules, and operational guidelines. This ensures they have all
-              necessary information before assisting a ship into the port.
+              MydigitalPA includes a news feed where pilots can catch up on
+              important updates, including regulatory changes, PSA news, weather
+              forecasts, and other relevant information. This helps pilots stay
+              informed and prepared for any changes in their daily operations.
             </p>
             <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide my-8">
-              🔄 Seamless Content Management
+              🔔 Real-Time Notifications
             </h1>
             <p className="text-white/60 px-4 text-lg md:text-xl">
-              Administrators can easily update content across the pilot&apos;s
-              app through a user-friendly interface, ensuring timely delivery of
-              important information.
+              Using MQTT, the app delivers instant notifications to pilots
+              regarding job updates, news, or critical information, ensuring
+              they are always in the loop.
             </p>
             <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide my-8">
-              🔗 Integration with PSA&apos;s Existing Systems
+              👨‍💼 Admin Panel
             </h1>
             <p className="text-white/60 px-4 text-lg md:text-xl">
-              The CMS was designed to integrate with PSA&apos;s internal data
-              sources, ensuring synchronization between the web platform and the
-              mobile application used by pilots.
+              The admin panel allows PSA International administrators to manage
+              pilots, assign new jobs, send news updates, and broadcast
+              notifications to pilots. The admin panel ensures that
+              pilots&apos;activities and tasks are effectively managed and
+              coordinated.
             </p>
           </div>
           <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
@@ -169,29 +167,22 @@ export default function Psa_cms() {
               Technologies and Tools
             </h1>
             <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide mb-8">
-              ⚛️ ReactJS for a Dynamic UI
+              🛰️ MQTT for Real-Time Communication
             </h1>
             <p className="text-white/60 px-4 text-lg md:text-xl">
-              I built the web-based CMS using ReactJS, leveraging its
-              component-based architecture to create a modular and maintainable
-              system.
+              The app leverages MQTT for lightweight, real-time messaging
+              between the server and the mobile app. This ensures low-latency
+              updates and instant delivery of notifications, making it an ideal
+              protocol for keeping pilots informed about new tasks and updates.
             </p>
             <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide my-8">
-              🔄 React-Redux for State Management
+              📱 Swift for Native iOS App Development
             </h1>
             <p className="text-white/60 px-4 text-lg md:text-xl">
-              To manage complex data flows efficiently, I implemented
-              React-Redux, ensuring that updates to pilot and vessel data were
-              synchronized across different components without performance
-              bottlenecks.
-            </p>
-            <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide my-8">
-              🏗 Scalable & Maintainable Architecture
-            </h1>
-            <p className="text-white/60 px-4 text-lg md:text-xl">
-              The system was designed to be scalable, allowing PSA to add new
-              features and integrate additional data sources in the future
-              without major refactoring.
+              The mobile app is built using Swift, ensuring a smooth, fast, and
+              responsive user experience. Swift&apos;s powerful features and
+              integration with iOS allow for seamless performance, making
+              MydigitalPA an intuitive tool for pilots.
             </p>
           </div>
           <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
@@ -200,28 +191,34 @@ export default function Psa_cms() {
               Key Learnings and Challenges
             </h1>
             <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide mb-8">
-              ✅ Deepened Expertise in ReactJS & React-Redux
+              ✅ Deepened Expertise in Swift
             </h1>
             <p className="text-white/60 px-4 text-lg md:text-xl">
-              This project strengthened my ability to build complex React
-              applications, improving my understanding of state management,
-              component reusability, and performance optimization using Redux.
+              Building the iOS app in Swift has significantly enhanced my
+              proficiency with iOS development. I’ve gained hands-on experience
+              with iOS-specific features, including user interface design,
+              notifications, and background tasks, to provide pilots with the
+              best possible mobile experience.
+            </p>
+            <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide my-8">
+              🧠 Mastering Real-Time Messaging with MQTT
+            </h1>
+            <p className="text-white/60 px-4 text-lg md:text-xl">
+              Implementing MQTT allowed me to learn more about real-time
+              communication protocols and their integration into mobile
+              applications. This experience taught me how to handle message
+              queues, ensure efficient data delivery, and maintain a robust
+              connection between the server and app.
             </p>
             <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide my-8">
               🤝 Collaboration with PSA&apos;s Development Team
             </h1>
             <p className="text-white/60 px-4 text-lg md:text-xl">
-              Working with PSA&apos;s internal teams provided valuable
-              experience in cross-team collaboration, aligning business
-              requirements with technical implementation.
-            </p>
-            <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide my-8">
-              🔗 Handling API Integrations with Third-Party Systems
-            </h1>
-            <p className="text-white/60 px-4 text-lg md:text-xl">
-              Integrating PSA-CMS with PSA&apos;s existing backend services
-              required handling API interactions, data synchronization, and
-              security considerations efficiently.
+              Working with PSA&apos;s team has strengthened my ability to
+              collaborate with third-party teams, align technical requirements
+              with business goals, and iterate based on user feedback. I&apos;ve
+              gained insights into their workflow and how to create a product
+              that meets both internal and external user needs.
             </p>
           </div>
           <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
@@ -229,21 +226,19 @@ export default function Psa_cms() {
             <h1 className="font-serif px-4 text-3xl md:text-5xl text-left  tracking-wide mb-8">
               Conclusion
             </h1>
-
             <p className="text-white/60 px-4 text-lg md:text-xl">
-              PSA-CMS was a high-impact project that provided pilots with a
-              centralized, real-time information hub while enabling PSA to
-              efficiently manage and distribute content. Through this
-              experience, I honed my ReactJS and Redux skills, improved my
-              ability to work in enterprise environments, and gained hands-on
-              experience in collaborating with third-party teams on large-scale
-              projects.
+              MydigitalPA is a powerful tool that helps PSA International&apos;s
+              pilots efficiently manage their workflow, stay on top of their
+              license upgrading process, and receive important updates in real
+              time. By leveraging Swift for native development and MQTT for
+              real-time messaging, we&apos;ve built an app that ensures pilots
+              have everything they need at their fingertips.
             </p>
             <p className="text-white/60 px-4 text-lg md:text-xl my-4">
-              With PSA-CMS now fully operational, PSA International has a
-              powerful, scalable system to support pilots with accurate,
-              up-to-date information—enhancing efficiency and safety in maritime
-              operations.
+              This project has been a valuable learning experience, allowing me
+              to deepen my expertise in both iOS development and real-time
+              communication technologies while working alongside a talented team
+              at PSA International.
             </p>
           </div>
         </motion.div>

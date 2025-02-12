@@ -4,9 +4,9 @@ import React, { useRef } from "react";
 import { Header } from "@/sections/Header";
 import mydigitalpa from "@/assets/images/mydigitalpa.png";
 import Image from "next/image";
-import { slideInFromBottom } from "../../../../../utils/motion";
+import { slideInFromBottom } from "../../../../utils/motion";
 import { motion, useInView } from "framer-motion";
-export default function Mydigitalpa() {
+export default function PilotAudit() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
   const contentRef = useRef(null);
@@ -26,8 +26,8 @@ export default function Mydigitalpa() {
         >
           <div className="my-8">
             <h1 className="font-serif px-4 text-3xl md:text-5xl text-left tracking-wide mb-8">
-              Building MydigitalPA: Empowering Pilots with Efficient License
-              Management and Job Tracking
+              Building Pilot Audit: Empowering Pilots with Comprehensive Audit
+              Management
             </h1>
             <div className="flex sm:flex-col md:flex-row lg:flex-row items-start justify-start md:gap-8 lg:gap-8 sm:gap-2">
               <div>
@@ -93,72 +93,75 @@ export default function Mydigitalpa() {
               Introduction
             </h1>
             <p className="text-white/60 px-4 text-lg md:text-xl">
-              In the maritime industry, pilots play a critical role in ensuring
-              safe navigation and efficient operations at ports. MydigitalPA is
-              a mobile application designed specifically for PSA
-              International&apos;s pilots, helping them streamline and manage
-              their license upgrading process, stay on top of job tasks, receive
-              real-time news updates, and get instant notifications. The app is
-              not only tailored to pilots but also provides an admin panel for
-              managing pilots, jobs, news, and sending notifications.
+              Effective audit management is essential for pilots to maintain
+              safety standards, improve performance, and ensure regulatory
+              compliance. Pilot Audit is a mobile application designed for PSA
+              International’s pilots to conveniently view their audit results,
+              check audit history, keep track of their audit schedules, monitor
+              audit status, and access detailed audit reports. The application
+              is built with a focus on simplicity, performance, and real-time
+              communication, providing pilots with an intuitive and seamless
+              experience.
             </p>
             <p className="text-white/60 px-4 text-lg md:text-xl mt-4">
-              The application integrates MQTT, a lightweight messaging protocol,
-              for real-time communication between the mobile app and the server,
-              ensuring pilots are always up to date with the latest information.
-              Swift was used to build the iOS app, providing a native and
-              responsive experience for the users.
+              To deliver real-time updates and notifications, MQTT was
+              integrated into the app, enabling instant messaging and data
+              synchronization. The iOS application was built using Swift,
+              ensuring a smooth, responsive experience and full native
+              integration with Apple&apos;s ecosystem.
             </p>
           </div>
           <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
           <div className="my-8">
             <h1 className="font-serif px-4 text-3xl md:text-5xl text-left  tracking-wide mb-8">
-              Key Features of MydigitalPA
+              Key Features of Pilot Audit
             </h1>
             <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide mb-8">
-              🎓 License Management
+              📊 Audit Results
             </h1>
             <p className="text-white/60 px-4 text-lg md:text-xl">
-              Pilots can easily track their license upgrading process, view
-              required tasks, and receive reminders about key milestones. This
-              feature ensures pilots stay on top of their professional
-              development and comply with regulatory requirements.
+              Pilots can easily view their audit results on the app. These
+              results are critical for understanding their performance and
+              identifying areas that need improvement. The application allows
+              pilots to track their audit scores and feedback from each
+              assessment, ensuring they are always aware of their standing.
             </p>
             <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide my-8">
-              📋 Job Management
+              🕒 Audit History
             </h1>
             <p className="text-white/60 px-4 text-lg md:text-xl">
-              The app provides a detailed list of jobs for pilots to complete,
-              including deadlines, vessel details, and operational instructions.
-              Pilots can mark tasks as completed and receive updates when new
-              tasks are assigned.
+              The app provides a comprehensive audit history, enabling pilots to
+              look back at previous assessments, view trends in their
+              performance, and analyze changes over time. This feature helps
+              pilots monitor their progress and identify patterns in their audit
+              results.
             </p>
             <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide my-8">
-              📰 News Feed
+              📅 Audit Schedule
             </h1>
             <p className="text-white/60 px-4 text-lg md:text-xl">
-              MydigitalPA includes a news feed where pilots can catch up on
-              important updates, including regulatory changes, PSA news, weather
-              forecasts, and other relevant information. This helps pilots stay
-              informed and prepared for any changes in their daily operations.
+              Pilots can view their upcoming audit schedules, ensuring they are
+              prepared for upcoming assessments. The app notifies pilots about
+              upcoming audits so they can plan accordingly and stay ahead of
+              deadlines.
             </p>
             <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide my-8">
-              🔔 Real-Time Notifications
+              📝 Audit Status
             </h1>
             <p className="text-white/60 px-4 text-lg md:text-xl">
-              Using MQTT, the app delivers instant notifications to pilots
-              regarding job updates, news, or critical information, ensuring
-              they are always in the loop.
+              The audit status feature allows pilots to check whether an audit
+              is in progress, pending, or completed. Pilots can easily track the
+              current status of any scheduled audit, helping them stay organized
+              and prepared.
             </p>
             <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide my-8">
-              👨‍💼 Admin Panel
+              🔍 Audit Details
             </h1>
             <p className="text-white/60 px-4 text-lg md:text-xl">
-              The admin panel allows PSA International administrators to manage
-              pilots, assign new jobs, send news updates, and broadcast
-              notifications to pilots. The admin panel ensures that
-              pilots&apos;activities and tasks are effectively managed and
-              coordinated.
+              Each audit comes with detailed information, including the criteria
+              used for the assessment and any remarks provided by the auditors.
+              Pilots can access these details directly from the app, giving them
+              full transparency on their audit results.
             </p>
           </div>
           <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
@@ -227,18 +230,17 @@ export default function Mydigitalpa() {
               Conclusion
             </h1>
             <p className="text-white/60 px-4 text-lg md:text-xl">
-              MydigitalPA is a powerful tool that helps PSA International&apos;s
-              pilots efficiently manage their workflow, stay on top of their
-              license upgrading process, and receive important updates in real
-              time. By leveraging Swift for native development and MQTT for
-              real-time messaging, we&apos;ve built an app that ensures pilots
-              have everything they need at their fingertips.
+              Pilot Audit is a powerful tool for PSA International&apos;s
+              pilots, providing them with real-time updates on their audits,
+              easy access to detailed results, and a streamlined way to manage
+              their audit schedules. By using MQTT for real-time communication
+              and Swift for the iOS app, we have built a fast, responsive, and
+              effective solution for pilots to stay on top of their audits.
             </p>
             <p className="text-white/60 px-4 text-lg md:text-xl my-4">
-              This project has been a valuable learning experience, allowing me
-              to deepen my expertise in both iOS development and real-time
-              communication technologies while working alongside a talented team
-              at PSA International.
+              This project has been an excellent opportunity to deepen my
+              knowledge of Swift and MQTT while collaborating with PSA&apos;s
+              talented development team.
             </p>
           </div>
         </motion.div>

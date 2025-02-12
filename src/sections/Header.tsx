@@ -14,7 +14,7 @@ export const Header = ({ activeId }: { activeId?: string }) => {
             href={`${
               id === "resume"
                 ? "https://drive.google.com/file/d/1-ZP2-tJDi6mo6eW-qvlyAP13GTpxKmAu/view?usp=drive_link"
-                : `/${id === "home" ? "" : id}`
+                : `/${id === "home" ? "" : `web-portfolio/` + id}`
             }`}
             className={`px-4 py-2 rounded-full transition-all ${
               activeSection === id

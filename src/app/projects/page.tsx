@@ -26,7 +26,7 @@ const portfolioProjects = [
           "VDental provides high quality dental services with a team of experienced doctors and modern equipment. The application helps users make appointments, advise on dental conditions and update the latest dental news.",
       },
     ],
-    link: "/projects/vdental",
+    link: "/web-portfolio/projects/vdental",
     image: vdental,
   },
   {
@@ -39,7 +39,7 @@ const portfolioProjects = [
           "Super smart application helps customers buy products, accumulate reward points and register as a Lothamilk Personal Agent. Customers directly buy Lothamilk products for their own consumption or sell to other consumers with many attractive promotions and vouchers.",
       },
     ],
-    link: "/projects/lothashop",
+    link: "/web-portfolio/projects/lothashop",
     image: lothashop,
   },
   {
@@ -52,7 +52,7 @@ const portfolioProjects = [
           "Manage pilot information and manage content on the pilot's app including news, vessels,...",
       },
     ],
-    link: "/projects/psa",
+    link: "/web-portfolio/projects/psa",
     image: psa,
   },
 ];
@@ -68,7 +68,7 @@ const mobileProjects = [
           "DigiSale is a sales force automation application that helps businesses manage their sales activities, track sales performance, and improve sales efficiency.",
       },
     ],
-    link: "/projects/sfa",
+    link: "/web-portfolio/projects/sfa",
     image: sfa,
   },
   {
@@ -81,7 +81,7 @@ const mobileProjects = [
           "App for pilots to manage license upgrading process, view jobs to be done, catch up news, receive notifications. It can used by Admin to manage pilots, manage jobs, manage news, send notifications.",
       },
     ],
-    link: "/projects/mydigitalpa",
+    link: "/web-portfolio/projects/mydigitalpa",
     image: mydigitalpa,
   },
   {
@@ -94,7 +94,7 @@ const mobileProjects = [
           "App for pilots to view their audit results, view their audit history, view their audit schedule, view their audit status, view their audit details.",
       },
     ],
-    link: "/projects/pilot_audit",
+    link: "/web-portfolio/projects/pilot_audit",
     image: pilot_audit,
   },
   {
@@ -107,7 +107,7 @@ const mobileProjects = [
           "An app to develop a skill self-training that will enable users to connect and share knowledge, discover themselves and succeed professionally in the future.",
       },
     ],
-    link: "/projects/career",
+    link: "/web-portfolio/projects/career",
     image: career,
   },
 ];

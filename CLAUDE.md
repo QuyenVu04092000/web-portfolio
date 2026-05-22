@@ -32,8 +32,7 @@ web-portfolio/
 │   │   ├── About.tsx         # Toolbox, hobbies drag board, map, "use client"
 │   │   ├── Contact.tsx       # CTA banner
 │   │   ├── Footer.tsx        # Social links
-│   │   ├── WorkExperience.tsx # Work history (not currently used in page.tsx)
-│   │   └── Testimonials.tsx  # Testimonial cards (stub, not used in page.tsx)
+│   │   └── WorkExperience.tsx # Work history, used in src/app/about/page.tsx
 │   ├── components/           # Reusable UI primitives
 │   │   ├── Card.tsx          # Dark card with grain texture + outline ring
 │   │   ├── CardHeader.tsx    # Star icon + title + description header
@@ -179,14 +178,11 @@ The Header uses hash-based anchor links for in-page navigation. Sections declare
 
 The "Resume" nav item links to an external Google Drive PDF.
 
-## Sections Not Yet Integrated
+## Additional Pages
 
-Two sections exist in `src/sections/` but are not rendered in `page.tsx`:
+Besides the main portfolio (`src/app/page.tsx`), there is an About page:
 
-- `WorkExperience.tsx` — full work history component (MLTech Soft, AziWorld)
-- `Testimonials.tsx` — stub component with testimonial data, not yet implemented
-
-To add them, import and place them in `src/app/page.tsx`.
+- `src/app/about/page.tsx` — personal bio, work experience, and photo gallery; uses `WorkExperience` section
 
 ## Framer Motion Utilities (`utils/motion.ts`)
 

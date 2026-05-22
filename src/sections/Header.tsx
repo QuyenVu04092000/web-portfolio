@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export const Header = ({ activeId }: { activeId?: string }) => {
   const [activeSection, setActiveSection] = useState(activeId ? activeId : "");

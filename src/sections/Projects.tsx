@@ -2,9 +2,7 @@ import vdental from "@/assets/images/vdental.png";
 import lothashop from "@/assets/images/lothashop.png";
 import psa from "@/assets/images/psa.png";
 import Image from "next/image";
-import CheckCircleIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
-import grainImage from "@/assets/images/grain.jpg";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
 

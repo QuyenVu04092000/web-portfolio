@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, Calistoga } from "next/font/google";
 import "./globals.css";
 import { twMerge } from "tailwind-merge";
+import { LangProvider } from "@/i18n/LangContext";
+import { PageTransition } from "@/components/PageTransition";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const calistoga = Calistoga({
@@ -29,7 +31,9 @@ export default function RootLayout({
           "bg-gray-900 text-white antialiased font-sans mx-auto max-w-[1440px]"
         )}
       >
-        {children}
+        <LangProvider>
+          <PageTransition>{children}</PageTransition>
+        </LangProvider>
       </body>
     </html>
   );

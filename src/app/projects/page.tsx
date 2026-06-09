@@ -8,6 +8,7 @@ import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import vdental from "@/assets/images/vdental.png";
 import lothashop from "@/assets/images/lothashop.png";
 import psa from "@/assets/images/psa_bg.png";
+import wetax from "@/assets/images/wetax.png";
 import sfa from "@/assets/images/sfa.png";
 import career from "@/assets/images/career.png";
 import mydigitalpa from "@/assets/images/mydigitalpa.png";
@@ -16,6 +17,19 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { title } from "process";
 
 const portfolioProjects = [
+  {
+    company: "Webcash Vietnam",
+    year: "2025",
+    title: "WeTax",
+    results: [
+      {
+        title:
+          "High-scale e-invoicing platform supporting tens of millions of invoices for enterprise clients. Features real-time invoice management, PDF generation, and WebSocket-powered notifications.",
+      },
+    ],
+    link: "/web-portfolio/projects/wetax",
+    image: wetax,
+  },
   {
     company: "MLTech Soft",
     year: "2024",
@@ -135,13 +149,16 @@ export default function Projects() {
                   top: `calc(64px + ${projectIndex * 40}px`,
                 }}
               >
-                <div className="lg:grid lg:grid-cols-2 md:grid md:grid-cols-2 lg:gap-6 md:gap-6 min-h-[374px]">
-                  <div className=" md:col-span-1 lg:col-span-1">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      className="lg:mt-0 lg:h-full lg:w-auto rounded-xl md:h-full md:w-auto object-cover object-left-top "
-                    />
+                <div className="lg:grid lg:grid-cols-2 md:grid md:grid-cols-2 lg:gap-6 md:gap-6">
+                  <div className="md:col-span-1 lg:col-span-1">
+                    <div className="relative w-full h-full">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="rounded-xl object-cover object-left-top"
+                      />
+                    </div>
                   </div>
                   <div className=" md:col-span-1 lg:col-span-1">
                     <div className="flex flex-col justify-between h-full">

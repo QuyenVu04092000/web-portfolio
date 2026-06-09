@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(ls /tmp/*.png /tmp/*.jpg /tmp/*.jpeg 2>/dev/null | head -5; find /var/folders -name \"*.png\" -newer /Users/quyenvu/Desktop/personal/web-portfolio/src/assets/images/vdental.png 2>/dev/null | head -5)",
+      "Read(//private/tmp/**)",
+      "Read(//private/var/folders/**)",
+      "Bash(npm install *)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' -X POST https://formspree.io/f/mzdqgdgn -H 'Content-Type: application/json' -d '{\"name\":\"test\",\"email\":\"test@test.com\",\"message\":\"test\"}')",
+      "Bash(curl -s -X POST https://formspree.io/f/mzdqgdgn -H 'Content-Type: application/json' -d '{\"name\":\"Test User\",\"email\":\"test@test.com\",\"budget\":\"$500-$1000\",\"message\":\"Test message from portfolio\"}')",
+      "Bash(python3 -m json.tool)"
+    ]
+  }
+}

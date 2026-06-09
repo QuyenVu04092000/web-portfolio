@@ -57,14 +57,16 @@ export default function About() {
                 Hello I&apos;m Quyen
               </h1>
               <p className="text-left text-white/60 mt-4 md:text-lg lg:text-xl">
-                Creative and detail-oriented Frontend Developer with over 2
-                years of experience. I specialize in building responsive,
-                user-friendly web applications with modern technologies
+                Senior Frontend Engineer with 5+ years of experience building
+                scalable web applications using React and Next.js. Strong
+                expertise in performance optimization, UI/UX, and RESTful API
+                integration, with hands-on experience in state management and
+                cross-platform development.
               </p>
               <p className="text-left text-white/60 mt-4 md:text-lg lg:text-xl">
-                Passionate about seamless experiences, I prioritize performance,
-                accessibility, and clean code. Adaptable and collaborative, I
-                efficiently scale projects with designers and backend teams.
+                Currently at Webcash Vietnam building enterprise-scale HR and
+                e-invoicing platforms. Passionate about clean code,
+                accessibility, and delivering fast, user-focused experiences.
               </p>
               <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
             </div>

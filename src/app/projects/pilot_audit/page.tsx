@@ -1,250 +1,61 @@
 "use client";
 
-import React, { useRef } from "react";
-import { Header } from "@/sections/Header";
-import mydigitalpa from "@/assets/images/mydigitalpa.png";
-import Image from "next/image";
-import { slideInFromBottom } from "../../../../utils/motion";
-import { motion, useInView } from "framer-motion";
+import pilot_audit from "@/assets/images/pilot_audit.png";
+import ProjectDetailLayout, { ProjectDetailContent } from "@/components/ProjectDetailLayout";
+
+const content: { en: ProjectDetailContent; vi: ProjectDetailContent } = {
+  en: {
+    title: "Building Pilot Audit: Empowering Pilots with Comprehensive Audit Management",
+    client: "PSA International",
+    role: "Mobile Developer",
+    timeline: "09/2023 – Present",
+    tech: "MQTT, Swift",
+    intro: "Effective audit management is essential for pilots to maintain safety standards, improve performance, and ensure regulatory compliance. Pilot Audit is a mobile application designed for PSA International's pilots to conveniently view their audit results, check audit history, keep track of audit schedules, monitor audit status, and access detailed audit reports. To deliver real-time updates and notifications, MQTT was integrated, enabling instant messaging and data synchronization. The iOS application was built using Swift, ensuring a smooth, responsive experience and full native integration with Apple's ecosystem.",
+    features: [
+      { title: "📊 Audit Results", body: "Pilots can easily view their audit results on the app. These results are critical for understanding performance and identifying areas that need improvement. The application allows pilots to track their audit scores and feedback from each assessment." },
+      { title: "🕒 Audit History", body: "The app provides a comprehensive audit history, enabling pilots to look back at previous assessments, view trends in their performance, and analyze changes over time." },
+      { title: "📅 Audit Schedule", body: "Pilots can view their upcoming audit schedules, ensuring they are prepared for upcoming assessments. The app notifies pilots about upcoming audits so they can plan accordingly." },
+      { title: "📝 Audit Status", body: "The audit status feature allows pilots to check whether an audit is in progress, pending, or completed. Pilots can easily track the current status of any scheduled audit." },
+      { title: "🔍 Audit Details", body: "Each audit comes with detailed information, including the criteria used for the assessment and any remarks provided by the auditors, giving pilots full transparency on their audit results." },
+    ],
+    techStack: [
+      { title: "🛰️ MQTT for Real-Time Communication", body: "The app leverages MQTT for lightweight, real-time messaging between the server and the mobile app. This ensures low-latency updates and instant delivery of notifications — ideal for keeping pilots informed." },
+      { title: "📱 Swift for Native iOS App Development", body: "The mobile app is built using Swift, ensuring a smooth, fast, and responsive user experience. Swift's powerful features and integration with iOS allow for seamless performance." },
+    ],
+    learnings: [
+      { title: "✅ Deepened Expertise in Swift", body: "Building the iOS app in Swift has significantly enhanced my proficiency with iOS development. I've gained hands-on experience with iOS-specific features, including user interface design, notifications, and background tasks." },
+      { title: "🧠 Mastering Real-Time Messaging with MQTT", body: "Implementing MQTT allowed me to learn more about real-time communication protocols and their integration into mobile applications — handling message queues and ensuring efficient data delivery." },
+      { title: "🤝 Collaboration with PSA's Development Team", body: "Working with PSA's team strengthened my ability to collaborate with third-party teams, align technical requirements with business goals, and iterate based on user feedback." },
+    ],
+    conclusion: "Pilot Audit is a powerful tool for PSA International's pilots, providing them with real-time updates on their audits, easy access to detailed results, and a streamlined way to manage their audit schedules. By using MQTT for real-time communication and Swift for the iOS app, we've built a fast, responsive, and effective solution for pilots to stay on top of their audits.",
+  },
+  vi: {
+    title: "Xây dựng Pilot Audit: Trao quyền cho phi công quản lý kiểm tra toàn diện",
+    client: "PSA International",
+    role: "Mobile Developer",
+    timeline: "09/2023 – Hiện tại",
+    tech: "MQTT, Swift",
+    intro: "Quản lý kiểm tra hiệu quả là điều cần thiết để phi công duy trì tiêu chuẩn an toàn, cải thiện hiệu suất và đảm bảo tuân thủ quy định. Pilot Audit là ứng dụng di động được thiết kế cho phi công của PSA International để xem kết quả kiểm tra, kiểm tra lịch sử, theo dõi lịch trình, giám sát trạng thái và truy cập báo cáo chi tiết. MQTT được tích hợp để cung cấp cập nhật và thông báo thời gian thực. App iOS được xây dựng bằng Swift, đảm bảo trải nghiệm mượt mà và tích hợp native đầy đủ với hệ sinh thái Apple.",
+    features: [
+      { title: "📊 Kết quả kiểm tra", body: "Phi công có thể dễ dàng xem kết quả kiểm tra trên app. Các kết quả này rất quan trọng để hiểu hiệu suất và xác định các lĩnh vực cần cải thiện, cho phép phi công theo dõi điểm và phản hồi từ mỗi đánh giá." },
+      { title: "🕒 Lịch sử kiểm tra", body: "Ứng dụng cung cấp lịch sử kiểm tra toàn diện, cho phép phi công xem lại các đánh giá trước, xem xu hướng hiệu suất và phân tích thay đổi theo thời gian." },
+      { title: "📅 Lịch trình kiểm tra", body: "Phi công có thể xem lịch trình kiểm tra sắp tới, đảm bảo họ chuẩn bị cho các đánh giá sắp diễn ra. Ứng dụng thông báo cho phi công về các cuộc kiểm tra sắp tới." },
+      { title: "📝 Trạng thái kiểm tra", body: "Tính năng trạng thái kiểm tra cho phép phi công kiểm tra xem cuộc kiểm tra đang diễn ra, đang chờ hay đã hoàn thành. Phi công có thể dễ dàng theo dõi trạng thái hiện tại của bất kỳ cuộc kiểm tra đã lên lịch nào." },
+      { title: "🔍 Chi tiết kiểm tra", body: "Mỗi cuộc kiểm tra đi kèm thông tin chi tiết, bao gồm các tiêu chí được sử dụng cho đánh giá và bất kỳ nhận xét nào từ kiểm toán viên, cung cấp cho phi công sự minh bạch đầy đủ về kết quả kiểm tra." },
+    ],
+    techStack: [
+      { title: "🛰️ MQTT cho Giao tiếp thời gian thực", body: "Ứng dụng tận dụng MQTT để nhắn tin thời gian thực nhẹ giữa server và app di động. Điều này đảm bảo cập nhật độ trễ thấp và phân phối thông báo tức thì — lý tưởng để giữ phi công được thông báo." },
+      { title: "📱 Swift cho iOS Native", body: "App di động được xây dựng bằng Swift, đảm bảo trải nghiệm người dùng mượt mà, nhanh và responsive. Các tính năng mạnh mẽ của Swift và tích hợp với iOS cho phép hiệu suất liền mạch." },
+    ],
+    learnings: [
+      { title: "✅ Chuyên sâu hơn về Swift", body: "Xây dựng app iOS bằng Swift đã nâng cao đáng kể kỹ năng phát triển iOS của tôi, tích lũy kinh nghiệm thực tiễn với các tính năng đặc thù iOS như thiết kế UI, thông báo và tác vụ nền." },
+      { title: "🧠 Làm chủ MQTT", body: "Triển khai MQTT cho tôi tìm hiểu thêm về giao thức giao tiếp thời gian thực — xử lý hàng đợi tin nhắn và đảm bảo phân phối dữ liệu hiệu quả." },
+      { title: "🤝 Hợp tác với đội ngũ PSA", body: "Làm việc với đội ngũ PSA củng cố khả năng hợp tác với nhóm bên thứ ba, điều chỉnh yêu cầu kỹ thuật với mục tiêu kinh doanh và lặp lại dựa trên phản hồi người dùng." },
+    ],
+    conclusion: "Pilot Audit là công cụ mạnh mẽ cho phi công của PSA International, cung cấp cập nhật thời gian thực về kiểm tra, truy cập dễ dàng vào kết quả chi tiết và cách hợp lý để quản lý lịch trình kiểm tra. Bằng cách dùng MQTT cho giao tiếp thời gian thực và Swift cho app iOS, chúng tôi đã xây dựng giải pháp nhanh, responsive và hiệu quả.",
+  },
+};
+
 export default function PilotAudit() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-  const contentRef = useRef(null);
-  const isInViewContent = useInView(contentRef, {
-    once: true,
-    margin: "-50px",
-  });
-  return (
-    <div>
-      <Header />
-      <section className="pb-16 py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip">
-        <motion.div
-          ref={ref}
-          variants={slideInFromBottom}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-        >
-          <div className="my-8">
-            <h1 className="font-serif px-4 text-3xl md:text-5xl text-left tracking-wide mb-8">
-              Building Pilot Audit: Empowering Pilots with Comprehensive Audit
-              Management
-            </h1>
-            <div className="flex sm:flex-col md:flex-row lg:flex-row items-start justify-start md:gap-8 lg:gap-8 sm:gap-2">
-              <div>
-                <p className="text-left px-4 text-white/60 mt-4 md:text-lg lg:text-xl">
-                  Client
-                </p>
-                <p
-                  className={`py-2 px-4 rounded-full transition-all text-lg text-white hover:bg-white/20
-            `}
-                >
-                  PSA International
-                </p>
-              </div>
-              <div>
-                <p className="text-left px-4 text-white/60 mt-4 md:text-lg lg:text-xl">
-                  Role
-                </p>
-                <p
-                  className={`py-2 rounded-full px-4 transition-all text-lg text-white hover:bg-white/20
-            `}
-                >
-                  Mobile Developer
-                </p>
-              </div>
-              <div>
-                <p className="text-left px-4 text-white/60 mt-4 md:text-lg lg:text-xl">
-                  Timeline
-                </p>
-                <p
-                  className={`py-2 px-4 rounded-full transition-all text-lg text-white hover:bg-white/20
-            `}
-                >
-                  09/2023 - Present
-                </p>
-              </div>
-            </div>
-            <div className="inline-flex flex-col items-start justify-start">
-              <p className="text-left px-4 text-white/60 mt-4 md:text-lg lg:text-xl">
-                Technologies Used
-              </p>
-              <p
-                className={`py-2 px-4 rounded-full transition-all text-lg text-white hover:bg-white/20
-            `}
-              >
-                MQTT, Swift
-              </p>
-            </div>
-          </div>
-          <Image
-            src={mydigitalpa}
-            alt="vdental"
-            className="w-full h-full object-cover rounded-3xl"
-          />
-        </motion.div>
-        <motion.div
-          ref={contentRef}
-          variants={slideInFromBottom}
-          initial="hidden"
-          animate={isInViewContent ? "visible" : "hidden"}
-        >
-          <div className="my-8">
-            <h1 className="font-serif px-4 text-3xl md:text-5xl text-left  tracking-wide mb-8">
-              Introduction
-            </h1>
-            <p className="text-white/60 px-4 text-lg md:text-xl">
-              Effective audit management is essential for pilots to maintain
-              safety standards, improve performance, and ensure regulatory
-              compliance. Pilot Audit is a mobile application designed for PSA
-              International’s pilots to conveniently view their audit results,
-              check audit history, keep track of their audit schedules, monitor
-              audit status, and access detailed audit reports. The application
-              is built with a focus on simplicity, performance, and real-time
-              communication, providing pilots with an intuitive and seamless
-              experience.
-            </p>
-            <p className="text-white/60 px-4 text-lg md:text-xl mt-4">
-              To deliver real-time updates and notifications, MQTT was
-              integrated into the app, enabling instant messaging and data
-              synchronization. The iOS application was built using Swift,
-              ensuring a smooth, responsive experience and full native
-              integration with Apple&apos;s ecosystem.
-            </p>
-          </div>
-          <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
-          <div className="my-8">
-            <h1 className="font-serif px-4 text-3xl md:text-5xl text-left  tracking-wide mb-8">
-              Key Features of Pilot Audit
-            </h1>
-            <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide mb-8">
-              📊 Audit Results
-            </h1>
-            <p className="text-white/60 px-4 text-lg md:text-xl">
-              Pilots can easily view their audit results on the app. These
-              results are critical for understanding their performance and
-              identifying areas that need improvement. The application allows
-              pilots to track their audit scores and feedback from each
-              assessment, ensuring they are always aware of their standing.
-            </p>
-            <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide my-8">
-              🕒 Audit History
-            </h1>
-            <p className="text-white/60 px-4 text-lg md:text-xl">
-              The app provides a comprehensive audit history, enabling pilots to
-              look back at previous assessments, view trends in their
-              performance, and analyze changes over time. This feature helps
-              pilots monitor their progress and identify patterns in their audit
-              results.
-            </p>
-            <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide my-8">
-              📅 Audit Schedule
-            </h1>
-            <p className="text-white/60 px-4 text-lg md:text-xl">
-              Pilots can view their upcoming audit schedules, ensuring they are
-              prepared for upcoming assessments. The app notifies pilots about
-              upcoming audits so they can plan accordingly and stay ahead of
-              deadlines.
-            </p>
-            <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide my-8">
-              📝 Audit Status
-            </h1>
-            <p className="text-white/60 px-4 text-lg md:text-xl">
-              The audit status feature allows pilots to check whether an audit
-              is in progress, pending, or completed. Pilots can easily track the
-              current status of any scheduled audit, helping them stay organized
-              and prepared.
-            </p>
-            <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide my-8">
-              🔍 Audit Details
-            </h1>
-            <p className="text-white/60 px-4 text-lg md:text-xl">
-              Each audit comes with detailed information, including the criteria
-              used for the assessment and any remarks provided by the auditors.
-              Pilots can access these details directly from the app, giving them
-              full transparency on their audit results.
-            </p>
-          </div>
-          <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
-          <div className="my-8">
-            <h1 className="font-serif px-4 text-3xl md:text-5xl text-left  tracking-wide mb-8">
-              Technologies and Tools
-            </h1>
-            <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide mb-8">
-              🛰️ MQTT for Real-Time Communication
-            </h1>
-            <p className="text-white/60 px-4 text-lg md:text-xl">
-              The app leverages MQTT for lightweight, real-time messaging
-              between the server and the mobile app. This ensures low-latency
-              updates and instant delivery of notifications, making it an ideal
-              protocol for keeping pilots informed about new tasks and updates.
-            </p>
-            <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide my-8">
-              📱 Swift for Native iOS App Development
-            </h1>
-            <p className="text-white/60 px-4 text-lg md:text-xl">
-              The mobile app is built using Swift, ensuring a smooth, fast, and
-              responsive user experience. Swift&apos;s powerful features and
-              integration with iOS allow for seamless performance, making
-              MydigitalPA an intuitive tool for pilots.
-            </p>
-          </div>
-          <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
-          <div className="my-8">
-            <h1 className="font-serif px-4 text-3xl md:text-5xl text-left  tracking-wide mb-8">
-              Key Learnings and Challenges
-            </h1>
-            <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide mb-8">
-              ✅ Deepened Expertise in Swift
-            </h1>
-            <p className="text-white/60 px-4 text-lg md:text-xl">
-              Building the iOS app in Swift has significantly enhanced my
-              proficiency with iOS development. I’ve gained hands-on experience
-              with iOS-specific features, including user interface design,
-              notifications, and background tasks, to provide pilots with the
-              best possible mobile experience.
-            </p>
-            <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide my-8">
-              🧠 Mastering Real-Time Messaging with MQTT
-            </h1>
-            <p className="text-white/60 px-4 text-lg md:text-xl">
-              Implementing MQTT allowed me to learn more about real-time
-              communication protocols and their integration into mobile
-              applications. This experience taught me how to handle message
-              queues, ensure efficient data delivery, and maintain a robust
-              connection between the server and app.
-            </p>
-            <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide my-8">
-              🤝 Collaboration with PSA&apos;s Development Team
-            </h1>
-            <p className="text-white/60 px-4 text-lg md:text-xl">
-              Working with PSA&apos;s team has strengthened my ability to
-              collaborate with third-party teams, align technical requirements
-              with business goals, and iterate based on user feedback. I&apos;ve
-              gained insights into their workflow and how to create a product
-              that meets both internal and external user needs.
-            </p>
-          </div>
-          <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
-          <div className="my-8">
-            <h1 className="font-serif px-4 text-3xl md:text-5xl text-left  tracking-wide mb-8">
-              Conclusion
-            </h1>
-            <p className="text-white/60 px-4 text-lg md:text-xl">
-              Pilot Audit is a powerful tool for PSA International&apos;s
-              pilots, providing them with real-time updates on their audits,
-              easy access to detailed results, and a streamlined way to manage
-              their audit schedules. By using MQTT for real-time communication
-              and Swift for the iOS app, we have built a fast, responsive, and
-              effective solution for pilots to stay on top of their audits.
-            </p>
-            <p className="text-white/60 px-4 text-lg md:text-xl my-4">
-              This project has been an excellent opportunity to deepen my
-              knowledge of Swift and MQTT while collaborating with PSA&apos;s
-              talented development team.
-            </p>
-          </div>
-        </motion.div>
-      </section>
-    </div>
-  );
+  return <ProjectDetailLayout image={pilot_audit} imageAlt="Pilot Audit" content={content} />;
 }

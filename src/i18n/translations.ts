@@ -25,6 +25,12 @@ export const translations = {
       title: "Featured Projects",
       description: "See how I transformed concepts into engaging digital experiences.",
       visitSite: "Visit Live Site",
+      items: [
+        { results: ["Improved PDF rendering performance by ~90%", "Supports tens of millions of e-invoices", "Real-time notifications via WebSocket"] },
+        { results: ["Enhanced user experience by 40%", "Improved site speed by 50%", "Increased mobile traffic by 35%"] },
+        { results: ["Boosted sales by 20%", "Expanded customer reach by 35%", "Increased brand awareness by 15%"] },
+        { results: ["Enhanced user experience by 40%", "Improved site speed by 50%", "Increased mobile traffic by 35%"] },
+      ],
     },
     services: {
       eyebrow: "What I Offer",
@@ -48,6 +54,13 @@ export const translations = {
       toolboxDesc: "Explore the technologies and tools I use to craft exceptional digital experiences.",
       beyond: "Beyond the Code",
       beyondDesc: "Explore my interests and hobbies beyond the digital realm.",
+      hobbies: ["Beer", "Gaming", "Traveling", "Music", "Fitness", "Football", "Badminton"],
+    },
+    workExperience: {
+      title: "Work Experience",
+    },
+    tape: {
+      words: ["Performant", "Accessible", "Secure", "Interactive", "Scalable", "User Friendly", "Responsive", "Maintainable", "Search Optimized", "Usable", "Reliable"],
     },
     testimonials: {
       eyebrow: "Kind Words",
@@ -78,6 +91,40 @@ export const translations = {
     footer: {
       crafted: "Crafted with care by Quyen Vu",
     },
+    projectsPage: {
+      eyebrow: "All Projects",
+      title: "My Projects",
+      description: "Explore the wide range of projects I've worked on, showcasing my skills and experience.",
+      mobileEyebrow: "Other Projects",
+      mobileTitle: "Mobile Projects",
+      mobileDescription: "Explore the mobile applications I've developed, demonstrating my expertise in mobile technologies.",
+      viewDetail: "View Detail",
+      projects: [
+        { title: "WeTax", description: "High-scale e-invoicing platform supporting tens of millions of invoices for enterprise clients. Features real-time invoice management, PDF generation, and WebSocket-powered notifications." },
+        { title: "VDental", description: "VDental provides high quality dental services with a team of experienced doctors and modern equipment. The application helps users make appointments, advise on dental conditions and update the latest dental news." },
+        { title: "Lothashop", description: "Super smart application helps customers buy products, accumulate reward points and register as a Lothamilk Personal Agent. Customers directly buy Lothamilk products for their own consumption or sell to other consumers with many attractive promotions and vouchers." },
+        { title: "PSA-CMS", description: "Manage pilot information and manage content on the pilot's app including news, vessels,..." },
+      ],
+      mobileProjects: [
+        { title: "DigiSale Sales Force Automation (SFA)", description: "DigiSale is a sales force automation application that helps businesses manage their sales activities, track sales performance, and improve sales efficiency." },
+        { title: "MydigitalPA", description: "App for pilots to manage license upgrading process, view jobs to be done, catch up news, receive notifications. It can used by Admin to manage pilots, manage jobs, manage news, send notifications." },
+        { title: "Pilot Audit", description: "App for pilots to view their audit results, view their audit history, view their audit schedule, view their audit status, view their audit details." },
+        { title: "Career Guidance App for LOF", description: "An app to develop a skill self-training that will enable users to connect and share knowledge, discover themselves and succeed professionally in the future." },
+      ],
+    },
+    detailLabels: {
+      client: "Client",
+      role: "Role",
+      timeline: "Timeline",
+      technologiesUsed: "Technologies Used",
+      introduction: "Introduction",
+      whatIs: "What is",
+      keyFeatures: "Key Features",
+      keyContributions: "Key Contributions",
+      technologies: "Technologies and Tools",
+      learnings: "Key Learnings and Challenges",
+      conclusion: "Conclusion",
+    },
   },
   vi: {
     nav: {
@@ -105,6 +152,12 @@ export const translations = {
       title: "Dự án nổi bật",
       description: "Xem cách tôi biến ý tưởng thành những trải nghiệm kỹ thuật số hấp dẫn.",
       visitSite: "Xem trang web",
+      items: [
+        { results: ["Cải thiện hiệu suất render PDF ~90%", "Hỗ trợ hàng chục triệu hóa đơn điện tử", "Thông báo thời gian thực qua WebSocket"] },
+        { results: ["Nâng cao trải nghiệm người dùng 40%", "Cải thiện tốc độ tải trang 50%", "Tăng lưu lượng mobile 35%"] },
+        { results: ["Tăng doanh số 20%", "Mở rộng tệp khách hàng 35%", "Tăng nhận diện thương hiệu 15%"] },
+        { results: ["Nâng cao trải nghiệm người dùng 40%", "Cải thiện tốc độ tải trang 50%", "Tăng lưu lượng mobile 35%"] },
+      ],
     },
     services: {
       eyebrow: "Dịch vụ",
@@ -128,6 +181,13 @@ export const translations = {
       toolboxDesc: "Các công nghệ và công cụ tôi dùng để tạo ra những trải nghiệm kỹ thuật số xuất sắc.",
       beyond: "Ngoài lập trình",
       beyondDesc: "Sở thích và đam mê của tôi ngoài thế giới kỹ thuật số.",
+      hobbies: ["Bia", "Gaming", "Du lịch", "Âm nhạc", "Thể hình", "Bóng đá", "Cầu lông"],
+    },
+    workExperience: {
+      title: "Kinh nghiệm làm việc",
+    },
+    tape: {
+      words: ["Hiệu suất cao", "Dễ tiếp cận", "Bảo mật", "Tương tác", "Mở rộng được", "Thân thiện người dùng", "Responsive", "Dễ bảo trì", "Tối ưu SEO", "Khả dụng", "Đáng tin cậy"],
     },
     testimonials: {
       eyebrow: "Nhận xét",
@@ -158,8 +218,42 @@ export const translations = {
     footer: {
       crafted: "Được tạo ra với tâm huyết bởi Quyen Vu",
     },
+    projectsPage: {
+      eyebrow: "Tất cả dự án",
+      title: "Dự án của tôi",
+      description: "Khám phá các dự án tôi đã thực hiện, thể hiện kỹ năng và kinh nghiệm của tôi.",
+      mobileEyebrow: "Dự án khác",
+      mobileTitle: "Ứng dụng di động",
+      mobileDescription: "Khám phá các ứng dụng di động tôi đã phát triển, thể hiện chuyên môn của tôi.",
+      viewDetail: "Xem chi tiết",
+      projects: [
+        { title: "WeTax", description: "Nền tảng hóa đơn điện tử quy mô lớn hỗ trợ hàng chục triệu hóa đơn cho khách hàng doanh nghiệp. Tính năng quản lý hóa đơn thời gian thực, tạo PDF và thông báo qua WebSocket." },
+        { title: "VDental", description: "VDental cung cấp dịch vụ nha khoa chất lượng cao với đội ngũ bác sĩ giàu kinh nghiệm và trang thiết bị hiện đại. Ứng dụng giúp người dùng đặt lịch, tư vấn tình trạng răng và cập nhật tin tức nha khoa mới nhất." },
+        { title: "Lothashop", description: "Ứng dụng mua sắm thông minh giúp khách hàng mua sản phẩm, tích lũy điểm thưởng và đăng ký làm đại lý cá nhân Lothamilk. Khách hàng mua sản phẩm để tiêu dùng hoặc bán lại với nhiều ưu đãi và voucher hấp dẫn." },
+        { title: "PSA-CMS", description: "Quản lý thông tin phi công và quản lý nội dung trên ứng dụng của phi công bao gồm tin tức, tàu thuyền,..." },
+      ],
+      mobileProjects: [
+        { title: "DigiSale Sales Force Automation (SFA)", description: "DigiSale là ứng dụng tự động hóa lực lượng bán hàng giúp doanh nghiệp quản lý hoạt động bán hàng, theo dõi hiệu suất và cải thiện hiệu quả bán hàng." },
+        { title: "MydigitalPA", description: "Ứng dụng cho phi công quản lý quy trình nâng cấp giấy phép, xem công việc cần làm, cập nhật tin tức, nhận thông báo. Admin có thể quản lý phi công, công việc, tin tức và gửi thông báo." },
+        { title: "Pilot Audit", description: "Ứng dụng cho phi công xem kết quả kiểm tra, lịch sử kiểm tra, lịch trình kiểm tra, trạng thái và chi tiết kiểm tra." },
+        { title: "Career Guidance App for LOF", description: "Ứng dụng phát triển kỹ năng tự đào tạo, giúp người dùng kết nối, chia sẻ kiến thức, khám phá bản thân và thành công trong sự nghiệp." },
+      ],
+    },
+    detailLabels: {
+      client: "Khách hàng",
+      role: "Vai trò",
+      timeline: "Thời gian",
+      technologiesUsed: "Công nghệ sử dụng",
+      introduction: "Giới thiệu",
+      whatIs: "Giới thiệu về",
+      keyFeatures: "Tính năng chính",
+      keyContributions: "Đóng góp chính",
+      technologies: "Công nghệ & Công cụ",
+      learnings: "Kinh nghiệm & Thách thức",
+      conclusion: "Kết luận",
+    },
   },
 } as const;
 
 export type Locale = keyof typeof translations;
-export type Translations = typeof translations.en;
+export type Translations = (typeof translations)[Locale];

@@ -11,55 +11,11 @@ import { Card } from "@/components/Card";
 import { useLang } from "@/i18n/LangContext";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
-const portfolioProjects = [
-  {
-    company: "Webcash Vietnam",
-    year: "2025",
-    title: "WeTax",
-    results: [
-      { title: "Improved PDF rendering performance by ~90%" },
-      { title: "Supports tens of millions of e-invoices" },
-      { title: "Real-time notifications via WebSocket" },
-    ],
-    link: "https://invoice.wetax.com.vn/",
-    image: wetax,
-  },
-  {
-    company: "MLTech Soft",
-    year: "2024",
-    title: "VDental",
-    results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
-    ],
-    link: "https://vdental.ai/vi",
-    image: vdental,
-  },
-  {
-    company: "MLTech Soft",
-    year: "2023",
-    title: "Lothashop",
-    results: [
-      { title: "Boosted sales by 20%" },
-      { title: "Expanded customer reach by 35%" },
-      { title: "Increased brand awareness by 15%" },
-    ],
-    link: "https://www.lothashop.vn/",
-    image: lothashop,
-  },
-  {
-    company: "MLTech Soft",
-    year: "2023",
-    title: "PSA-CMS",
-    results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
-    ],
-    link: "https://psa-cms.mltechsoft.com",
-    image: psa,
-  },
+const projectsMeta = [
+  { company: "Webcash Vietnam", year: "2025", title: "WeTax", link: "https://invoice.wetax.com.vn/", image: wetax },
+  { company: "MLTech Soft", year: "2024", title: "VDental", link: "https://vdental.ai/vi", image: vdental },
+  { company: "MLTech Soft", year: "2023", title: "Lothashop", link: "https://www.lothashop.vn/", image: lothashop },
+  { company: "MLTech Soft", year: "2023", title: "PSA-CMS", link: "https://psa-cms.mltechsoft.com", image: psa },
 ];
 
 export const ProjectsSection = () => {
@@ -73,7 +29,7 @@ export const ProjectsSection = () => {
           description={t.projects.description}
         />
         <div className="flex flex-col mt-10 gap-20 md:mt-20">
-          {portfolioProjects.map((project, projectIndex) => (
+          {projectsMeta.map((project, projectIndex) => (
             <ScrollReveal key={project.title} delay={0.1} direction="up">
             <Card
               className="px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20 sticky overflow-hidden"
@@ -92,13 +48,12 @@ export const ProjectsSection = () => {
                   </h3>
                   <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
                   <ul className="flex flex-col gap-4 mt-4 md:mt-5">
-                    {project.results.map((result) => (
+                    {t.projects.items[projectIndex].results.map((result) => (
                       <li
-                        key={result.title}
+                        key={result}
                         className="flex gap-2 md:text-base text-sm text-white/50"
                       >
-                        {/* <CheckCircleIcon className="size-5 md:size-6" /> */}
-                        <span>{result.title}</span>
+                        <span>{result}</span>
                       </li>
                     ))}
                   </ul>

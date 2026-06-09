@@ -1,4 +1,7 @@
+"use client";
+
 import { Card } from "@/components/Card";
+import { useLang } from "@/i18n/LangContext";
 
 const experiences = [
   {
@@ -51,11 +54,12 @@ const experiences = [
 ];
 
 export const WorkExperience = () => {
+  const { t } = useLang();
   return (
     <div className="px-7">
       <Card className="px-8 flex-1 flex flex-col">
         <h2 className="font-serif text-2xl md:text-3xl text-left mt-8 tracking-wide">
-          Work Experience
+          {t.workExperience.title}
         </h2>
         <div className="mt-6 mb-8 flex flex-col gap-10">
           {experiences.map((exp, i) => (

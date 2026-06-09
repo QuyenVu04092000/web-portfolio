@@ -21,6 +21,7 @@ import { CardHeader } from "@/components/CardHeader";
 import { ToolboxItems } from "@/components/ToolboxItems";
 import { motion } from "framer-motion";
 import { useRef } from "react";
+import { useLang } from "@/i18n/LangContext";
 
 const toolboxItems = [
   { title: "JavaScript", iconType: JavascriptIcon },
@@ -36,67 +37,34 @@ const toolboxItems = [
   { title: "Chrome DevTools", iconType: ChromeIcon },
 ];
 
-const hobbies = [
-  {
-    title: "Beer",
-    emoji: "🍺",
-    left: "5%",
-    top: "5%",
-  },
-  {
-    title: "Gaming",
-    emoji: "🎮",
-    left: "50%",
-    top: "5%",
-  },
-  {
-    title: "Traveling",
-    emoji: "✈️",
-    left: "10%",
-    top: "35%",
-  },
-  {
-    title: "Music",
-    emoji: "🎵",
-    left: "35%",
-    top: "40%",
-  },
-  {
-    title: "Fitness",
-    emoji: "🏋️",
-    left: "70%",
-    top: "45%",
-  },
-  {
-    title: "Football",
-    emoji: "⚽",
-    left: "5%",
-    top: "65%",
-  },
-  {
-    title: "Badminton",
-    emoji: "🏸",
-    left: "45%",
-    top: "70%",
-  },
+const hobbiesData = [
+  { emoji: "🍺", left: "5%", top: "5%" },
+  { emoji: "🎮", left: "50%", top: "5%" },
+  { emoji: "✈️", left: "10%", top: "35%" },
+  { emoji: "🎵", left: "35%", top: "40%" },
+  { emoji: "🏋️", left: "70%", top: "45%" },
+  { emoji: "⚽", left: "5%", top: "65%" },
+  { emoji: "🏸", left: "45%", top: "70%" },
 ];
 
 export const AboutSection = () => {
   const constraintRef = useRef(null);
+  const { t } = useLang();
+  const hobbies = hobbiesData.map((h, i) => ({ ...h, title: t.about.hobbies[i] }));
   return (
     <div className="pb-20 lg:py-28">
       <div className="container">
         <SectionHeader
-          eyebrow="About Me"
-          title="A Glimpse Into My World"
-          description="Learn more about who I am, what I do, and what inspires me."
+          eyebrow={t.about.eyebrow}
+          title={t.about.title}
+          description={t.about.description}
         />
         <div className="mt-20 flex flex-col gap-8">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3 ">
             <Card className="h-[320px] md:col-span-2 lg:col-span-1">
               <CardHeader
-                title="My Reads"
-                description="Explore the books shaping my perspectives"
+                title={t.about.reads}
+                description={t.about.readsDesc}
               />
               <div className="w-40 mx-auto mt-2 md:mt-0">
                 <Image src={bookImage} alt="Book Cover" />
@@ -104,8 +72,8 @@ export const AboutSection = () => {
             </Card>
             <Card className="h-[320px] md:col-span-3 lg:col-span-2">
               <CardHeader
-                title="My Toolbox"
-                description="Explore the technologies and tools I use to craft exceptional digital experiences."
+                title={t.about.toolbox}
+                description={t.about.toolboxDesc}
               />
               <ToolboxItems
                 items={toolboxItems}
@@ -123,8 +91,8 @@ export const AboutSection = () => {
             <Card className="h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2">
               <CardHeader
                 className="px-6 pt-6"
-                title="Beyond the Code"
-                description="Explore my interests and hobbies beyond the digital realm."
+                title={t.about.beyond}
+                description={t.about.beyondDesc}
               />
               <div className="relative flex-1" ref={constraintRef}>
                 {hobbies.map((hobby) => (

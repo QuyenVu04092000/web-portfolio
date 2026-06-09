@@ -1,248 +1,61 @@
 "use client";
 
-import React, { useRef } from "react";
-import { Header } from "@/sections/Header";
 import mydigitalpa from "@/assets/images/mydigitalpa.png";
-import Image from "next/image";
-import { slideInFromBottom } from "../../../../utils/motion";
-import { motion, useInView } from "framer-motion";
+import ProjectDetailLayout, { ProjectDetailContent } from "@/components/ProjectDetailLayout";
+
+const content: { en: ProjectDetailContent; vi: ProjectDetailContent } = {
+  en: {
+    title: "Building MydigitalPA: Empowering Pilots with Efficient License Management and Job Tracking",
+    client: "PSA International",
+    role: "Mobile Developer",
+    timeline: "09/2023 – Present",
+    tech: "MQTT, Swift",
+    intro: "In the maritime industry, pilots play a critical role in ensuring safe navigation and efficient operations at ports. MydigitalPA is a mobile application designed specifically for PSA International's pilots, helping them streamline and manage their license upgrading process, stay on top of job tasks, receive real-time news updates, and get instant notifications. The app integrates MQTT for real-time communication between the mobile app and the server, ensuring pilots are always up to date. Swift was used to build the iOS app, providing a native and responsive experience.",
+    features: [
+      { title: "🎓 License Management", body: "Pilots can easily track their license upgrading process, view required tasks, and receive reminders about key milestones. This feature ensures pilots stay on top of their professional development and comply with regulatory requirements." },
+      { title: "📋 Job Management", body: "The app provides a detailed list of jobs for pilots to complete, including deadlines, vessel details, and operational instructions. Pilots can mark tasks as completed and receive updates when new tasks are assigned." },
+      { title: "📰 News Feed", body: "MydigitalPA includes a news feed where pilots can catch up on important updates, including regulatory changes, PSA news, weather forecasts, and other relevant information." },
+      { title: "🔔 Real-Time Notifications", body: "Using MQTT, the app delivers instant notifications to pilots regarding job updates, news, or critical information, ensuring they are always in the loop." },
+      { title: "👨‍💼 Admin Panel", body: "The admin panel allows PSA International administrators to manage pilots, assign new jobs, send news updates, and broadcast notifications to pilots, ensuring activities and tasks are effectively managed." },
+    ],
+    techStack: [
+      { title: "🛰️ MQTT for Real-Time Communication", body: "The app leverages MQTT for lightweight, real-time messaging between the server and the mobile app. This ensures low-latency updates and instant delivery of notifications, making it an ideal protocol for keeping pilots informed." },
+      { title: "📱 Swift for Native iOS App Development", body: "The mobile app is built using Swift, ensuring a smooth, fast, and responsive user experience. Swift's powerful features and integration with iOS allow for seamless performance." },
+    ],
+    learnings: [
+      { title: "✅ Deepened Expertise in Swift", body: "Building the iOS app in Swift has significantly enhanced my proficiency with iOS development. I've gained hands-on experience with iOS-specific features, including user interface design, notifications, and background tasks." },
+      { title: "🧠 Mastering Real-Time Messaging with MQTT", body: "Implementing MQTT allowed me to learn more about real-time communication protocols and their integration into mobile applications. This experience taught me how to handle message queues and ensure efficient data delivery." },
+      { title: "🤝 Collaboration with PSA's Development Team", body: "Working with PSA's team strengthened my ability to collaborate with third-party teams, align technical requirements with business goals, and iterate based on user feedback." },
+    ],
+    conclusion: "MydigitalPA is a powerful tool that helps PSA International's pilots efficiently manage their workflow, stay on top of their license upgrading process, and receive important updates in real time. By leveraging Swift for native development and MQTT for real-time messaging, we've built an app that ensures pilots have everything they need at their fingertips.",
+  },
+  vi: {
+    title: "Xây dựng MydigitalPA: Trao quyền cho phi công quản lý giấy phép và theo dõi công việc hiệu quả",
+    client: "PSA International",
+    role: "Mobile Developer",
+    timeline: "09/2023 – Hiện tại",
+    tech: "MQTT, Swift",
+    intro: "Trong ngành hàng hải, phi công đóng vai trò quan trọng trong việc đảm bảo điều hướng an toàn và hoạt động hiệu quả tại cảng. MydigitalPA là ứng dụng di động được thiết kế riêng cho phi công của PSA International, giúp họ hợp lý hóa và quản lý quy trình nâng cấp giấy phép, theo dõi công việc, nhận cập nhật tin tức thời gian thực và nhận thông báo tức thì. Ứng dụng tích hợp MQTT để giao tiếp thời gian thực giữa app di động và server. Swift được dùng để xây dựng app iOS, cung cấp trải nghiệm native và responsive.",
+    features: [
+      { title: "🎓 Quản lý giấy phép", body: "Phi công có thể dễ dàng theo dõi quy trình nâng cấp giấy phép, xem các tác vụ yêu cầu và nhận nhắc nhở về các cột mốc quan trọng. Tính năng này đảm bảo phi công theo kịp phát triển chuyên môn và tuân thủ yêu cầu quy định." },
+      { title: "📋 Quản lý công việc", body: "Ứng dụng cung cấp danh sách chi tiết các công việc cần hoàn thành, bao gồm deadline, chi tiết tàu và hướng dẫn vận hành. Phi công có thể đánh dấu nhiệm vụ đã hoàn thành và nhận cập nhật khi có nhiệm vụ mới." },
+      { title: "📰 Bảng tin", body: "MydigitalPA bao gồm bảng tin nơi phi công có thể cập nhật thông tin quan trọng, bao gồm thay đổi quy định, tin tức PSA, dự báo thời tiết và các thông tin liên quan khác." },
+      { title: "🔔 Thông báo thời gian thực", body: "Sử dụng MQTT, ứng dụng gửi thông báo tức thì cho phi công về cập nhật công việc, tin tức hoặc thông tin quan trọng, đảm bảo họ luôn được thông báo." },
+      { title: "👨‍💼 Bảng quản trị", body: "Bảng quản trị cho phép quản trị viên PSA International quản lý phi công, giao công việc mới, gửi cập nhật tin tức và phát thông báo tới phi công, đảm bảo các hoạt động và nhiệm vụ được quản lý hiệu quả." },
+    ],
+    techStack: [
+      { title: "🛰️ MQTT cho Giao tiếp thời gian thực", body: "Ứng dụng tận dụng MQTT để nhắn tin thời gian thực nhẹ giữa server và app di động. Điều này đảm bảo cập nhật độ trễ thấp và phân phối thông báo tức thì, làm cho nó trở thành giao thức lý tưởng để giữ phi công được thông báo." },
+      { title: "📱 Swift cho iOS Native", body: "App di động được xây dựng bằng Swift, đảm bảo trải nghiệm người dùng mượt mà, nhanh và responsive. Các tính năng mạnh mẽ của Swift và tích hợp với iOS cho phép hiệu suất liền mạch." },
+    ],
+    learnings: [
+      { title: "✅ Chuyên sâu hơn về Swift", body: "Xây dựng app iOS bằng Swift đã nâng cao đáng kể kỹ năng phát triển iOS của tôi. Tôi đã tích lũy kinh nghiệm thực tiễn với các tính năng đặc thù iOS, bao gồm thiết kế UI, thông báo và tác vụ nền." },
+      { title: "🧠 Làm chủ MQTT", body: "Triển khai MQTT cho tôi tìm hiểu thêm về giao thức giao tiếp thời gian thực và tích hợp của chúng vào ứng dụng di động. Trải nghiệm này dạy tôi cách xử lý hàng đợi tin nhắn và đảm bảo phân phối dữ liệu hiệu quả." },
+      { title: "🤝 Hợp tác với đội ngũ PSA", body: "Làm việc với đội ngũ PSA củng cố khả năng hợp tác với nhóm bên thứ ba, điều chỉnh yêu cầu kỹ thuật với mục tiêu kinh doanh và lặp lại dựa trên phản hồi người dùng của tôi." },
+    ],
+    conclusion: "MydigitalPA là công cụ mạnh mẽ giúp phi công của PSA International quản lý quy trình làm việc hiệu quả, theo kịp quy trình nâng cấp giấy phép và nhận cập nhật quan trọng theo thời gian thực. Bằng cách tận dụng Swift cho native development và MQTT cho nhắn tin thời gian thực, chúng tôi đã xây dựng app đảm bảo phi công có mọi thứ cần thiết trong tầm tay.",
+  },
+};
+
 export default function Mydigitalpa() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-  const contentRef = useRef(null);
-  const isInViewContent = useInView(contentRef, {
-    once: true,
-    margin: "-50px",
-  });
-  return (
-    <div>
-      <Header />
-      <section className="pb-16 py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip">
-        <motion.div
-          ref={ref}
-          variants={slideInFromBottom}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-        >
-          <div className="my-8">
-            <h1 className="font-serif px-4 text-3xl md:text-5xl text-left tracking-wide mb-8">
-              Building MydigitalPA: Empowering Pilots with Efficient License
-              Management and Job Tracking
-            </h1>
-            <div className="flex sm:flex-col md:flex-row lg:flex-row items-start justify-start md:gap-8 lg:gap-8 sm:gap-2">
-              <div>
-                <p className="text-left px-4 text-white/60 mt-4 md:text-lg lg:text-xl">
-                  Client
-                </p>
-                <p
-                  className={`py-2 px-4 rounded-full transition-all text-lg text-white hover:bg-white/20
-            `}
-                >
-                  PSA International
-                </p>
-              </div>
-              <div>
-                <p className="text-left px-4 text-white/60 mt-4 md:text-lg lg:text-xl">
-                  Role
-                </p>
-                <p
-                  className={`py-2 rounded-full px-4 transition-all text-lg text-white hover:bg-white/20
-            `}
-                >
-                  Mobile Developer
-                </p>
-              </div>
-              <div>
-                <p className="text-left px-4 text-white/60 mt-4 md:text-lg lg:text-xl">
-                  Timeline
-                </p>
-                <p
-                  className={`py-2 px-4 rounded-full transition-all text-lg text-white hover:bg-white/20
-            `}
-                >
-                  09/2023 - Present
-                </p>
-              </div>
-            </div>
-            <div className="inline-flex flex-col items-start justify-start">
-              <p className="text-left px-4 text-white/60 mt-4 md:text-lg lg:text-xl">
-                Technologies Used
-              </p>
-              <p
-                className={`py-2 px-4 rounded-full transition-all text-lg text-white hover:bg-white/20
-            `}
-              >
-                MQTT, Swift
-              </p>
-            </div>
-          </div>
-          <Image
-            src={mydigitalpa}
-            alt="vdental"
-            className="w-full h-full object-cover rounded-3xl"
-          />
-        </motion.div>
-        <motion.div
-          ref={contentRef}
-          variants={slideInFromBottom}
-          initial="hidden"
-          animate={isInViewContent ? "visible" : "hidden"}
-        >
-          <div className="my-8">
-            <h1 className="font-serif px-4 text-3xl md:text-5xl text-left  tracking-wide mb-8">
-              Introduction
-            </h1>
-            <p className="text-white/60 px-4 text-lg md:text-xl">
-              In the maritime industry, pilots play a critical role in ensuring
-              safe navigation and efficient operations at ports. MydigitalPA is
-              a mobile application designed specifically for PSA
-              International&apos;s pilots, helping them streamline and manage
-              their license upgrading process, stay on top of job tasks, receive
-              real-time news updates, and get instant notifications. The app is
-              not only tailored to pilots but also provides an admin panel for
-              managing pilots, jobs, news, and sending notifications.
-            </p>
-            <p className="text-white/60 px-4 text-lg md:text-xl mt-4">
-              The application integrates MQTT, a lightweight messaging protocol,
-              for real-time communication between the mobile app and the server,
-              ensuring pilots are always up to date with the latest information.
-              Swift was used to build the iOS app, providing a native and
-              responsive experience for the users.
-            </p>
-          </div>
-          <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
-          <div className="my-8">
-            <h1 className="font-serif px-4 text-3xl md:text-5xl text-left  tracking-wide mb-8">
-              Key Features of MydigitalPA
-            </h1>
-            <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide mb-8">
-              🎓 License Management
-            </h1>
-            <p className="text-white/60 px-4 text-lg md:text-xl">
-              Pilots can easily track their license upgrading process, view
-              required tasks, and receive reminders about key milestones. This
-              feature ensures pilots stay on top of their professional
-              development and comply with regulatory requirements.
-            </p>
-            <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide my-8">
-              📋 Job Management
-            </h1>
-            <p className="text-white/60 px-4 text-lg md:text-xl">
-              The app provides a detailed list of jobs for pilots to complete,
-              including deadlines, vessel details, and operational instructions.
-              Pilots can mark tasks as completed and receive updates when new
-              tasks are assigned.
-            </p>
-            <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide my-8">
-              📰 News Feed
-            </h1>
-            <p className="text-white/60 px-4 text-lg md:text-xl">
-              MydigitalPA includes a news feed where pilots can catch up on
-              important updates, including regulatory changes, PSA news, weather
-              forecasts, and other relevant information. This helps pilots stay
-              informed and prepared for any changes in their daily operations.
-            </p>
-            <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide my-8">
-              🔔 Real-Time Notifications
-            </h1>
-            <p className="text-white/60 px-4 text-lg md:text-xl">
-              Using MQTT, the app delivers instant notifications to pilots
-              regarding job updates, news, or critical information, ensuring
-              they are always in the loop.
-            </p>
-            <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide my-8">
-              👨‍💼 Admin Panel
-            </h1>
-            <p className="text-white/60 px-4 text-lg md:text-xl">
-              The admin panel allows PSA International administrators to manage
-              pilots, assign new jobs, send news updates, and broadcast
-              notifications to pilots. The admin panel ensures that
-              pilots&apos;activities and tasks are effectively managed and
-              coordinated.
-            </p>
-          </div>
-          <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
-          <div className="my-8">
-            <h1 className="font-serif px-4 text-3xl md:text-5xl text-left  tracking-wide mb-8">
-              Technologies and Tools
-            </h1>
-            <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide mb-8">
-              🛰️ MQTT for Real-Time Communication
-            </h1>
-            <p className="text-white/60 px-4 text-lg md:text-xl">
-              The app leverages MQTT for lightweight, real-time messaging
-              between the server and the mobile app. This ensures low-latency
-              updates and instant delivery of notifications, making it an ideal
-              protocol for keeping pilots informed about new tasks and updates.
-            </p>
-            <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide my-8">
-              📱 Swift for Native iOS App Development
-            </h1>
-            <p className="text-white/60 px-4 text-lg md:text-xl">
-              The mobile app is built using Swift, ensuring a smooth, fast, and
-              responsive user experience. Swift&apos;s powerful features and
-              integration with iOS allow for seamless performance, making
-              MydigitalPA an intuitive tool for pilots.
-            </p>
-          </div>
-          <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
-          <div className="my-8">
-            <h1 className="font-serif px-4 text-3xl md:text-5xl text-left  tracking-wide mb-8">
-              Key Learnings and Challenges
-            </h1>
-            <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide mb-8">
-              ✅ Deepened Expertise in Swift
-            </h1>
-            <p className="text-white/60 px-4 text-lg md:text-xl">
-              Building the iOS app in Swift has significantly enhanced my
-              proficiency with iOS development. I’ve gained hands-on experience
-              with iOS-specific features, including user interface design,
-              notifications, and background tasks, to provide pilots with the
-              best possible mobile experience.
-            </p>
-            <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide my-8">
-              🧠 Mastering Real-Time Messaging with MQTT
-            </h1>
-            <p className="text-white/60 px-4 text-lg md:text-xl">
-              Implementing MQTT allowed me to learn more about real-time
-              communication protocols and their integration into mobile
-              applications. This experience taught me how to handle message
-              queues, ensure efficient data delivery, and maintain a robust
-              connection between the server and app.
-            </p>
-            <h1 className="font-serif px-4 text-xl md:text-3xl text-left  tracking-wide my-8">
-              🤝 Collaboration with PSA&apos;s Development Team
-            </h1>
-            <p className="text-white/60 px-4 text-lg md:text-xl">
-              Working with PSA&apos;s team has strengthened my ability to
-              collaborate with third-party teams, align technical requirements
-              with business goals, and iterate based on user feedback. I&apos;ve
-              gained insights into their workflow and how to create a product
-              that meets both internal and external user needs.
-            </p>
-          </div>
-          <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
-          <div className="my-8">
-            <h1 className="font-serif px-4 text-3xl md:text-5xl text-left  tracking-wide mb-8">
-              Conclusion
-            </h1>
-            <p className="text-white/60 px-4 text-lg md:text-xl">
-              MydigitalPA is a powerful tool that helps PSA International&apos;s
-              pilots efficiently manage their workflow, stay on top of their
-              license upgrading process, and receive important updates in real
-              time. By leveraging Swift for native development and MQTT for
-              real-time messaging, we&apos;ve built an app that ensures pilots
-              have everything they need at their fingertips.
-            </p>
-            <p className="text-white/60 px-4 text-lg md:text-xl my-4">
-              This project has been a valuable learning experience, allowing me
-              to deepen my expertise in both iOS development and real-time
-              communication technologies while working alongside a talented team
-              at PSA International.
-            </p>
-          </div>
-        </motion.div>
-      </section>
-    </div>
-  );
+  return <ProjectDetailLayout image={mydigitalpa} imageAlt="MydigitalPA" content={content} />;
 }

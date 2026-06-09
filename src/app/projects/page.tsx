@@ -14,183 +14,80 @@ import career from "@/assets/images/career.png";
 import mydigitalpa from "@/assets/images/mydigitalpa.png";
 import pilot_audit from "@/assets/images/pilot_audit.png";
 import { SectionHeader } from "@/components/SectionHeader";
-import { title } from "process";
+import { useLang } from "@/i18n/LangContext";
 
-const portfolioProjects = [
-  {
-    company: "Webcash Vietnam",
-    year: "2025",
-    title: "WeTax",
-    results: [
-      {
-        title:
-          "High-scale e-invoicing platform supporting tens of millions of invoices for enterprise clients. Features real-time invoice management, PDF generation, and WebSocket-powered notifications.",
-      },
-    ],
-    link: "/web-portfolio/projects/wetax",
-    image: wetax,
-  },
-  {
-    company: "MLTech Soft",
-    year: "2024",
-    title: "VDental",
-    results: [
-      {
-        title:
-          "VDental provides high quality dental services with a team of experienced doctors and modern equipment. The application helps users make appointments, advise on dental conditions and update the latest dental news.",
-      },
-    ],
-    link: "/web-portfolio/projects/vdental",
-    image: vdental,
-  },
-  {
-    company: "MLTech Soft",
-    year: "2023",
-    title: "Lothashop",
-    results: [
-      {
-        title:
-          "Super smart application helps customers buy products, accumulate reward points and register as a Lothamilk Personal Agent. Customers directly buy Lothamilk products for their own consumption or sell to other consumers with many attractive promotions and vouchers.",
-      },
-    ],
-    link: "/web-portfolio/projects/lothashop",
-    image: lothashop,
-  },
-  {
-    company: "MLTech Soft",
-    year: "2023",
-    title: "PSA-CMS",
-    results: [
-      {
-        title:
-          "Manage pilot information and manage content on the pilot's app including news, vessels,...",
-      },
-    ],
-    link: "/web-portfolio/projects/psa",
-    image: psa,
-  },
+const portfolioImages = [wetax, vdental, lothashop, psa];
+const portfolioLinks = [
+  "/web-portfolio/projects/wetax",
+  "/web-portfolio/projects/vdental",
+  "/web-portfolio/projects/lothashop",
+  "/web-portfolio/projects/psa",
+];
+const portfolioMeta = [
+  { company: "Webcash Vietnam", year: "2025" },
+  { company: "MLTech Soft", year: "2024" },
+  { company: "MLTech Soft", year: "2023" },
+  { company: "MLTech Soft", year: "2023" },
 ];
 
-const mobileProjects = [
-  {
-    company: "MLTech Soft",
-    year: "2024",
-    title: "DigiSale Sales Force Automation (SFA)",
-    results: [
-      {
-        title:
-          "DigiSale is a sales force automation application that helps businesses manage their sales activities, track sales performance, and improve sales efficiency.",
-      },
-    ],
-    link: "/web-portfolio/projects/sfa",
-    image: sfa,
-  },
-  {
-    company: "MLTech Soft",
-    year: "2023",
-    title: "MydigitalPA",
-    results: [
-      {
-        title:
-          "App for pilots to manage license upgrading process, view jobs to be done, catch up news, receive notifications. It can used by Admin to manage pilots, manage jobs, manage news, send notifications.",
-      },
-    ],
-    link: "/web-portfolio/projects/mydigitalpa",
-    image: mydigitalpa,
-  },
-  {
-    company: "MLTech Soft",
-    year: "2023",
-    title: "Pilot Audit",
-    results: [
-      {
-        title:
-          "App for pilots to view their audit results, view their audit history, view their audit schedule, view their audit status, view their audit details.",
-      },
-    ],
-    link: "/web-portfolio/projects/pilot_audit",
-    image: pilot_audit,
-  },
-  {
-    company: "MLTech Soft",
-    year: "2022",
-    title: "Career Guidance App for LOF",
-    results: [
-      {
-        title:
-          "An app to develop a skill self-training that will enable users to connect and share knowledge, discover themselves and succeed professionally in the future.",
-      },
-    ],
-    link: "/web-portfolio/projects/career",
-    image: career,
-  },
+const mobileImages = [sfa, mydigitalpa, pilot_audit, career];
+const mobileLinks = [
+  "/web-portfolio/projects/sfa",
+  "/web-portfolio/projects/mydigitalpa",
+  "/web-portfolio/projects/pilot_audit",
+  "/web-portfolio/projects/career",
+];
+const mobileMeta = [
+  { company: "MLTech Soft", year: "2024" },
+  { company: "MLTech Soft", year: "2023" },
+  { company: "MLTech Soft", year: "2023" },
+  { company: "MLTech Soft", year: "2022" },
 ];
 
 export default function Projects() {
+  const { t } = useLang();
+  const p = t.projectsPage;
+
   return (
     <div>
       <Header activeId="projects" />
-      <section
-        className="pb-16 py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip"
-        id="projects"
-      >
+      <section className="pb-16 py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip" id="projects">
         <div className="container">
-          <SectionHeader
-            eyebrow="All Projects"
-            title="My Projects"
-            description="Explore the wide range of projects I've worked on, showcasing my skills and experience."
-          />
+          <SectionHeader eyebrow={p.eyebrow} title={p.title} description={p.description} />
           <div className="flex flex-col mt-10 gap-20 md:mt-20">
-            {portfolioProjects.map((project, projectIndex) => (
+            {p.projects.map((project, projectIndex) => (
               <Card
                 key={project.title}
                 className="px-4 pt-8 pb-0 md:p-5 lg:p-5 sticky"
-                style={{
-                  top: `calc(64px + ${projectIndex * 40}px`,
-                }}
+                style={{ top: `calc(64px + ${projectIndex * 40}px)` }}
               >
                 <div className="lg:grid lg:grid-cols-2 md:grid md:grid-cols-2 lg:gap-6 md:gap-6">
                   <div className="md:col-span-1 lg:col-span-1">
                     <div className="relative w-full h-full">
                       <Image
-                        src={project.image}
+                        src={portfolioImages[projectIndex]}
                         alt={project.title}
                         fill
                         className="rounded-xl object-cover object-left-top"
                       />
                     </div>
                   </div>
-                  <div className=" md:col-span-1 lg:col-span-1">
+                  <div className="md:col-span-1 lg:col-span-1">
                     <div className="flex flex-col justify-between h-full">
                       <div>
                         <div className="bg-gradient-to-r from-emerald-300 to-sky-400 inline-flex gap-2 font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text">
-                          <span>{project.company}</span>
+                          <span>{portfolioMeta[projectIndex].company}</span>
                           <span>&bull;</span>
-                          <span>{project.year}</span>
+                          <span>{portfolioMeta[projectIndex].year}</span>
                         </div>
-                        <h3 className="font-serif text-2xl mt-2 md:text-4xl md:mt-5">
-                          {project.title}
-                        </h3>
+                        <h3 className="font-serif text-2xl mt-2 md:text-4xl md:mt-5">{project.title}</h3>
                         <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
-                        <ul className="flex flex-col gap-4 mt-4 md:mt-5">
-                          {project.results.map((result) => (
-                            <li
-                              key={result.title}
-                              className="flex gap-2 md:text-base text-sm text-white/50"
-                            >
-                              {/* <CheckCircleIcon className="size-5 md:size-6" /> */}
-                              <span>{result.title}</span>
-                            </li>
-                          ))}
-                        </ul>
+                        <p className="mt-4 md:mt-5 text-sm md:text-base text-white/50">{project.description}</p>
                       </div>
-                      <a href={project.link} target="_blank" rel="noreferrer">
-                        <button
-                          className="bg-white text-gray-950 h-12 w-full md:w-auto px-6
-                rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8 "
-                        >
-                          <span>View Detail</span>
-                          <ArrowUpRightIcon className="size-4 " />
+                      <a href={portfolioLinks[projectIndex]}>
+                        <button className="bg-white text-gray-950 h-12 w-full md:w-auto px-6 rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8">
+                          <span>{p.viewDetail}</span>
+                          <ArrowUpRightIcon className="size-4" />
                         </button>
                       </a>
                     </div>
@@ -200,67 +97,49 @@ export default function Projects() {
             ))}
           </div>
         </div>
+
         <div className="py-16 lg:py-24">
-          <SectionHeader
-            eyebrow="Other Projects"
-            title="Mobile Projects"
-            description="Explore the mobile applications I've developed, demonstrating my expertise in mobile technologies."
-          />
-          <div className="flex flex-col mt-10 gap-20 md:mt-20">
-            {mobileProjects.map((project, projectIndex) => (
-              <Card
-                key={project.title}
-                className="px-4 pt-8 pb-0 md:p-5 lg:p-5 sticky"
-                style={{
-                  top: `calc(64px + ${projectIndex * 40}px`,
-                }}
-              >
-                <div className="lg:grid lg:grid-cols-2 md:grid md:grid-cols-2 lg:gap-6 md:gap-6 min-h-[374px]">
-                  <div className=" md:col-span-1 lg:col-span-1">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      className="lg:mt-0 lg:h-full lg:w-auto rounded-xl md:h-full md:w-auto object-cover object-left-top bg-white "
-                    />
-                  </div>
-                  <div className=" md:col-span-1 lg:col-span-1">
-                    <div className="flex flex-col justify-between h-full">
-                      <div>
-                        <div className="bg-gradient-to-r from-emerald-300 to-sky-400 inline-flex gap-2 font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text">
-                          <span>{project.company}</span>
-                          <span>&bull;</span>
-                          <span>{project.year}</span>
+          <div className="container">
+            <SectionHeader eyebrow={p.mobileEyebrow} title={p.mobileTitle} description={p.mobileDescription} />
+            <div className="flex flex-col mt-10 gap-20 md:mt-20">
+              {p.mobileProjects.map((project, projectIndex) => (
+                <Card
+                  key={project.title}
+                  className="px-4 pt-8 pb-0 md:p-5 lg:p-5 sticky"
+                  style={{ top: `calc(64px + ${projectIndex * 40}px)` }}
+                >
+                  <div className="lg:grid lg:grid-cols-2 md:grid md:grid-cols-2 lg:gap-6 md:gap-6 min-h-[374px]">
+                    <div className="md:col-span-1 lg:col-span-1">
+                      <Image
+                        src={mobileImages[projectIndex]}
+                        alt={project.title}
+                        className="lg:mt-0 lg:h-full lg:w-auto rounded-xl md:h-full md:w-auto object-cover object-left-top bg-white"
+                      />
+                    </div>
+                    <div className="md:col-span-1 lg:col-span-1">
+                      <div className="flex flex-col justify-between h-full">
+                        <div>
+                          <div className="bg-gradient-to-r from-emerald-300 to-sky-400 inline-flex gap-2 font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text">
+                            <span>{mobileMeta[projectIndex].company}</span>
+                            <span>&bull;</span>
+                            <span>{mobileMeta[projectIndex].year}</span>
+                          </div>
+                          <h3 className="font-serif text-2xl mt-2 md:text-4xl md:mt-5">{project.title}</h3>
+                          <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
+                          <p className="mt-4 md:mt-5 text-sm md:text-base text-white/50">{project.description}</p>
                         </div>
-                        <h3 className="font-serif text-2xl mt-2 md:text-4xl md:mt-5">
-                          {project.title}
-                        </h3>
-                        <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
-                        <ul className="flex flex-col gap-4 mt-4 md:mt-5">
-                          {project.results.map((result) => (
-                            <li
-                              key={result.title}
-                              className="flex gap-2 md:text-base text-sm text-white/50"
-                            >
-                              {/* <CheckCircleIcon className="size-5 md:size-6" /> */}
-                              <span>{result.title}</span>
-                            </li>
-                          ))}
-                        </ul>
+                        <a href={mobileLinks[projectIndex]}>
+                          <button className="bg-white text-gray-950 h-12 w-full md:w-auto px-6 rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8">
+                            <span>{p.viewDetail}</span>
+                            <ArrowUpRightIcon className="size-4" />
+                          </button>
+                        </a>
                       </div>
-                      <a href={project.link} target="_blank" rel="noreferrer">
-                        <button
-                          className="bg-white text-gray-950 h-12 w-full md:w-auto px-6
-                rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8 "
-                        >
-                          <span>View Detail</span>
-                          <ArrowUpRightIcon className="size-4 " />
-                        </button>
-                      </a>
                     </div>
                   </div>
-                </div>
-              </Card>
-            ))}
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>

@@ -7,7 +7,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 
 const testimonials = [
   {
-    name: "Nguyen Minh Duc",
+    name: "Hoang Ngoc Tuan Khoa",
     role: "CTO, MLTech Soft",
     avatar: "NM",
     text: {
@@ -16,7 +16,7 @@ const testimonials = [
     },
   },
   {
-    name: "Tran Thi Lan",
+    name: "Phan Thi Thanh Tuyen",
     role: "Product Manager, Webcash Vietnam",
     avatar: "TL",
     text: {
@@ -48,27 +48,34 @@ export const TestimonialsSection = () => {
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((item, i) => (
             <ScrollReveal key={item.name} delay={i * 0.15} direction="up">
-            <Card className="px-6 py-6 flex flex-col gap-4">
-              <div className="flex items-center gap-3">
-                <div className="size-10 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 flex items-center justify-center text-gray-900 font-semibold text-sm shrink-0">
-                  {item.avatar}
+              <Card className="px-6 py-6 flex flex-col gap-4">
+                <div className="flex items-center gap-3">
+                  <div className="size-10 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 flex items-center justify-center text-gray-900 font-semibold text-sm shrink-0">
+                    {item.avatar}
+                  </div>
+                  <div>
+                    <p className="text-white font-semibold text-sm">
+                      {item.name}
+                    </p>
+                    <p className="text-white/40 text-xs">{item.role}</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-white font-semibold text-sm">{item.name}</p>
-                  <p className="text-white/40 text-xs">{item.role}</p>
+                <div className="flex gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <svg
+                      key={i}
+                      className="size-4 text-emerald-300"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                  ))}
                 </div>
-              </div>
-              <div className="flex gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="size-4 text-emerald-300" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                  </svg>
-                ))}
-              </div>
-              <p className="text-white/60 text-sm leading-relaxed">
-                &ldquo;{item.text[locale]}&rdquo;
-              </p>
-            </Card>
+                <p className="text-white/60 text-sm leading-relaxed">
+                  &ldquo;{item.text[locale]}&rdquo;
+                </p>
+              </Card>
             </ScrollReveal>
           ))}
         </div>

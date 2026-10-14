@@ -5,7 +5,6 @@ import { Header } from "@/sections/Header";
 import { HeroSection } from "@/sections/Hero";
 import { SkillsSection } from "@/sections/Skills";
 import { StatsSection } from "@/sections/Stats";
-import { TestimonialsSection } from "@/sections/Testimonials";
 import { WeTaxFeatureSection } from "@/sections/WeTaxFeature";
 import { StickyCtaBar } from "@/components/StickyCtaBar";
 
@@ -29,10 +28,7 @@ export default function Home() {
         {/* 6. Case studies grid + other projects */}
         <CaseStudiesSection />
 
-        {/* 7. Testimonials */}
-        <TestimonialsSection />
-
-        {/* 8. Contact */}
+        {/* 7. Contact */}
         <ContactSection />
       </main>
       <Footer />

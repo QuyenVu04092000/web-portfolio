@@ -18,7 +18,7 @@ export const WeTaxFeatureSection = () => {
       eyebrow: "Featured Case Study",
       title: "WeTax — Enterprise E-Invoicing",
       context:
-        "WeTax is a high-scale e-invoicing platform at Webcash Vietnam handling tens of millions of invoices for enterprise clients. I own the frontend architecture end-to-end.",
+        "WeTax is a high-scale e-invoicing platform at Webcash Vietnam handling tens of millions of invoices for enterprise clients. I am responsible for the frontend architecture of WeTax.",
       cta: "Read full case study",
       diagramTitle: "Data Flow Architecture",
     },
@@ -26,7 +26,7 @@ export const WeTaxFeatureSection = () => {
       eyebrow: "Case Study nổi bật",
       title: "WeTax — Hóa đơn điện tử doanh nghiệp",
       context:
-        "WeTax là nền tảng hóa đơn điện tử quy mô lớn tại Webcash Vietnam, xử lý hàng chục triệu hóa đơn cho khách hàng doanh nghiệp. Tôi sở hữu kiến trúc frontend end-to-end.",
+        "WeTax là nền tảng hóa đơn điện tử quy mô lớn tại Webcash Vietnam, xử lý hàng chục triệu hóa đơn cho khách hàng doanh nghiệp. Tôi phụ trách kiến trúc frontend của WeTax.",
       cta: "Đọc case study đầy đủ",
       diagramTitle: "Kiến trúc luồng dữ liệu",
     },

@@ -24,10 +24,10 @@ const portfolioLinks = [
   "/web-portfolio/projects/psa",
 ];
 const portfolioMeta = [
-  { company: "Webcash Vietnam", year: "2025" },
-  { company: "MLTech Soft", year: "2024" },
-  { company: "MLTech Soft", year: "2023" },
-  { company: "MLTech Soft", year: "2023" },
+  { company: "Webcash Vietnam", year: "2025", role: "Frontend Engineer", chips: ["Next.js", "TypeScript", "React Query", "Zustand", "WebSocket"] },
+  { company: "MLTech Soft", year: "2024", role: "Middle Frontend Engineer", chips: ["React", "Next.js", "TypeScript", "i18n"] },
+  { company: "MLTech Soft", year: "2023", role: "Middle Frontend Engineer", chips: ["React", "TypeScript", "E-commerce"] },
+  { company: "MLTech Soft", year: "2023", role: "Junior Frontend Engineer", chips: ["React", "TypeScript", "REST API"] },
 ];
 
 const mobileImages = [sfa, mydigitalpa, pilot_audit, career];
@@ -38,10 +38,10 @@ const mobileLinks = [
   "/web-portfolio/projects/career",
 ];
 const mobileMeta = [
-  { company: "MLTech Soft", year: "2024" },
-  { company: "MLTech Soft", year: "2023" },
-  { company: "MLTech Soft", year: "2023" },
-  { company: "MLTech Soft", year: "2022" },
+  { company: "MLTech Soft", year: "2024", role: "Middle Frontend Engineer", chips: ["React Native", "TypeScript", "Redux"] },
+  { company: "MLTech Soft", year: "2023", role: "Junior Frontend Engineer", chips: ["React Native", "TypeScript"] },
+  { company: "MLTech Soft", year: "2023", role: "Junior Frontend Engineer", chips: ["React Native", "TypeScript"] },
+  { company: "MLTech Soft", year: "2022", role: "Junior Frontend Engineer", chips: ["React Native", "TypeScript"] },
 ];
 
 export default function Projects() {
@@ -80,7 +80,15 @@ export default function Projects() {
                           <span>&bull;</span>
                           <span>{portfolioMeta[projectIndex].year}</span>
                         </div>
-                        <h3 className="font-serif text-2xl mt-2 md:text-4xl md:mt-5">{project.title}</h3>
+                        <p className="text-white/50 text-xs mt-1">{portfolioMeta[projectIndex].role}</p>
+                        <h2 className="font-serif text-2xl mt-2 md:text-4xl md:mt-3">{project.title}</h2>
+                        <div className="flex flex-wrap gap-1.5 mt-3">
+                          {portfolioMeta[projectIndex].chips.map((chip) => (
+                            <span key={chip} className="px-2.5 py-1 rounded-full text-xs font-medium border border-white/15 text-white/60 bg-white/5">
+                              {chip}
+                            </span>
+                          ))}
+                        </div>
                         <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
                         <p className="mt-4 md:mt-5 text-sm md:text-base text-white/50">{project.description}</p>
                       </div>
@@ -124,7 +132,15 @@ export default function Projects() {
                             <span>&bull;</span>
                             <span>{mobileMeta[projectIndex].year}</span>
                           </div>
-                          <h3 className="font-serif text-2xl mt-2 md:text-4xl md:mt-5">{project.title}</h3>
+                          <p className="text-white/50 text-xs mt-1">{mobileMeta[projectIndex].role}</p>
+                          <h2 className="font-serif text-2xl mt-2 md:text-4xl md:mt-3">{project.title}</h2>
+                          <div className="flex flex-wrap gap-1.5 mt-3">
+                            {mobileMeta[projectIndex].chips.map((chip) => (
+                              <span key={chip} className="px-2.5 py-1 rounded-full text-xs font-medium border border-white/15 text-white/60 bg-white/5">
+                                {chip}
+                              </span>
+                            ))}
+                          </div>
                           <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
                           <p className="mt-4 md:mt-5 text-sm md:text-base text-white/50">{project.description}</p>
                         </div>

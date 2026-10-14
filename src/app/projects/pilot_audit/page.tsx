@@ -7,7 +7,7 @@ const content: { en: ProjectDetailContent; vi: ProjectDetailContent } = {
   en: {
     title: "Building Pilot Audit: Empowering Pilots with Comprehensive Audit Management",
     client: "PSA International",
-    role: "Mobile Developer",
+    role: "Middle Frontend Engineer · React Native",
     timeline: "09/2023 – Present",
     tech: "MQTT, Swift",
     intro: "Effective audit management is essential for pilots to maintain safety standards, improve performance, and ensure regulatory compliance. Pilot Audit is a mobile application designed for PSA International's pilots to conveniently view their audit results, check audit history, keep track of audit schedules, monitor audit status, and access detailed audit reports. To deliver real-time updates and notifications, MQTT was integrated, enabling instant messaging and data synchronization. The iOS application was built using Swift, ensuring a smooth, responsive experience and full native integration with Apple's ecosystem.",
@@ -32,7 +32,7 @@ const content: { en: ProjectDetailContent; vi: ProjectDetailContent } = {
   vi: {
     title: "Xây dựng Pilot Audit: Trao quyền cho phi công quản lý kiểm tra toàn diện",
     client: "PSA International",
-    role: "Mobile Developer",
+    role: "Middle Frontend Engineer · React Native",
     timeline: "09/2023 – Hiện tại",
     tech: "MQTT, Swift",
     intro: "Quản lý kiểm tra hiệu quả là điều cần thiết để phi công duy trì tiêu chuẩn an toàn, cải thiện hiệu suất và đảm bảo tuân thủ quy định. Pilot Audit là ứng dụng di động được thiết kế cho phi công của PSA International để xem kết quả kiểm tra, kiểm tra lịch sử, theo dõi lịch trình, giám sát trạng thái và truy cập báo cáo chi tiết. MQTT được tích hợp để cung cấp cập nhật và thông báo thời gian thực. App iOS được xây dựng bằng Swift, đảm bảo trải nghiệm mượt mà và tích hợp native đầy đủ với hệ sinh thái Apple.",

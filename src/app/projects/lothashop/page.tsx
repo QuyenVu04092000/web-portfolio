@@ -7,7 +7,7 @@ const content: { en: ProjectDetailContent; vi: ProjectDetailContent } = {
   en: {
     title: "Building Lothashop: A Smart Shopping App for Lothamilk Customers",
     client: "Lothamilk JSC",
-    role: "Front-end Developer and Mobile Developer",
+    role: "Middle Frontend Engineer",
     timeline: "10 months",
     tech: "Next.js, Tailwind CSS, Flutter, VNPay Integration",
     intro: "Lothashop was built as a smart shopping application that allows users to purchase Lothamilk products, accumulate reward points, and register as a Lothamilk Personal Agent. This app empowers users to buy products for personal consumption or resell them to others with attractive promotions and vouchers. The project required integrating e-commerce functionalities, loyalty programs, personal agent registration, and payment processing via VNPay across both web (Next.js) and mobile (Flutter) platforms.",
@@ -36,7 +36,7 @@ const content: { en: ProjectDetailContent; vi: ProjectDetailContent } = {
   vi: {
     title: "Xây dựng Lothashop: Ứng dụng mua sắm thông minh cho khách hàng Lothamilk",
     client: "Lothamilk JSC",
-    role: "Front-end Developer và Mobile Developer",
+    role: "Middle Frontend Engineer",
     timeline: "10 tháng",
     tech: "Next.js, Tailwind CSS, Flutter, Tích hợp VNPay",
     intro: "Lothashop được xây dựng như một ứng dụng mua sắm thông minh cho phép người dùng mua sản phẩm Lothamilk, tích lũy điểm thưởng và đăng ký làm đại lý cá nhân Lothamilk. Ứng dụng tích hợp chức năng thương mại điện tử, chương trình khách hàng thân thiết, đăng ký đại lý cá nhân và xử lý thanh toán qua VNPay trên cả nền tảng web (Next.js) và di động (Flutter).",

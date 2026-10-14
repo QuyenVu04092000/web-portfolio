@@ -8,9 +8,9 @@ export const translations = {
     },
     hero: {
       available: "Open to full-time · Remote-friendly",
-      title: "Senior Frontend Engineer",
+      title: "Frontend Engineer",
       subtitle: "React · Next.js · TypeScript",
-      roles: ["Senior Frontend Engineer", "Next.js Engineer", "TypeScript Engineer", "Frontend Architect"],
+      roles: ["Frontend Engineer", "Next.js Engineer", "TypeScript Engineer", "Frontend Architect"],
       description:
         "I build production-grade React applications for high-volume business and financial workflows, from frontend architecture to performance and real-time UX.",
       viewCaseStudy: "View Case Study",
@@ -118,9 +118,9 @@ export const translations = {
       eyebrow: "About Me",
       title: "A Bit About Me",
       descriptionShort:
-        "Senior Frontend Engineer with 5+ years building React/Next.js + TypeScript applications. Currently owning frontend architecture for WeTax, a high-scale e-invoicing platform at Webcash Vietnam. Previously led frontend for e-commerce and distributor-management products, including payment integration and mentoring.",
+        "Frontend Engineer with 5+ years building React/Next.js + TypeScript applications. Currently working on frontend architecture for WeTax, a high-scale e-invoicing platform at Webcash Vietnam. Previously led frontend for e-commerce and distributor-management products, including payment integration and mentoring.",
       description:
-        "Senior Frontend Engineer with 5+ years building React/Next.js + TypeScript applications. Currently owning frontend architecture for WeTax, a high-scale e-invoicing platform at Webcash Vietnam: data fetching and caching with React Query, global state with Zustand, real-time updates via WebSocket. Previously led frontend for e-commerce and distributor-management products at MLTech Soft, including third-party payment integration, code review, and mentoring junior developers. I care about clear component boundaries, predictable async state, and fast, accessible UIs.",
+        "Frontend Engineer with 5+ years building React/Next.js + TypeScript applications. Currently working on the frontend architecture of WeTax, a high-scale e-invoicing platform at Webcash Vietnam: data fetching and caching with React Query, global state with Zustand, real-time updates via WebSocket. Previously led frontend for e-commerce and distributor-management products at MLTech Soft, including third-party payment integration, code review, and mentoring junior developers. I care about clear component boundaries, predictable async state, and fast, accessible UIs.",
       reads: "My Reads",
       readsDesc: "Explore the books shaping my perspectives",
       toolbox: "My Toolbox",
@@ -179,9 +179,9 @@ export const translations = {
       eyebrow: "All Projects",
       title: "My Projects",
       description: "Production systems and client projects I've shipped across web and mobile.",
-      mobileEyebrow: "Other Projects",
-      mobileTitle: "Mobile Projects",
-      mobileDescription: "Mobile applications I've developed.",
+      mobileEyebrow: "Mobile Apps",
+      mobileTitle: "Mobile (React Native)",
+      mobileDescription: "React Native applications I've developed.",
       viewDetail: "View Detail",
       projects: [
         {
@@ -222,9 +222,9 @@ export const translations = {
             "App for pilots to view audit results, history, schedule, status, and details.",
         },
         {
-          title: "Career Guidance App for LOF",
+          title: "Career Guidance App",
           description:
-            "Skill self-training app enabling users to connect, share knowledge, and grow professionally.",
+            "A learning app where members practice skills, share knowledge, and grow professionally.",
         },
       ],
     },
@@ -256,9 +256,9 @@ export const translations = {
     },
     hero: {
       available: "Tìm kiếm vị trí toàn thời gian · Remote",
-      title: "Senior Frontend Engineer",
+      title: "Frontend Engineer",
       subtitle: "React · Next.js · TypeScript",
-      roles: ["Senior Frontend Engineer", "Next.js Engineer", "TypeScript Engineer", "Frontend Architect"],
+      roles: ["Frontend Engineer", "Next.js Engineer", "TypeScript Engineer", "Frontend Architect"],
       description:
         "Tôi xây dựng ứng dụng React production-grade cho nghiệp vụ tài chính và kinh doanh khối lượng lớn — từ kiến trúc frontend đến tối ưu hiệu suất và UX thời gian thực.",
       viewCaseStudy: "Xem Case Study",
@@ -366,9 +366,9 @@ export const translations = {
       eyebrow: "Về tôi",
       title: "Một chút về tôi",
       descriptionShort:
-        "Senior Frontend Engineer với 5+ năm xây dựng ứng dụng React/Next.js + TypeScript. Hiện đang sở hữu kiến trúc frontend cho WeTax, nền tảng hóa đơn điện tử quy mô lớn tại Webcash Vietnam. Trước đây dẫn đầu frontend cho e-commerce và hệ thống quản lý phân phối tại MLTech Soft, bao gồm tích hợp thanh toán và mentoring.",
+        "Frontend Engineer với 5+ năm xây dựng ứng dụng React/Next.js + TypeScript. Hiện đang phụ trách kiến trúc frontend cho WeTax, nền tảng hóa đơn điện tử quy mô lớn tại Webcash Vietnam. Trước đây dẫn đầu frontend cho e-commerce và hệ thống quản lý phân phối tại MLTech Soft, bao gồm tích hợp thanh toán và mentoring.",
       description:
-        "Senior Frontend Engineer với 5+ năm xây dựng ứng dụng React/Next.js + TypeScript. Hiện đang sở hữu kiến trúc frontend cho WeTax, nền tảng hóa đơn điện tử quy mô lớn tại Webcash Vietnam: tìm nạp và cache dữ liệu với React Query, global state với Zustand, cập nhật thời gian thực qua WebSocket. Trước đây dẫn đầu frontend cho e-commerce và hệ thống quản lý phân phối tại MLTech Soft, bao gồm tích hợp thanh toán bên thứ ba, code review và mentoring junior developers. Tôi quan tâm đến ranh giới component rõ ràng, async state đoán trước được và UI nhanh, dễ tiếp cận.",
+        "Frontend Engineer với 5+ năm xây dựng ứng dụng React/Next.js + TypeScript. Hiện đang phụ trách kiến trúc frontend của WeTax, nền tảng hóa đơn điện tử quy mô lớn tại Webcash Vietnam: tìm nạp và cache dữ liệu với React Query, global state với Zustand, cập nhật thời gian thực qua WebSocket. Trước đây dẫn đầu frontend cho e-commerce và hệ thống quản lý phân phối tại MLTech Soft, bao gồm tích hợp thanh toán bên thứ ba, code review và mentoring junior developers. Tôi quan tâm đến ranh giới component rõ ràng, async state đoán trước được và UI nhanh, dễ tiếp cận.",
       reads: "Sách tôi đọc",
       readsDesc: "Những cuốn sách định hình góc nhìn của tôi",
       toolbox: "Công cụ của tôi",
@@ -427,9 +427,9 @@ export const translations = {
       eyebrow: "Tất cả dự án",
       title: "Dự án của tôi",
       description: "Các hệ thống production và dự án khách hàng tôi đã ship.",
-      mobileEyebrow: "Dự án khác",
-      mobileTitle: "Ứng dụng di động",
-      mobileDescription: "Các ứng dụng di động tôi đã phát triển.",
+      mobileEyebrow: "Ứng dụng di động",
+      mobileTitle: "Mobile (React Native)",
+      mobileDescription: "Các ứng dụng React Native tôi đã phát triển.",
       viewDetail: "Xem chi tiết",
       projects: [
         {
@@ -469,9 +469,9 @@ export const translations = {
           description: "Ứng dụng cho phi công xem kết quả kiểm tra, lịch sử, lịch trình và chi tiết kiểm tra.",
         },
         {
-          title: "Career Guidance App for LOF",
+          title: "Career Guidance App",
           description:
-            "Ứng dụng tự đào tạo kỹ năng, giúp người dùng kết nối, chia sẻ kiến thức và phát triển sự nghiệp.",
+            "Ứng dụng học kỹ năng, giúp người dùng kết nối, chia sẻ kiến thức và phát triển sự nghiệp.",
         },
       ],
     },

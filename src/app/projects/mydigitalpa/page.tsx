@@ -7,7 +7,7 @@ const content: { en: ProjectDetailContent; vi: ProjectDetailContent } = {
   en: {
     title: "Building MydigitalPA: Empowering Pilots with Efficient License Management and Job Tracking",
     client: "PSA International",
-    role: "Mobile Developer",
+    role: "Middle Frontend Engineer · React Native",
     timeline: "09/2023 – Present",
     tech: "MQTT, Swift",
     intro: "In the maritime industry, pilots play a critical role in ensuring safe navigation and efficient operations at ports. MydigitalPA is a mobile application designed specifically for PSA International's pilots, helping them streamline and manage their license upgrading process, stay on top of job tasks, receive real-time news updates, and get instant notifications. The app integrates MQTT for real-time communication between the mobile app and the server, ensuring pilots are always up to date. Swift was used to build the iOS app, providing a native and responsive experience.",
@@ -32,7 +32,7 @@ const content: { en: ProjectDetailContent; vi: ProjectDetailContent } = {
   vi: {
     title: "Xây dựng MydigitalPA: Trao quyền cho phi công quản lý giấy phép và theo dõi công việc hiệu quả",
     client: "PSA International",
-    role: "Mobile Developer",
+    role: "Middle Frontend Engineer · React Native",
     timeline: "09/2023 – Hiện tại",
     tech: "MQTT, Swift",
     intro: "Trong ngành hàng hải, phi công đóng vai trò quan trọng trong việc đảm bảo điều hướng an toàn và hoạt động hiệu quả tại cảng. MydigitalPA là ứng dụng di động được thiết kế riêng cho phi công của PSA International, giúp họ hợp lý hóa và quản lý quy trình nâng cấp giấy phép, theo dõi công việc, nhận cập nhật tin tức thời gian thực và nhận thông báo tức thì. Ứng dụng tích hợp MQTT để giao tiếp thời gian thực giữa app di động và server. Swift được dùng để xây dựng app iOS, cung cấp trải nghiệm native và responsive.",

@@ -7,7 +7,7 @@ const content: { en: ProjectDetailContent; vi: ProjectDetailContent } = {
   en: {
     title: "Building the Career Guidance App for LOF: Empowering Users to Succeed Professionally",
     client: "International Dairy Products JSC",
-    role: "Mobile Developer",
+    role: "Junior Frontend Engineer · React Native",
     timeline: "11 months",
     tech: "Flutter, State Management (BLoC Cubit), Socket for Chat",
     intro: "In an ever-changing world, individuals need the tools to adapt, grow, and make informed decisions about their professional futures. The Career Guidance App for LOF is designed to provide users with a self-training platform that promotes skill development, fosters knowledge-sharing, and connects them with like-minded individuals. The application was developed using Flutter for a cross-platform experience, while BLoC Cubit was implemented for state management. Socket was integrated for real-time communication, allowing users to engage in live chat and exchange ideas.",
@@ -34,7 +34,7 @@ const content: { en: ProjectDetailContent; vi: ProjectDetailContent } = {
   vi: {
     title: "Xây dựng ứng dụng Hướng nghiệp cho LOF: Trao quyền cho người dùng thành công trong sự nghiệp",
     client: "International Dairy Products JSC",
-    role: "Mobile Developer",
+    role: "Junior Frontend Engineer · React Native",
     timeline: "11 tháng",
     tech: "Flutter, Quản lý State (BLoC Cubit), Socket cho Chat",
     intro: "Trong thế giới liên tục thay đổi, mọi người cần công cụ để thích nghi, phát triển và đưa ra quyết định sáng suốt về tương lai nghề nghiệp. Ứng dụng Hướng nghiệp cho LOF được thiết kế để cung cấp nền tảng tự đào tạo thúc đẩy phát triển kỹ năng, nuôi dưỡng chia sẻ kiến thức và kết nối người dùng với những người có cùng chí hướng. Ứng dụng được phát triển bằng Flutter cho trải nghiệm đa nền tảng, BLoC Cubit cho quản lý state và Socket cho giao tiếp thời gian thực.",

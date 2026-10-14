@@ -2,17 +2,20 @@
 
 import React, { Fragment, useRef } from "react";
 import { Header } from "@/sections/Header";
+import { WorkExperience } from "@/sections/WorkExperience";
+import { Card } from "@/components/Card";
+import { CardHeader } from "@/components/CardHeader";
 import Image from "next/image";
+import avatar from "@/assets/images/avatar.jpeg";
 import avatar1 from "@/assets/images/avatar1.jpeg";
 import avatar2 from "@/assets/images/avatar2.jpeg";
 import avatar3 from "@/assets/images/avatar3.jpeg";
 import avatar5 from "@/assets/images/avatar5.jpeg";
-import { Card } from "@/components/Card";
-import { CardHeader } from "@/components/CardHeader";
 import grainImage from "@/assets/images/grain.jpg";
 import mapImage from "@/assets/images/map.png";
 import smileMemoji from "@/assets/images/memoji-smile.png";
 import { motion } from "framer-motion";
+import { useLang } from "@/i18n/LangContext";
 
 const hobbies = [
   { title: "Beer", emoji: "🍺", left: "5%", top: "5%" },
@@ -26,6 +29,9 @@ const hobbies = [
 
 export default function About() {
   const constraintRef = useRef(null);
+  const { t } = useLang();
+  const a = t.about;
+
   const images = [
     { title: "avatar1", src: avatar1 },
     { title: "avatar2", src: avatar2 },
@@ -37,14 +43,48 @@ export default function About() {
     <div>
       <Header activeId="about" />
 
+      {/* Bio / Intro */}
+      <div className="px-7 pt-32 md:pt-48 lg:pt-60 pb-8">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-5">
+          {/* Portrait */}
+          <div className="lg:col-span-2 flex justify-center lg:justify-start">
+            <div className="relative w-64 h-80 md:w-72 md:h-96 rounded-2xl overflow-hidden">
+              <div
+                className="absolute inset-0 z-10 opacity-10"
+                style={{ backgroundImage: `url(${grainImage.src})` }}
+              />
+              <Image
+                src={avatar}
+                alt="Vu Trong Quyen"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          {/* Text */}
+          <div className="lg:col-span-3 flex flex-col justify-center gap-4">
+            <p className="text-sm font-semibold uppercase tracking-widest bg-gradient-to-r from-emerald-300 to-sky-400 bg-clip-text text-transparent">
+              {a.eyebrow}
+            </p>
+            <h1 className="font-serif text-3xl md:text-4xl">{a.title}</h1>
+            <p className="text-white/60 text-base leading-relaxed">{a.description}</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Work Experience */}
+      <div className="px-7 pb-8">
+        <WorkExperience />
+      </div>
+
       {/* Beyond the Code + Map */}
-      <div className="px-7 pb-8 pt-32 md:pt-48 lg:pt-60">
+      <div className="px-7 pb-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3">
           <Card className="h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2">
             <CardHeader
               className="px-6 pt-6"
-              title="Beyond the Code"
-              description="Explore my interests and hobbies beyond the digital realm."
+              title={a.beyond}
+              description={a.beyondDesc}
             />
             <div className="relative flex-1" ref={constraintRef}>
               {hobbies.map((hobby) => (

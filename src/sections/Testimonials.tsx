@@ -24,15 +24,6 @@ const testimonials = [
       vi: "Làm việc với Quyen trong dự án WeTax là một trải nghiệm tuyệt vời. Anh ấy cải thiện hiệu suất render PDF lên 90% và tái cấu trúc invoice editor đáng kể — tất cả trong khi vẫn đáp ứng deadline chặt chẽ.",
     },
   },
-  {
-    name: "David Chen",
-    role: "Client, VDental Project",
-    avatar: "DC",
-    text: {
-      en: "Quyen built our dental booking platform from scratch. The final product was pixel-perfect, fast, and our mobile traffic increased by 35% after launch. Highly recommend for any web project.",
-      vi: "Quyen đã xây dựng nền tảng đặt lịch nha khoa của chúng tôi từ đầu. Sản phẩm cuối cùng hoàn hảo, nhanh, và lưu lượng mobile tăng 35% sau khi ra mắt.",
-    },
-  },
 ];
 
 export const TestimonialsSection = () => {
@@ -45,7 +36,7 @@ export const TestimonialsSection = () => {
           title={t.testimonials.title}
           description={t.testimonials.description}
         />
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
           {testimonials.map((item, i) => (
             <ScrollReveal key={item.name} delay={i * 0.15} direction="up">
               <Card className="px-6 py-6 flex flex-col gap-4 h-full">

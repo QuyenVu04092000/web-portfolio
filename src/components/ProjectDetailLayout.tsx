@@ -199,7 +199,7 @@ export function ProjectDetailLayout({ data }: { data: ProjectDetailData }) {
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 px-5 h-10 rounded-xl border border-white/20 text-white/80 font-semibold text-sm hover:bg-white/5 transition-colors"
                 >
-                  App Store
+                  iOS
                   <ArrowUpRightIcon className="size-3.5" />
                 </a>
               )}

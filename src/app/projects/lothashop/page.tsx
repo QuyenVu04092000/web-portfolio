@@ -228,14 +228,13 @@ const data: ProjectDetailData = {
   title: "Lothashop",
   company: "MLTech Soft",
   role: "Middle Frontend Developer",
-  timeline: "10 months · 2023",
+  timeline: "2023",
   platform: "Web",
   summary: "E-commerce platform for Lothamilk dairy products, covering B2C orders, dealer accounts, three delivery types, and VNPay integration.",
   tech: "Next.js 12 · TypeScript · MUI · Zustand · Formik + Yup · axios · socket.io-client · crypto-js",
   techChips: ["Next.js", "TypeScript", "MUI", "Zustand", "Formik", "socket.io", "VNPay"],
   coverImage: lothashop,
   coverImageAlt: "Lothashop e-commerce storefront",
-  myScope: "Built from scratch",
   overview:
     "Lothashop is an e-commerce platform for Lothamilk's dairy products, serving B2C customers and registered dealer accounts who order from a network of regional distributors. Delivery options include self-pickup at a distributor location, fast delivery via GHN from a nearby distributor, and standard delivery via GHTK.",
   technicalHighlights: [

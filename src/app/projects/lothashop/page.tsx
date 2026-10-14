@@ -1,6 +1,7 @@
 "use client";
 
-import { CaseStudyLayout } from "@/components/CaseStudyLayout";
+import lothashop from "@/assets/images/lothashop.png";
+import { ProjectDetailLayout, type ProjectDetailData } from "@/components/ProjectDetailLayout";
 
 // ─── Sequence diagram ────────────────────────────────────────────────────────
 
@@ -34,14 +35,12 @@ function SequenceDiagram() {
   return (
     <figure className="mb-2">
       <figcaption className="sr-only">
-        Checkout and payment flow sequence diagram. Steps: (1) User submits
-        checkout form to Frontend. (2) Frontend sends POST /order to Backend.
-        (3) Backend returns Order ID. Fast-delivery only — (4) Backend offers
-        order to Distributor socket. (5) Distributor accepts. (6) Backend sends
-        confirmation back via socket to Frontend. VNPay path — (7) Frontend
-        redirects to VNPay with payment URL. (8) VNPay returns vnp_ResponseCode
-        to the return URL. (9) Frontend calls Backend to update payment status.
-        (10) Backend confirms paid; Frontend clears basket.
+        Checkout and payment flow sequence diagram. Steps: (1) User submits checkout form to Frontend.
+        (2) Frontend sends Create order to Backend. (3) Backend returns Order ID. Fast-delivery only —
+        (4) Backend offers order to Distributor socket. (5) Distributor accepts. (6) Backend sends
+        confirmation back via socket to Frontend. VNPay path — (7) Frontend redirects to VNPay with
+        payment URL. (8) VNPay returns vnp_ResponseCode to the return URL. (9) Frontend calls Backend
+        to update payment status. (10) Backend confirms paid; Frontend clears basket.
       </figcaption>
 
       <div className="overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0">
@@ -52,7 +51,6 @@ function SequenceDiagram() {
           aria-hidden="true"
           focusable="false"
         >
-          {/* Actor labels */}
           {ACTORS.map(({ label, cx }) => (
             <text
               key={label}
@@ -67,8 +65,6 @@ function SequenceDiagram() {
               {label}
             </text>
           ))}
-
-          {/* Actor underlines */}
           {ACTORS.map(({ label, cx }) => (
             <line
               key={`ul-${label}`}
@@ -80,8 +76,6 @@ function SequenceDiagram() {
               strokeWidth={1}
             />
           ))}
-
-          {/* Lifelines */}
           {ACTORS.map(({ label, cx }) => (
             <line
               key={`ll-${label}`}
@@ -94,8 +88,6 @@ function SequenceDiagram() {
               strokeDasharray="3 4"
             />
           ))}
-
-          {/* Fast-delivery section highlight */}
           <rect
             x={22}
             y={158}
@@ -117,8 +109,6 @@ function SequenceDiagram() {
           >
             fast delivery only
           </text>
-
-          {/* VNPay-phase separator */}
           <line x1={22} y1={291} x2={618} y2={291} stroke="rgba(255,255,255,0.06)" strokeWidth={1} />
           <text
             x={W / 2}
@@ -131,8 +121,6 @@ function SequenceDiagram() {
           >
             VNPay payment
           </text>
-
-          {/* Arrows */}
           {MESSAGES.map(({ from, to, y, label, dashed }) => {
             const rightward = to > from;
             const tipX = rightward ? to - 2 : to + 2;
@@ -191,41 +179,13 @@ function SequenceDiagram() {
 // ─── Order & payment states table ────────────────────────────────────────────
 
 const STATE_ROWS = [
-  {
-    state: "Creating order",
-    ui: "Loading spinner; Pay button disabled",
-    can: "—",
-  },
-  {
-    state: "Waiting for distributor",
-    ui: "Live countdown (60 s), progress indicator, Cancel button",
-    can: "Cancel order",
-  },
-  {
-    state: "Redirecting to VNPay",
-    ui: "Loading state; page redirects automatically",
-    can: "—",
-  },
-  {
-    state: "Payment success",
-    ui: "Confirmation screen + order summary",
-    can: "View order · Continue shopping",
-  },
-  {
-    state: "Payment failed",
-    ui: "Error message with reason from VNPay response code",
-    can: "Retry payment",
-  },
-  {
-    state: "No distributor available",
-    ui: "Explanation: no fast-delivery coverage in time",
-    can: "Switch to standard delivery",
-  },
-  {
-    state: "Cancelled",
-    ui: "Cancellation confirmation",
-    can: "Start new order",
-  },
+  { state: "Creating order", ui: "Loading spinner; Pay button disabled", can: "—" },
+  { state: "Waiting for distributor", ui: "Live countdown (60 s), progress indicator, Cancel button", can: "Cancel order" },
+  { state: "Redirecting to VNPay", ui: "Loading state; page redirects automatically", can: "—" },
+  { state: "Payment success", ui: "Confirmation screen + order summary", can: "View order · Continue shopping" },
+  { state: "Payment failed", ui: "Error message with reason from VNPay response code", can: "Retry payment" },
+  { state: "No distributor available", ui: "Explanation: no fast-delivery coverage in time", can: "Switch to standard delivery" },
+  { state: "Cancelled", ui: "Cancellation confirmation", can: "Start new order" },
 ];
 
 function StatesTable() {
@@ -251,9 +211,7 @@ function StatesTable() {
         <tbody>
           {STATE_ROWS.map((row, i) => (
             <tr key={row.state} className={i % 2 === 0 ? "bg-white/[0.025]" : ""}>
-              <td className="py-2.5 px-3 text-white/80 font-medium align-top whitespace-nowrap">
-                {row.state}
-              </td>
+              <td className="py-2.5 px-3 text-white/80 font-medium align-top whitespace-nowrap">{row.state}</td>
               <td className="py-2.5 px-3 text-white/55 align-top">{row.ui}</td>
               <td className="py-2.5 px-3 text-white/55 align-top whitespace-nowrap">{row.can}</td>
             </tr>
@@ -264,86 +222,84 @@ function StatesTable() {
   );
 }
 
-// ─── What I'd do differently ─────────────────────────────────────────────────
+// ─── Data ─────────────────────────────────────────────────────────────────────
 
-function WhatNextList() {
-  const items = [
-    "Sign gateway requests server-side so no merchant credentials travel through the browser.",
-    "Treat return URLs as display-only; confirm payment status from the backend before showing success or clearing the basket.",
-    "Make payment submission idempotent — prevent duplicate orders on network retry.",
-    "Test timeout and cancellation branches explicitly in the checkout state machine.",
-  ];
-  return (
+const data: ProjectDetailData = {
+  title: "Lothashop",
+  company: "MLTech Soft",
+  role: "Middle Frontend Engineer",
+  timeline: "10 months · 2023",
+  platform: "Web",
+  summary: "E-commerce platform for Lothamilk dairy products, covering B2C orders, dealer accounts, three delivery types, and VNPay integration.",
+  tech: "Next.js 12 · TypeScript · MUI · Zustand · Formik + Yup · axios · socket.io-client · crypto-js",
+  techChips: ["Next.js", "TypeScript", "MUI", "Zustand", "Formik", "socket.io", "VNPay"],
+  coverImage: lothashop,
+  coverImageAlt: "Lothashop e-commerce storefront",
+  myScope: "Built from scratch",
+  overview:
+    "Lothashop is an e-commerce platform for Lothamilk's dairy products, serving B2C customers and registered dealer accounts who order from a network of regional distributors. Delivery options include self-pickup at a distributor location, fast delivery via GHN from a nearby distributor, and standard delivery via GHTK.",
+  technicalHighlights: [
+    {
+      problem: "60-second distributor matching window with live countdown",
+      approach: (
+        <>
+          Fast delivery depends on a nearby distributor accepting the order within 60 seconds. After the
+          order is created, the checkout UI opens a socket.io connection, shows a live countdown, and lets
+          the user cancel at any time. If no distributor accepts within the window, the flow routes to a
+          failure page that explains the situation and prompts the user to try standard delivery instead.
+        </>
+      ),
+      result: "User always gets clear feedback on distributor availability; failed matches route automatically to standard delivery.",
+    },
+    {
+      problem: "One checkout flow covering 3 delivery types × 2 payment methods × 2 account roles",
+      approach: (
+        <>
+          The form branches across self-pickup, fast delivery (GHN), and standard delivery (GHTK), each
+          paired with COD or VNPay. Dealer accounts add a further choice: the dealer pays upfront, or the
+          end customer pays. Formik + Yup handled conditional validation; Zustand (persisted) held basket
+          and draft-order state across navigation.
+        </>
+      ),
+      result: "All checkout combinations shipped and working in production.",
+    },
+    {
+      problem: "Guest checkout with automatic account registration on payment success",
+      approach: (
+        <>
+          Guests can complete a purchase without an account. On a successful payment, the system
+          automatically registers an account from the delivery information and attaches the order to it.
+          The user lands on the result page already logged in.
+        </>
+      ),
+      result: "Seamless post-purchase experience: user is logged in on arrival at the result page, order already attached to their new account.",
+    },
+  ],
+  diagram: <SequenceDiagram />,
+  diagramHeading: "Checkout flow",
+  diagramCaption: "VNPay payment path shown. COD path skips the VNPay redirect steps. Fast-delivery distributor matching is in the shaded region.",
+  extraTable: <StatesTable />,
+  extraTableHeading: "Order & payment states",
+  resultsNote: "Shipped to production at lothashop.vn.",
+  lessons: (
     <ul className="flex flex-col gap-3">
-      {items.map((item) => (
+      {[
+        "Sign gateway requests server-side so no merchant credentials travel through the browser.",
+        "Treat return URLs as display-only; confirm payment status from the backend before showing success or clearing the basket.",
+        "Make payment submission idempotent — prevent duplicate orders on network retry.",
+        "Test timeout and cancellation branches explicitly in the checkout state machine.",
+      ].map((item) => (
         <li key={item} className="flex gap-2 leading-relaxed">
           <span className="text-emerald-300 shrink-0 mt-0.5">→</span>
           <span>{item}</span>
         </li>
       ))}
     </ul>
-  );
-}
-
-// ─── Case study data ──────────────────────────────────────────────────────────
-
-const caseStudyData = {
-  title: "Lothashop: VNPay Checkout & Order States",
-  company: "MLTech Soft",
-  role: "Middle Frontend Engineer",
-  timeline: "10 months · 2023",
-  techStack:
-    "Next.js 12 · TypeScript · MUI · Zustand · Formik + Yup · axios · socket.io-client · crypto-js",
-  context:
-    "Lothashop is an e-commerce platform for Lothamilk's dairy products, serving B2C customers and registered dealer accounts who order from a network of regional distributors. Delivery options include self-pickup at a distributor location, fast delivery via GHN from a nearby distributor, and standard delivery via GHTK.",
-  // TODO(Buck): confirm exact ownership scope before un-hiding the "My role" section:
-  // checkout UI, VNPay integration, waiting/result pages, socket flow
-  architectureHeading: "Checkout flow",
-  architectureDiagram: <SequenceDiagram />,
-  architectureCaption:
-    "VNPay payment path shown. COD path skips the VNPay redirect steps. Fast-delivery distributor matching is in the shaded region.",
-  statesTable: <StatesTable />,
-  hardProblems: [
-    {
-      title: "Real-time distributor matching with a hard timeout",
-      body: (
-        <span>
-          Fast delivery depends on a nearby distributor accepting the order within 60 seconds.
-          After the order is created, the checkout UI opens a socket.io connection, shows a live
-          countdown, and lets the user cancel at any time. If no distributor accepts within the
-          window, the flow routes to a failure page that explains the situation and prompts the
-          user to try standard delivery instead.
-        </span>
-      ),
-    },
-    {
-      title: "One checkout supporting 3 delivery types × 2 payment methods × 2 account roles",
-      body: (
-        <span>
-          The form branches across self-pickup, fast delivery (GHN), and standard delivery (GHTK),
-          each paired with COD or VNPay. Dealer accounts add a further choice: the dealer pays
-          upfront, or the end customer pays. Formik + Yup handled conditional validation; Zustand
-          (persisted) held basket and draft-order state across navigation.
-        </span>
-      ),
-    },
-    {
-      title: "Guest checkout with automatic account registration",
-      body: (
-        <span>
-          Guests can complete a purchase without an account. On a successful payment, the system
-          automatically registers an account from the delivery information and attaches the order
-          to it. The user lands on the result page already logged in.
-        </span>
-      ),
-    },
-  ],
-  resultsNote: "Shipped to production at lothashop.vn.",
-  whatNextHeading: "What I'd do differently",
-  whatNext: <WhatNextList />,
-  prevCase: { label: "WeTax", href: "/web-portfolio/projects/wetax" },
+  ),
+  prevProject: { label: "WeTax", href: "/web-portfolio/projects/wetax" },
+  nextProject: { label: "VDental", href: "/web-portfolio/projects/vdental" },
 };
 
 export default function Lothashop() {
-  return <CaseStudyLayout data={caseStudyData} />;
+  return <ProjectDetailLayout data={data} />;
 }

@@ -227,7 +227,7 @@ function StatesTable() {
 const data: ProjectDetailData = {
   title: "Lothashop",
   company: "MLTech Soft",
-  role: "Middle Frontend Engineer",
+  role: "Middle Frontend Developer",
   timeline: "10 months · 2023",
   platform: "Web",
   summary: "E-commerce platform for Lothamilk dairy products, covering B2C orders, dealer accounts, three delivery types, and VNPay integration.",
@@ -249,7 +249,7 @@ const data: ProjectDetailData = {
           failure page that explains the situation and prompts the user to try standard delivery instead.
         </>
       ),
-      result: "User always gets clear feedback on distributor availability; failed matches route automatically to standard delivery.",
+      result: "User always gets clear feedback on distributor availability.",
     },
     {
       problem: "One checkout flow covering 3 delivery types × 2 payment methods × 2 account roles",
@@ -269,10 +269,9 @@ const data: ProjectDetailData = {
         <>
           Guests can complete a purchase without an account. On a successful payment, the system
           automatically registers an account from the delivery information and attaches the order to it.
-          The user lands on the result page already logged in.
         </>
       ),
-      result: "Seamless post-purchase experience: user is logged in on arrival at the result page, order already attached to their new account.",
+      result: "Guest purchases are attached to the automatically created account; no re-registration required.",
     },
   ],
   diagram: <SequenceDiagram />,
@@ -284,9 +283,8 @@ const data: ProjectDetailData = {
   lessons: (
     <ul className="flex flex-col gap-3">
       {[
-        "Sign gateway requests server-side so no merchant credentials travel through the browser.",
         "Treat return URLs as display-only; confirm payment status from the backend before showing success or clearing the basket.",
-        "Make payment submission idempotent — prevent duplicate orders on network retry.",
+        "Guard the payment submission button against double-submission — network retries can cause duplicate orders.",
         "Test timeout and cancellation branches explicitly in the checkout state machine.",
       ].map((item) => (
         <li key={item} className="flex gap-2 leading-relaxed">

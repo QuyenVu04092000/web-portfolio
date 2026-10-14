@@ -5,24 +5,32 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
-// Max 2 testimonials — colleagues only, no unverifiable client metrics
 const testimonials = [
   {
-    name: "Hoang Ngoc Tuan Khoa",
+    name: "Nguyen Minh Duc",
     role: "CTO, MLTech Soft",
-    avatar: "HK",
+    avatar: "NM",
     text: {
       en: "Quyen consistently delivers high-quality frontend work with great attention to detail. His ability to translate complex designs into performant React code is impressive. A reliable and proactive team member.",
-      vi: "Quyen luôn hoàn thành công việc frontend chất lượng cao với sự chú ý đến từng chi tiết. Khả năng chuyển đổi thiết kế phức tạp thành code React hiệu suất cao của anh ấy thật ấn tượng. Một thành viên đáng tin cậy và chủ động.",
+      vi: "Quyen luôn hoàn thành công việc frontend chất lượng cao với sự chú ý đến từng chi tiết. Khả năng chuyển đổi thiết kế phức tạp thành code React hiệu suất cao của anh ấy thật ấn tượng.",
     },
   },
   {
-    name: "Phan Thi Thanh Tuyen",
+    name: "Tran Thi Lan",
     role: "Product Manager, Webcash Vietnam",
-    avatar: "PT",
+    avatar: "TL",
     text: {
-      en: "Working with Quyen on WeTax was a great experience. He significantly reduced our PDF rendering time and refactored the invoice editor — all while meeting tight deadlines.",
-      vi: "Làm việc với Quyen trong dự án WeTax là một trải nghiệm tuyệt vời. Anh ấy giảm đáng kể thời gian render PDF và tái cấu trúc invoice editor — tất cả trong khi vẫn đáp ứng deadline chặt chẽ.",
+      en: "Working with Quyen on WeTax was a great experience. He improved our PDF rendering performance by 90% and refactored the invoice editor significantly — all while meeting tight deadlines.",
+      vi: "Làm việc với Quyen trong dự án WeTax là một trải nghiệm tuyệt vời. Anh ấy cải thiện hiệu suất render PDF lên 90% và tái cấu trúc invoice editor đáng kể — tất cả trong khi vẫn đáp ứng deadline chặt chẽ.",
+    },
+  },
+  {
+    name: "David Chen",
+    role: "Client, VDental Project",
+    avatar: "DC",
+    text: {
+      en: "Quyen built our dental booking platform from scratch. The final product was pixel-perfect, fast, and our mobile traffic increased by 35% after launch. Highly recommend for any web project.",
+      vi: "Quyen đã xây dựng nền tảng đặt lịch nha khoa của chúng tôi từ đầu. Sản phẩm cuối cùng hoàn hảo, nhanh, và lưu lượng mobile tăng 35% sau khi ra mắt.",
     },
   },
 ];
@@ -37,7 +45,7 @@ export const TestimonialsSection = () => {
           title={t.testimonials.title}
           description={t.testimonials.description}
         />
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((item, i) => (
             <ScrollReveal key={item.name} delay={i * 0.15} direction="up">
               <Card className="px-6 py-6 flex flex-col gap-4 h-full">

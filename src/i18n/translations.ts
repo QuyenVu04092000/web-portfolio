@@ -48,7 +48,7 @@ export const translations = {
         {
           title: "Lothashop",
           company: "MLTech Soft",
-          role: "Middle Frontend Engineer",
+          role: "Middle Frontend Developer",
           techChips: ["Next.js", "TypeScript", "Zustand", "VNPay", "socket.io"],
           summary: "VNPay checkout integration and real-time distributor matching for a dairy-products e-commerce platform.",
           results: [
@@ -63,18 +63,24 @@ export const translations = {
         {
           title: "VDental",
           company: "MLTech Soft",
-          role: "Middle Frontend Engineer",
-          techChips: ["Next.js", "TypeScript", "Tailwind CSS", "i18n"],
-          summary: "Rebuilt multi-step booking UI with VI/EN internationalization support.",
+          role: "Senior Frontend Developer",
+          techChips: ["Next.js", "TypeScript", "Tailwind CSS"],
+          summary: "Dental booking platform connecting U.S.-based patients with clinics in Vietnam.",
           link: "https://vdental.ai/vi",
         },
         {
           title: "PSA-CMS",
-          company: "PSA International",
-          role: "Middle Frontend Engineer",
-          techChips: ["React", "TypeScript", "Redux"],
+          company: "MLTech Soft",
+          role: "Middle Frontend Developer",
+          techChips: ["React", "JavaScript", "Redux", "Highcharts"],
           summary: "CMS dashboard covering news, vessels, and pilot records with role-based UI.",
-          link: "https://psa-cms.mltechsoft.com",
+        },
+        {
+          title: "DigiSale DMS",
+          company: "MLTech Soft",
+          role: "Senior Frontend Developer",
+          techChips: ["React", "TypeScript"],
+          summary: "Led frontend of a major update using an in-house reusable component set.",
         },
       ],
     },
@@ -82,7 +88,7 @@ export const translations = {
       eyebrow: "Technical Skills",
       title: "What I Work With",
       aiNote:
-        "I use AI tools to speed up implementation, but every change still goes through my own review, types and tests.",
+        "I use AI tools to speed up implementation, but every change still goes through my own review and types.",
       groups: [
         {
           name: "Core",
@@ -90,7 +96,7 @@ export const translations = {
         },
         {
           name: "UI Libraries",
-          items: ["Tailwind CSS", "Material UI (MUI)", "Ant Design"],
+          items: ["Tailwind CSS", "Material UI (MUI)"],
         },
         {
           name: "State & Data",
@@ -309,7 +315,7 @@ export const translations = {
         {
           title: "Lothashop",
           company: "MLTech Soft",
-          role: "Middle Frontend Engineer",
+          role: "Middle Frontend Developer",
           techChips: ["Next.js", "TypeScript", "Zustand", "VNPay", "socket.io"],
           summary: "Tích hợp thanh toán VNPay và ghép nối distributor thời gian thực cho nền tảng e-commerce sữa Lothamilk.",
           results: [
@@ -324,18 +330,24 @@ export const translations = {
         {
           title: "VDental",
           company: "MLTech Soft",
-          role: "Middle Frontend Engineer",
-          techChips: ["Next.js", "TypeScript", "Tailwind CSS", "i18n"],
-          summary: "Xây dựng lại luồng đặt lịch đa bước với hỗ trợ đa ngôn ngữ VI/EN.",
+          role: "Senior Frontend Developer",
+          techChips: ["Next.js", "TypeScript", "Tailwind CSS"],
+          summary: "Nền tảng đặt lịch nha khoa kết nối bệnh nhân Mỹ với phòng khám tại Việt Nam.",
           link: "https://vdental.ai/vi",
         },
         {
           title: "PSA-CMS",
-          company: "PSA International",
-          role: "Middle Frontend Engineer",
-          techChips: ["React", "TypeScript", "Redux"],
+          company: "MLTech Soft",
+          role: "Middle Frontend Developer",
+          techChips: ["React", "JavaScript", "Redux", "Highcharts"],
           summary: "Dashboard CMS quản lý tin tức, tàu thuyền và hồ sơ phi công với phân quyền.",
-          link: "https://psa-cms.mltechsoft.com",
+        },
+        {
+          title: "DigiSale DMS",
+          company: "MLTech Soft",
+          role: "Senior Frontend Developer",
+          techChips: ["React", "TypeScript"],
+          summary: "Dẫn dắt frontend cho bản cập nhật lớn sử dụng bộ component tái sử dụng nội bộ.",
         },
       ],
     },
@@ -343,7 +355,7 @@ export const translations = {
       eyebrow: "Kỹ năng kỹ thuật",
       title: "Công cụ tôi làm việc với",
       aiNote:
-        "Tôi dùng công cụ AI để tăng tốc triển khai, nhưng mọi thay đổi vẫn qua review, types và tests của riêng tôi.",
+        "Tôi dùng công cụ AI để tăng tốc triển khai, nhưng mọi thay đổi vẫn qua review và types của riêng tôi.",
       groups: [
         {
           name: "Core",
@@ -351,7 +363,7 @@ export const translations = {
         },
         {
           name: "UI Libraries",
-          items: ["Tailwind CSS", "Material UI (MUI)", "Ant Design"],
+          items: ["Tailwind CSS", "Material UI (MUI)"],
         },
         {
           name: "State & Data",

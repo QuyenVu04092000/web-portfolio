@@ -6,12 +6,12 @@ import { ProjectDetailLayout, type ProjectDetailData } from "@/components/Projec
 const data: ProjectDetailData = {
   title: "PSA-CMS",
   company: "MLTech Soft",
-  role: "Middle Frontend Engineer",
+  role: "Middle Frontend Developer",
   timeline: "2023",
   platform: "Web",
   summary: "Web admin system for PSA International's marine pilot operations — extended and maintained across licensing, auditing, and content management modules.",
-  tech: "React 16 · JavaScript · Redux + redux-form · React Router 5 · Bootstrap · Highcharts · Jest + Enzyme",
-  techChips: ["React", "JavaScript", "Redux", "Highcharts", "Bootstrap", "Jest"],
+  tech: "React 16 · JavaScript · Redux + redux-form · React Router 5 · Bootstrap · Highcharts",
+  techChips: ["React", "JavaScript", "Redux", "Highcharts"],
   coverImage: psa,
   coverImageAlt: "PSA-CMS admin dashboard",
   client: "PSA International",
@@ -23,7 +23,6 @@ const data: ProjectDetailData = {
     "Extended the audit module: added pilot audit record listing, checklist editing, workload tracking tables, and per-audit report views.",
     "Maintained and extended CRUD modules for news, users, vessels, zones/locations, and app configuration.",
     "Fixed bugs and extended reporting dashboards using Highcharts (line/bar charts for completion rates and duration distributions across pilot cohorts).",
-    "Updated unit tests (Jest + Enzyme) for shared form, table, filter, and pagination components.",
   ],
   technicalHighlights: [
     {
@@ -36,7 +35,7 @@ const data: ProjectDetailData = {
           New chart views plug into the wrapper without repeating boilerplate.
         </>
       ),
-      result: "Consistent chart styling across all reporting screens; new chart types take a fraction of the time to add.",
+      result: "Consistent chart styling across all reporting screens.",
     },
     {
       problem: "License upgrade workflow had many stages but no clear progress view for admins",
@@ -49,17 +48,6 @@ const data: ProjectDetailData = {
         </>
       ),
       result: "Admins can see a pilot's entire upgrade journey in one view without navigating multiple screens.",
-    },
-    {
-      problem: "Jest + Enzyme tests were outdated and failing after dependency bumps",
-      approach: (
-        <>
-          Updated enzyme adapters and test utilities, then rewrote failing tests for redux-form field
-          components, reusable filter components, and pagination. Tests now mock redux-form context
-          correctly and assert on rendered output rather than internal state.
-        </>
-      ),
-      result: "Test suite passing; regressions in shared components caught before deployment.",
     },
   ],
   resultsNote: "Used internally by PSA International's operations team. Access is restricted, so there is no public link or screenshots of live data.",

@@ -104,15 +104,17 @@ export const CaseStudiesSection = () => {
                     ))}
                   </div>
 
-                  <a
-                    href={proj.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-white/70 hover:text-white transition-colors mt-auto focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/50 rounded"
-                  >
-                    {p.visitSite}
-                    <ArrowUpRightIcon className="size-3.5" />
-                  </a>
+                  {("link" in proj) && (
+                    <a
+                      href={(proj as { link: string }).link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-white/70 hover:text-white transition-colors mt-auto focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/50 rounded"
+                    >
+                      {p.visitSite}
+                      <ArrowUpRightIcon className="size-3.5" />
+                    </a>
+                  )}
                 </Card>
               </ScrollReveal>
             ))}

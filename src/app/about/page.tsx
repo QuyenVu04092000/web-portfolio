@@ -3,7 +3,6 @@
 import React, { Fragment, useRef } from "react";
 import { Header } from "@/sections/Header";
 import Image from "next/image";
-import avatar from "@/assets/images/avatar.jpeg";
 import avatar1 from "@/assets/images/avatar1.jpeg";
 import avatar2 from "@/assets/images/avatar2.jpeg";
 import avatar3 from "@/assets/images/avatar3.jpeg";
@@ -13,7 +12,6 @@ import { CardHeader } from "@/components/CardHeader";
 import grainImage from "@/assets/images/grain.jpg";
 import mapImage from "@/assets/images/map.png";
 import smileMemoji from "@/assets/images/memoji-smile.png";
-import { WorkExperience } from "@/sections/WorkExperience";
 import { motion } from "framer-motion";
 
 const hobbies = [
@@ -39,49 +37,8 @@ export default function About() {
     <div>
       <Header activeId="about" />
 
-      {/* Bio */}
-      <div className="lg:grid lg:grid-cols-6 lg:gap-7 pb-8 pt-32 md:pt-48 lg:pt-60 relative z-0 overflow-x-clip px-7">
-        <div className="col-span-2 relative flex lg:block md:hidden sm:hidden">
-          <div className="relative">
-            <div
-              className="absolute inset-0 z-10 opacity-10"
-              style={{ backgroundImage: `url(${grainImage.src})` }}
-            />
-            <Image
-              className="rounded-lg h-full object-cover"
-              alt="avatar"
-              src={avatar}
-            />
-          </div>
-        </div>
-        <div className="col-span-4 flex">
-          <Card className="px-8 flex-1 flex flex-col">
-            <h1 className="font-serif text-3xl md:text-5xl text-left mt-8 tracking-wide">
-              Hello I&apos;m Quyen
-            </h1>
-            <p className="text-left text-white/60 mt-4 md:text-lg lg:text-xl">
-              Senior Frontend Engineer with 5+ years of experience building
-              scalable web applications using React and Next.js. Strong
-              expertise in performance optimization, UI/UX, and RESTful API
-              integration, with hands-on experience in state management and
-              cross-platform development.
-            </p>
-            <p className="text-left text-white/60 mt-4 md:text-lg lg:text-xl pb-8">
-              Currently at Webcash Vietnam building enterprise-scale HR and
-              e-invoicing platforms. Passionate about clean code,
-              accessibility, and delivering fast, user-focused experiences.
-            </p>
-          </Card>
-        </div>
-      </div>
-
-      {/* Work Experience */}
-      <div className="px-7 pb-8">
-        <WorkExperience />
-      </div>
-
       {/* Beyond the Code + Map */}
-      <div className="px-7 pb-8">
+      <div className="px-7 pb-8 pt-32 md:pt-48 lg:pt-60">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3">
           <Card className="h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2">
             <CardHeader

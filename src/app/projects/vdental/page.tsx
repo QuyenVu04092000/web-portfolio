@@ -6,12 +6,12 @@ import { ProjectDetailLayout, type ProjectDetailData } from "@/components/Projec
 const data: ProjectDetailData = {
   title: "VDental",
   company: "MLTech Soft",
-  role: "Middle Frontend Engineer",
+  role: "Senior Frontend Developer",
   timeline: "2024",
   platform: "Web",
-  summary: "Public-facing website for a Vietnamese dental clinic group, with multilingual support and a responsive layout.",
+  summary: "Dental booking platform connecting U.S.-based patients with clinics in Vietnam.",
   tech: "Next.js · TypeScript · Tailwind CSS · i18n",
-  techChips: ["Next.js", "TypeScript", "Tailwind CSS", "i18n"],
+  techChips: ["Next.js", "TypeScript", "Tailwind CSS"],
   coverImage: vdental,
   coverImageAlt: "VDental clinic website",
   myScope: "Built from scratch",
@@ -19,7 +19,7 @@ const data: ProjectDetailData = {
   overview:
     "VDental is the public website for a dental clinic group operating in Vietnam. I built the site with Next.js and TypeScript, implementing a custom i18n layer to serve both Vietnamese and English content from a single codebase.",
   whatIBuilt: [
-    "Built the full site structure with Next.js App Router — service pages, clinic location pages, doctor profiles, and appointment booking.",
+    "Built the full site structure with Next.js App Router — service pages and appointment booking.",
     "Implemented multilingual routing and content switching (Vietnamese / English) using a custom i18n context.",
     "Built a responsive layout with Tailwind CSS targeting mobile, tablet, and desktop viewports.",
     "Integrated a contact and appointment booking form with client-side validation.",

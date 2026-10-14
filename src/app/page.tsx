@@ -1,3 +1,4 @@
+import { AboutSection } from "@/sections/About";
 import { CaseStudiesSection } from "@/sections/CaseStudies";
 import { ContactSection } from "@/sections/Contact";
 import { Footer } from "@/sections/Footer";
@@ -20,19 +21,22 @@ export default function Home() {
         {/* 2. Stats */}
         <StatsSection />
 
-        {/* 3. Technical Skills */}
+        {/* 3. About bento */}
+        <AboutSection />
+
+        {/* 4. Technical Skills */}
         <SkillsSection />
 
-        {/* 4. WeTax featured case study */}
+        {/* 5. WeTax featured case study */}
         <WeTaxFeatureSection />
 
-        {/* 5. Case studies grid + other projects */}
+        {/* 6. Case studies grid + other projects */}
         <CaseStudiesSection />
 
-        {/* 6. Testimonials */}
+        {/* 7. Testimonials */}
         <TestimonialsSection />
 
-        {/* 7. Contact */}
+        {/* 8. Contact */}
         <ContactSection />
       </main>
       <Footer />

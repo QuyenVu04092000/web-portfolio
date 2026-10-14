@@ -3,75 +3,30 @@
 import { Card } from "@/components/Card";
 import { SectionHeader } from "@/components/SectionHeader";
 import Image from "next/image";
-import JavascriptIcon from "@/assets/icons/square-js.svg";
-import HTMLIcon from "@/assets/icons/html5.svg";
-import CssIcon from "@/assets/icons/css3.svg";
-import ReactIcon from "@/assets/icons/react.svg";
-import ChromeIcon from "@/assets/icons/chrome.svg";
-import GithubIcon from "@/assets/icons/github.svg";
 import mapImage from "@/assets/images/map.png";
 import smileMemoji from "@/assets/images/memoji-smile.png";
 import { CardHeader } from "@/components/CardHeader";
-import { ToolboxItems } from "@/components/ToolboxItems";
-import { motion } from "framer-motion";
-import { useRef } from "react";
 
-const toolboxItems = [
-  { title: "JavaScript", iconType: JavascriptIcon },
-  { title: "HTML5", iconType: HTMLIcon },
-  { title: "CSS3", iconType: CssIcon },
-  { title: "React", iconType: ReactIcon },
-  { title: "Chrome", iconType: ChromeIcon },
-  { title: "Github", iconType: GithubIcon },
-];
-
-const hobbies = [
+const skillGroups = [
   {
-    title: "Beer",
-    emoji: "🍺",
-    left: "5%",
-    top: "5%",
+    name: "Core",
+    items: ["React", "Next.js", "TypeScript", "JavaScript"],
   },
   {
-    title: "Gaming",
-    emoji: "🎮",
-    left: "50%",
-    top: "5%",
+    name: "UI Libraries",
+    items: ["Tailwind CSS", "Material UI (MUI)", "Ant Design"],
   },
   {
-    title: "Traveling",
-    emoji: "✈️",
-    left: "10%",
-    top: "35%",
+    name: "State & Data",
+    items: ["React Query", "Zustand", "Redux"],
   },
   {
-    title: "Music",
-    emoji: "🎵",
-    left: "35%",
-    top: "40%",
-  },
-  {
-    title: "Fitness",
-    emoji: "🏋️",
-    left: "70%",
-    top: "45%",
-  },
-  {
-    title: "Football",
-    emoji: "⚽",
-    left: "5%",
-    top: "65%",
-  },
-  {
-    title: "Badminton",
-    emoji: "🏸",
-    left: "45%",
-    top: "70%",
+    name: "Mobile",
+    items: ["React Native", "Flutter"],
   },
 ];
 
 export const AboutSection = () => {
-  const constraintRef = useRef(null);
   return (
     <div className="pb-20 lg:py-28" id="about">
       <div className="container">
@@ -81,53 +36,35 @@ export const AboutSection = () => {
           description="Learn more about who I am, what I do, and what inspires me."
         />
         <div className="mt-20 flex flex-col gap-8">
-          {/* Row 1: My Toolbox — full width (My Reads removed) */}
           <div className="grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3">
-            <Card className="h-[320px] md:col-span-5 lg:col-span-3">
+            {/* Technical Skills */}
+            <Card className="p-6 md:col-span-3 lg:col-span-2">
               <CardHeader
-                title="My Toolbox"
-                description="Explore the technologies and tools I use to craft exceptional digital experiences."
+                title="Technical Skills"
+                description="My core stack for web and mobile development."
               />
-              <ToolboxItems
-                items={toolboxItems}
-                className=""
-                itemsWrapperClassName="animate-move-left [animation-duration:30s]"
-              />
-              <ToolboxItems
-                items={toolboxItems}
-                className="mt-6"
-                itemsWrapperClassName="animate-move-right [animation-duration:30s]"
-              />
-            </Card>
-          </div>
-          {/* Row 2: Beyond the Code + Map (unchanged) */}
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3">
-            <Card className="h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2">
-              <CardHeader
-                className="px-6 pt-6"
-                title="Beyond the Code"
-                description="Explore my interests and hobbies beyond the digital realm."
-              />
-              <div className="relative flex-1" ref={constraintRef}>
-                {hobbies.map((hobby) => (
-                  <motion.div
-                    key={hobby.title}
-                    className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute"
-                    style={{
-                      left: hobby.left,
-                      top: hobby.top,
-                    }}
-                    drag
-                    dragConstraints={constraintRef}
-                  >
-                    <span className="font-medium text-gray-950">
-                      {hobby.title}
+              <div className="mt-4 flex flex-col gap-4">
+                {skillGroups.map((group) => (
+                  <div key={group.name}>
+                    <span className="text-xs font-semibold uppercase tracking-widest text-white/30 mb-2 block">
+                      {group.name}
                     </span>
-                    <span>{hobby.emoji}</span>
-                  </motion.div>
+                    <div className="flex flex-wrap gap-2">
+                      {group.items.map((item) => (
+                        <span
+                          key={item}
+                          className="px-3 py-1 rounded-full text-xs font-medium border border-white/15 text-white/80 bg-white/5"
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 ))}
               </div>
             </Card>
+
+            {/* Map */}
             <Card className="h-[320px] p-0 relative md:col-span-2 lg:col-span-1">
               <Image
                 src={mapImage}

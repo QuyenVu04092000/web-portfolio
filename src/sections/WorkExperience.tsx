@@ -10,22 +10,28 @@ const RESUME_URL =
 const experiences = [
   {
     company: "Webcash Vietnam",
-    role: "Senior Frontend Developer",
+    role: "Senior Frontend Engineer",
     period: "03/2025 – Present",
+    tech: "Next.js · TypeScript · React Query · Zustand · WebSocket · Java (collab)",
     highlights: [
-      "Own the frontend architecture of WeTax (e-invoicing, tens of millions of invoices) and WeHR, built with Next.js + TypeScript, React Query for server state and Zustand for global state.",
-      "Cut PDF invoice rendering time by ~90% less by moving generation from client-side to server-side (wkhtmltopdf on the Java backend), working closely with the backend team.",
-      "Made data-heavy invoice lists fast with React Query caching, server-side pagination, and list virtualization; built real-time notifications via WebSocket.",
+      "Own the frontend architecture of WeTax (e-invoicing platform handling tens of millions of invoices) and WeHR (HR management), built with Next.js + TypeScript.",
+      "Cut PDF invoice rendering time ~90% by moving generation from client-side to server-side (wkhtmltopdf on the Java backend) — worked closely with backend team on API design and pipeline integration.",
+      "Optimised data-heavy invoice list views with React Query server-state caching, server-side pagination, and list virtualisation; added real-time invoice status notifications via WebSocket.",
+      "Designed state architecture for WeHR's complex HR workflows (payroll, leave, timekeeping) using Zustand for global state and React Query for server state.",
     ],
   },
   {
     company: "MLTech Soft",
-    role: "Frontend Developer",
+    role: "Frontend Engineer",
     period: "03/2021 – 03/2025 · Junior → Middle → Senior",
+    tech: "React · React Native · Swift · Flutter · Next.js · TypeScript · Redux · Highcharts · Jest/Enzyme",
     highlights: [
-      "Led frontend across multiple client projects, including code review, mentoring junior developers, and improving team workflow.",
-      "Led the rebuild of DigiSale (Distributor Management System) with a custom in-house component library; reduced re-renders with React.memo, useCallback, and useMemo; minimized bundle size with tree shaking and dynamic imports.",
-      "Built reusable React components and complex flows for high-traffic e-commerce and DMS products; improved Core Web Vitals with code splitting, lazy loading, and tree shaking; integrated REST and GraphQL APIs.",
+      "Led frontend across 6+ client projects; owned code review process, mentored junior developers, and introduced structured branching and PR workflow across the team.",
+      "Built PSA-CMS (React 16 + Redux + Highcharts + Jest/Enzyme) for PSA International — extended marine pilot licensing, audit workflow, and content management modules with new reporting dashboards and multi-stage progress timelines.",
+      "Built LothaShop e-commerce (React + Redux) with full VNPay payment integration — implemented a server-side gateway signature flow, payment-state machine (7 states), and idempotent order submission to prevent double-charges.",
+      "Built VDental.ai public site (Next.js + TypeScript) with a custom bilingual i18n layer (Vietnamese/English) — multi-step appointment booking flow and follow-up appointment flow pre-filling past visit data.",
+      "Built SFA DigiSale mobile app (React Native + Expo + NativeWind) from scratch — distributor route management, client visit tracking, order and promotion management, OneSignal push notifications, deployed to App Store and Google Play.",
+      "Maintained PSA International's MyDigitalPA iOS app (Swift + RxSwift + MVVM + Coordinator) and Pilot Audit iOS app (Swift + RxSwift + RealmSwift + Charts) — fixed MQTT reconnect issues and Realm sync race conditions.",
     ],
   },
 ];
@@ -47,6 +53,7 @@ export const WorkExperience = () => {
               <p className="font-semibold text-white text-base">{exp.company}</p>
               <p className="text-emerald-300 text-sm mt-1">{exp.role}</p>
               <p className="text-white/40 text-sm mt-1">{exp.period}</p>
+              <p className="text-white/25 text-xs mt-2 leading-relaxed">{exp.tech}</p>
             </div>
             <div className="col-span-2">
               <ul className="flex flex-col gap-2">

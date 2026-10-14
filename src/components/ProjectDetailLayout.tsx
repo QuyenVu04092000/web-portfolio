@@ -13,9 +13,13 @@ export interface DetailSection {
 }
 
 export interface TechHighlight {
+  title?: string;         // optional card heading above the labeled sections
   problem: string;
+  problemLabel?: string;  // defaults to "Problem"
   approach: ReactNode;
-  result: string;
+  approachLabel?: string; // defaults to "Approach"
+  result?: string;        // optional — section hidden when absent
+  resultLabel?: string;   // defaults to "Result"
 }
 
 export interface ResultMetric {
@@ -291,12 +295,25 @@ export function ProjectDetailLayout({ data }: { data: ProjectDetailData }) {
             <div className="flex flex-col gap-5">
               {data.technicalHighlights.map((h, i) => (
                 <div key={i} className="bg-white/[0.025] border border-white/10 rounded-2xl px-6 py-5">
-                  <p className="text-xs font-semibold uppercase tracking-widest text-white/30 mb-2">Problem</p>
+                  {h.title && (
+                    <p className="font-semibold text-white text-sm md:text-base mb-4">{h.title}</p>
+                  )}
+                  <p className="text-xs font-semibold uppercase tracking-widest text-white/30 mb-2">
+                    {h.problemLabel ?? "Problem"}
+                  </p>
                   <p className="font-medium text-white mb-4 text-sm md:text-base">{h.problem}</p>
-                  <p className="text-xs font-semibold uppercase tracking-widest text-emerald-300/50 mb-2">Approach</p>
+                  <p className="text-xs font-semibold uppercase tracking-widest text-emerald-300/50 mb-2">
+                    {h.approachLabel ?? "Approach"}
+                  </p>
                   <div className="text-white/60 text-sm leading-relaxed mb-4">{h.approach}</div>
-                  <p className="text-xs font-semibold uppercase tracking-widest text-sky-400/50 mb-2">Result</p>
-                  <p className="text-white/70 text-sm">{h.result}</p>
+                  {h.result !== undefined && (
+                    <>
+                      <p className="text-xs font-semibold uppercase tracking-widest text-sky-400/50 mb-2">
+                        {h.resultLabel ?? "Result"}
+                      </p>
+                      <p className="text-white/70 text-sm">{h.result}</p>
+                    </>
+                  )}
                 </div>
               ))}
             </div>

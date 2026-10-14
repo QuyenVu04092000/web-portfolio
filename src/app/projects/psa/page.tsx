@@ -62,6 +62,7 @@ const data: ProjectDetailData = {
       result: "Test suite passing; regressions in shared components caught before deployment.",
     },
   ],
+  resultsNote: "Used internally by PSA International's operations team. Access is restricted, so there is no public link or screenshots of live data.",
   prevProject: { label: "VDental", href: "/web-portfolio/projects/vdental" },
   nextProject: { label: "SFA · DigiSale", href: "/web-portfolio/projects/sfa" },
 };

@@ -127,12 +127,12 @@ export default function About() {
             <Fragment key={index}>
               {images.map((item) => (
                 <div
-                  className="relative flex lg:block md:hidden sm:hidden rounded-lg"
+                  className="relative rounded-lg"
                   key={item.title}
                 >
-                  <div className="relative w-[328px] h-[642px] rounded-lg">
+                  <div className="relative w-[200px] h-[380px] md:w-[260px] md:h-[500px] lg:w-[328px] lg:h-[642px] rounded-lg">
                     <div
-                      className="absolute inset-0 z-10 opacity-10 w-[328px] h-[642px] rounded-lg"
+                      className="absolute inset-0 z-10 opacity-10 rounded-lg"
                       style={{ backgroundImage: `url(${grainImage.src})` }}
                     />
                     <Image

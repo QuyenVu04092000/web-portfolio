@@ -13,13 +13,14 @@ const stats = [
 ] as const;
 
 const Counter = ({ end, suffix }: { end: number; suffix: string }) => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(end); // pre-render real number for SSR/crawlers
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   useEffect(() => {
     if (!isInView) return;
     let start = 0;
+    setCount(0);
     const duration = 1500;
     const step = 16;
     const increment = end / (duration / step);

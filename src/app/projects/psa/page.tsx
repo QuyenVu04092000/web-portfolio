@@ -7,7 +7,7 @@ const content: { en: ProjectDetailContent; vi: ProjectDetailContent } = {
   en: {
     title: "Building PSA-CMS: A Robust Content Management System for Pilots",
     client: "PSA International",
-    role: "Front-end Developer",
+    role: "Middle Frontend Engineer",
     timeline: "09/2023 – Present",
     tech: "ReactJS, React-Redux",
     intro: "In the maritime industry, efficient management of pilot operations is crucial for smooth and safe vessel navigation. PSA-CMS was developed as a content management system (CMS) tailored for PSA International, one of the world's leading port operators. The system serves as the backbone for managing pilot information and delivering essential content to pilots via their mobile app — including news updates, vessel details, and operational data. Working closely with PSA's team, I contributed to building a scalable, user-friendly system using ReactJS and React-Redux for state management.",
@@ -33,7 +33,7 @@ const content: { en: ProjectDetailContent; vi: ProjectDetailContent } = {
   vi: {
     title: "Xây dựng PSA-CMS: Hệ thống quản lý nội dung mạnh mẽ cho phi công",
     client: "PSA International",
-    role: "Front-end Developer",
+    role: "Middle Frontend Engineer",
     timeline: "09/2023 – Hiện tại",
     tech: "ReactJS, React-Redux",
     intro: "Trong ngành hàng hải, quản lý hoạt động phi công hiệu quả là rất quan trọng để đảm bảo điều hướng tàu thuyền an toàn và trơn tru. PSA-CMS được phát triển như một hệ thống quản lý nội dung (CMS) dành riêng cho PSA International, một trong những nhà khai thác cảng hàng đầu thế giới. Hệ thống phục vụ như nền tảng để quản lý thông tin phi công và cung cấp nội dung thiết yếu cho phi công qua ứng dụng di động của họ. Làm việc chặt chẽ với đội ngũ PSA, tôi đã đóng góp vào việc xây dựng hệ thống có thể mở rộng, thân thiện người dùng bằng ReactJS và React-Redux.",

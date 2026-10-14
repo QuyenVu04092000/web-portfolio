@@ -20,7 +20,7 @@ export default function Vdental() {
     en: {
       title: "Building VDental: A Platform to Bridge U.S. Clients with Dental Clinics in Vietnam",
       client: "V-Dental",
-      role: "Front-end Developer and Mobile Developer",
+      role: "Senior Frontend Engineer",
       timeline: "4 months",
       tech: "Next.js, Tailwind CSS, React Native",
       intro: <>
@@ -57,7 +57,7 @@ export default function Vdental() {
     vi: {
       title: "Xây dựng VDental: Nền tảng kết nối khách hàng Mỹ với phòng khám nha khoa Việt Nam",
       client: "V-Dental",
-      role: "Front-end Developer và Mobile Developer",
+      role: "Senior Frontend Engineer",
       timeline: "4 tháng",
       tech: "Next.js, Tailwind CSS, React Native",
       intro: <>
@@ -127,39 +127,39 @@ export default function Vdental() {
 
         <motion.div ref={contentRef} variants={slideInFromBottom} initial="hidden" animate={isInViewContent ? "visible" : "hidden"}>
           <div className="my-8">
-            <h1 className="font-serif px-4 text-3xl md:text-5xl text-left tracking-wide mb-8">{L.introduction}</h1>
+            <h2 className="font-serif px-4 text-3xl md:text-5xl text-left tracking-wide mb-8">{L.introduction}</h2>
             <p className="text-white/60 px-4 text-lg md:text-xl">{c.intro}</p>
           </div>
           <div className="my-8">
-            <h1 className="font-serif px-4 text-3xl md:text-5xl text-left tracking-wide mb-8">{L.whatIs} VDental?</h1>
+            <h2 className="font-serif px-4 text-3xl md:text-5xl text-left tracking-wide mb-8">{L.whatIs} VDental?</h2>
             {c.whatIs}
           </div>
           <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
           <div className="my-8">
-            <h1 className="font-serif px-4 text-3xl md:text-5xl text-left tracking-wide mb-8">{L.keyFeatures}</h1>
+            <h2 className="font-serif px-4 text-3xl md:text-5xl text-left tracking-wide mb-8">{L.keyFeatures}</h2>
             {c.features.map((item, i) => (
               <div key={i}>
-                <h2 className={`font-serif px-4 text-xl md:text-3xl text-left tracking-wide mb-4 ${i > 0 ? "mt-8" : ""}`}>{item.title}</h2>
+                <h3 className={`font-serif px-4 text-xl md:text-3xl text-left tracking-wide mb-4 ${i > 0 ? "mt-8" : ""}`}>{item.title}</h3>
                 <p className="text-white/60 px-4 text-lg md:text-xl">{item.body}</p>
               </div>
             ))}
           </div>
           <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
           <div className="my-8">
-            <h1 className="font-serif px-4 text-3xl md:text-5xl text-left tracking-wide mb-8">{L.technologies}</h1>
+            <h2 className="font-serif px-4 text-3xl md:text-5xl text-left tracking-wide mb-8">{L.technologies}</h2>
             {c.techStack.map((item, i) => (
               <div key={i}>
-                <h2 className={`font-serif px-4 text-xl md:text-3xl text-left tracking-wide mb-4 ${i > 0 ? "mt-8" : ""}`}>{item.title}</h2>
+                <h3 className={`font-serif px-4 text-xl md:text-3xl text-left tracking-wide mb-4 ${i > 0 ? "mt-8" : ""}`}>{item.title}</h3>
                 <p className="text-white/60 px-4 text-lg md:text-xl">{item.body}</p>
               </div>
             ))}
           </div>
           <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
           <div className="my-8">
-            <h1 className="font-serif px-4 text-3xl md:text-5xl text-left tracking-wide mb-8">{L.learnings}</h1>
+            <h2 className="font-serif px-4 text-3xl md:text-5xl text-left tracking-wide mb-8">{L.learnings}</h2>
             {c.learnings.map((item, i) => (
               <div key={i}>
-                <h2 className={`font-serif px-4 text-xl md:text-3xl text-left tracking-wide mb-4 ${i > 0 ? "mt-8" : ""}`}>{item.title}</h2>
+                <h3 className={`font-serif px-4 text-xl md:text-3xl text-left tracking-wide mb-4 ${i > 0 ? "mt-8" : ""}`}>{item.title}</h3>
                 <p className="text-white/60 px-4 text-lg md:text-xl">{item.body}</p>
               </div>
             ))}

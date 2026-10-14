@@ -7,7 +7,7 @@ const content: { en: ProjectDetailContent; vi: ProjectDetailContent } = {
   en: {
     title: "SFA (DigiSale): Empowering Sales Teams with Technology",
     client: "MLTech Soft",
-    role: "Mobile Developer",
+    role: "Senior Frontend Engineer · React Native",
     timeline: "4 months",
     tech: "React Native, React Hooks, Tailwind CSS",
     intro: "DigiSale is an innovative Sales Force Automation (SFA) application designed to help businesses optimize and streamline their sales activities. The app empowers sales teams with tools to track performance, manage leads, and improve sales efficiency. Through a user-friendly interface and seamless mobile experience, DigiSale enables salespeople to perform tasks with ease and stay connected with their sales data on the go.",
@@ -32,7 +32,7 @@ const content: { en: ProjectDetailContent; vi: ProjectDetailContent } = {
   vi: {
     title: "SFA (DigiSale): Trao quyền cho đội ngũ bán hàng bằng công nghệ",
     client: "MLTech Soft",
-    role: "Mobile Developer",
+    role: "Senior Frontend Engineer · React Native",
     timeline: "4 tháng",
     tech: "React Native, React Hooks, Tailwind CSS",
     intro: "DigiSale là ứng dụng Sales Force Automation (SFA) sáng tạo được thiết kế để giúp doanh nghiệp tối ưu hóa và hợp lý hóa các hoạt động bán hàng. Ứng dụng trao quyền cho đội ngũ bán hàng với công cụ theo dõi hiệu suất, quản lý khách hàng tiềm năng và cải thiện hiệu quả bán hàng. Thông qua giao diện thân thiện người dùng và trải nghiệm di động liền mạch, DigiSale giúp nhân viên bán hàng thực hiện công việc dễ dàng và luôn kết nối với dữ liệu bán hàng khi di chuyển.",

@@ -20,7 +20,7 @@ export default function WeTax() {
     en: {
       title: "WeTax: Enterprise E-Invoicing Platform",
       client: "Webcash Vietnam",
-      role: "Senior Front-End Developer",
+      role: "Senior Frontend Developer",
       timeline: "03/2025 – Present",
       tech: "Next.js · TypeScript · React Query · Zustand · WebSocket · Tailwind CSS",
       problem: {
@@ -30,13 +30,13 @@ export default function WeTax() {
             title: "Slow PDF generation blocking the UI",
             body: (
               <>
-                The invoice PDF was generated <span className="text-white">entirely in the browser</span> using a client-side library. For complex invoices (multiple line items, custom headers, VAT tables), generation could take 8–15 seconds — freezing the tab and timing out on slower devices. Enterprise clients printing hundreds of invoices per session reported the feature as nearly unusable.
+                The invoice PDF was generated <span className="text-white">entirely in the browser</span> using a client-side library. For complex invoices (multiple line items, custom headers, VAT tables), generation could take many seconds — freezing the tab and timing out on slower devices. Enterprise clients printing hundreds of invoices per session reported the feature as nearly unusable.
               </>
             ),
           },
           {
             title: "A monolithic editor no one could change safely",
-            body: "The core invoice editor was a single 1,200-line component that mixed form state, validation logic, field rendering, and submission in one file. Every feature request required editing the same file, which caused frequent merge conflicts and subtle regressions. New invoice types (credit notes, adjustment invoices) were being blocked because no one could confidently modify the editor.",
+            body: "The core invoice editor was a large single-file component that mixed form state, validation logic, field rendering, and submission in one file. Every feature request required editing the same file, which caused frequent merge conflicts and subtle regressions. New invoice types (credit notes, adjustment invoices) were being blocked because no one could confidently modify the editor.",
           },
           {
             title: "Listing pages grinding to a halt",
@@ -85,7 +85,7 @@ export default function WeTax() {
                 Every data-dependent page uses React Query&apos;s{" "}
                 <code className="text-emerald-300 bg-white/5 px-1.5 py-0.5 rounded text-sm">isLoading</code>,{" "}
                 <code className="text-emerald-300 bg-white/5 px-1.5 py-0.5 rounded text-sm">isFetching</code>, and{" "}
-                <code className="text-emerald-300 bg-white/5 px-1.5 py-0.5 rounded text-sm">isError</code> flags explicitly. Skeleton screens are shown on initial load; a subtle top-bar progress indicator on background refetches; and a retry-able error card when a fetch fails — so the user always knows what&apos;s happening without being blocked.
+                <code className="text-emerald-300 bg-white/5 px-1.5 py-0.5 rounded text-sm">isError</code> flags explicitly. Skeleton screens are shown on initial load; a subtle top-bar progress indicator on background refetches; and a retryable error card when a fetch fails — so the user always knows what&apos;s happening without being blocked.
               </>
             ),
           },
@@ -94,8 +94,8 @@ export default function WeTax() {
             body: "Common actions like marking an invoice as paid or cancelling a draft use optimistic updates: the UI reflects the change immediately, and React Query rolls back automatically if the server returns an error. This makes the interface feel instant even on slow connections, with a toast notification confirming or reverting the action.",
           },
           {
-            title: "WebSocket reconnection with exponential back-off",
-            body: "The WebSocket hook tracks connection state and automatically retries on close with a back-off schedule (1s, 2s, 4s, max 30s). If reconnection fails after several attempts, the UI degrades gracefully: a banner warns the user that real-time updates are unavailable and offers a manual refresh button — rather than silently showing stale data.",
+            title: "WebSocket reconnection with exponential backoff",
+            body: "The WebSocket hook tracks connection state and automatically retries on close with a backoff schedule (1s, 2s, 4s, max 30s). If reconnection fails after several attempts, the UI degrades gracefully: a banner warns the user that real-time updates are unavailable and offers a manual refresh button — rather than silently showing stale data.",
           },
           {
             title: "Form-level validation before any network call",
@@ -107,25 +107,25 @@ export default function WeTax() {
         heading: L.performance,
         sections: [
           {
-            title: "PDF offloaded to the server (~90% faster)",
+            title: "PDF offloaded to the server — ~90% less rendering time",
             body: (
               <>
                 The PDF generation was migrated from a client-side JavaScript library to{" "}
-                <span className="text-white">wkhtmltopdf running on the Java backend</span>. The frontend now sends a render request and receives a binary stream. Generation time dropped from 8–15 seconds to under 1 second for typical invoices. The browser tab no longer locks up, and the feature works correctly on mobile and low-powered devices.
+                <span className="text-white">wkhtmltopdf running on the Java backend</span>. The frontend now sends a render request and receives a binary stream. Generation time dropped significantly for typical invoices. The browser tab no longer locks up, and the feature works correctly on mobile and low-powered devices.
               </>
             ),
           },
           {
-            title: "Invoice editor refactored into modules (~90% less complexity)",
+            title: "Invoice editor refactored into focused modules",
             body: (
               <>
-                The 1,200-line monolithic editor was broken into:{" "}
+                The large monolithic editor was broken into:{" "}
                 <span className="text-white">InvoiceHeader</span>,{" "}
                 <span className="text-white">LineItemTable</span>,{" "}
                 <span className="text-white">TaxSummary</span>, and{" "}
                 <span className="text-white">SubmitPanel</span> — each with its own custom hook (
                 <code className="text-emerald-300 bg-white/5 px-1.5 py-0.5 rounded text-sm">useLineItems</code>,{" "}
-                <code className="text-emerald-300 bg-white/5 px-1.5 py-0.5 rounded text-sm">useTaxCalculation</code>). Cyclomatic complexity dropped by ~90% per the team&apos;s internal metric. Adding a new invoice type now requires creating one new module rather than editing the central file.
+                <code className="text-emerald-300 bg-white/5 px-1.5 py-0.5 rounded text-sm">useTaxCalculation</code>). Each module is now independently maintainable. Adding a new invoice type now requires creating one new module rather than editing the central file.
               </>
             ),
           },
@@ -134,7 +134,7 @@ export default function WeTax() {
             body: (
               <>
                 Invoice lists now fetch one page at a time from the server (50 rows by default). The rendered list uses{" "}
-                <span className="text-white">UI virtualization</span> — only the rows in the viewport are in the DOM. Combined with React Query caching, navigating back to a previously visited page is instant (served from cache) and the initial load for enterprise accounts dropped from 10+ seconds to under 2 seconds.
+                <span className="text-white">UI virtualization</span> — only the rows in the viewport are in the DOM. Combined with React Query caching, navigating back to a previously visited page is instant (served from cache) and the initial load for enterprise accounts dropped significantly.
               </>
             ),
           },
@@ -153,19 +153,17 @@ export default function WeTax() {
       result: {
         heading: L.result,
         items: [
-          { metric: "~90%", label: "reduction in PDF generation time — from 8–15 s to under 1 s" },
-          { metric: "~90%", label: "reduction in invoice editor complexity — new invoice types ship in hours, not days" },
-          { metric: "<2 s", label: "initial load for enterprise listing pages (was 10+ s with full-dataset fetch)" },
-          { metric: "0", label: "tab-lock events reported by users since server-side PDF migration" },
-          { metric: "Tens of M", label: "e-invoices handled in production across enterprise accounts" },
+          { metric: "~90%", label: "less PDF rendering time — moved from client-side to server-side generation" },
+          { metric: "Tens of millions", label: "e-invoices handled in production across enterprise accounts" },
+          // TODO(Buck): confirm <2s listing load time and 0 tab-lock events before re-adding those metrics
         ],
-        closing: "WeTax is the project where I learned that frontend performance work is never just about faster code — it's about finding the right system boundary. Moving PDF generation to the server was a five-line frontend change that eliminated the most painful user-facing bottleneck. The refactor and virtualization work had more lines of code but a similar insight: the monolith wasn't slow because JavaScript is slow, it was slow because the boundary between concerns was in the wrong place.",
+        closing: "WeTax is the project where I learned that frontend performance work is never just about faster code — it is about finding the right system boundary. Moving PDF generation to the server eliminated the most painful user-facing bottleneck. The refactor and virtualization work had more lines of code but a similar insight: the monolith was not slow because JavaScript is slow, it was slow because the boundary between concerns was in the wrong place.",
       },
     },
     vi: {
       title: "WeTax: Nền tảng hoá đơn điện tử doanh nghiệp",
       client: "Webcash Vietnam",
-      role: "Senior Front-End Developer",
+      role: "Senior Frontend Developer",
       timeline: "03/2025 – Hiện tại",
       tech: "Next.js · TypeScript · React Query · Zustand · WebSocket · Tailwind CSS",
       problem: {
@@ -175,7 +173,7 @@ export default function WeTax() {
             title: "Render PDF chậm, chặn UI",
             body: (
               <>
-                PDF hóa đơn được tạo <span className="text-white">hoàn toàn trên trình duyệt</span> bằng thư viện client-side. Với các hóa đơn phức tạp (nhiều dòng hàng, tiêu đề tùy chỉnh, bảng VAT), thời gian tạo có thể mất 8–15 giây — làm đóng băng tab và timeout trên thiết bị chậm. Khách hàng doanh nghiệp in hàng trăm hóa đơn mỗi phiên phản ánh tính năng gần như không dùng được.
+                PDF hóa đơn được tạo <span className="text-white">hoàn toàn trên trình duyệt</span> bằng thư viện client-side. Với các hóa đơn phức tạp (nhiều dòng hàng, tiêu đề tùy chỉnh, bảng VAT), thời gian tạo có thể mất nhiều giây — làm đóng băng tab và timeout trên thiết bị chậm. Khách hàng doanh nghiệp in hàng trăm hóa đơn mỗi phiên phản ánh tính năng gần như không dùng được.
               </>
             ),
           },
@@ -239,8 +237,8 @@ export default function WeTax() {
             body: "Các action phổ biến như đánh dấu hóa đơn đã thanh toán hoặc hủy draft sử dụng optimistic update: UI phản ánh thay đổi ngay lập tức, React Query tự rollback nếu server trả về lỗi. Cảm giác phản hồi tức thì ngay cả trên kết nối chậm, với toast xác nhận hoặc hoàn tác.",
           },
           {
-            title: "WebSocket reconnect với exponential back-off",
-            body: "WebSocket hook theo dõi trạng thái kết nối và tự retry khi đứt kết nối theo lịch back-off (1s, 2s, 4s, tối đa 30s). Nếu reconnect thất bại sau nhiều lần, UI degradation gracefully: banner cảnh báo real-time không khả dụng và cung cấp nút refresh thủ công — thay vì im lặng hiển thị dữ liệu cũ.",
+            title: "WebSocket reconnect với exponential backoff",
+            body: "WebSocket hook theo dõi trạng thái kết nối và tự retry khi đứt kết nối theo lịch backoff (1s, 2s, 4s, tối đa 30s). Nếu reconnect thất bại sau nhiều lần, UI degradation gracefully: banner cảnh báo real-time không khả dụng và cung cấp nút refresh thủ công — thay vì im lặng hiển thị dữ liệu cũ.",
           },
           {
             title: "Validate form trước khi gọi API",
@@ -252,11 +250,11 @@ export default function WeTax() {
         heading: L.performance,
         sections: [
           {
-            title: "PDF offload sang server (~nhanh hơn 90%)",
+            title: "PDF offload sang server — giảm ~90% thời gian render",
             body: (
               <>
                 Việc tạo PDF được chuyển từ thư viện JavaScript phía client sang{" "}
-                <span className="text-white">wkhtmltopdf chạy trên Java backend</span>. Frontend giờ chỉ gửi render request và nhận binary stream về. Thời gian tạo giảm từ 8–15 giây xuống dưới 1 giây với hóa đơn thông thường. Tab trình duyệt không còn bị đóng băng, và tính năng hoạt động tốt trên mobile và thiết bị yếu.
+                <span className="text-white">wkhtmltopdf chạy trên Java backend</span>. Frontend giờ chỉ gửi render request và nhận binary stream về. Thời gian tạo giảm đáng kể với hóa đơn thông thường. Tab trình duyệt không còn bị đóng băng, và tính năng hoạt động tốt trên mobile và thiết bị yếu.
               </>
             ),
           },
@@ -270,7 +268,7 @@ export default function WeTax() {
                 <span className="text-white">TaxSummary</span> và{" "}
                 <span className="text-white">SubmitPanel</span> — mỗi phần có custom hook riêng (
                 <code className="text-emerald-300 bg-white/5 px-1.5 py-0.5 rounded text-sm">useLineItems</code>,{" "}
-                <code className="text-emerald-300 bg-white/5 px-1.5 py-0.5 rounded text-sm">useTaxCalculation</code>). Cyclomatic complexity giảm ~90%. Thêm loại hóa đơn mới giờ chỉ cần tạo một module mới thay vì sửa file trung tâm.
+                <code className="text-emerald-300 bg-white/5 px-1.5 py-0.5 rounded text-sm">useTaxCalculation</code>). Mỗi module giờ có thể bảo trì độc lập. Thêm loại hóa đơn mới giờ chỉ cần tạo một module mới thay vì sửa file trung tâm.
               </>
             ),
           },
@@ -298,13 +296,11 @@ export default function WeTax() {
       result: {
         heading: L.result,
         items: [
-          { metric: "~90%", label: "giảm thời gian tạo PDF — từ 8–15 giây xuống dưới 1 giây" },
-          { metric: "~90%", label: "giảm độ phức tạp invoice editor — loại hóa đơn mới triển khai trong giờ thay vì ngày" },
-          { metric: "<2 s", label: "tải ban đầu cho trang danh sách doanh nghiệp (trước là 10+ giây với full-dataset fetch)" },
-          { metric: "0", label: "sự cố tab đóng băng được báo cáo kể từ khi chuyển sang server-side PDF" },
+          { metric: "~90%", label: "giảm thời gian render PDF — chuyển từ client-side sang server-side" },
           { metric: "Hàng chục triệu", label: "hóa đơn điện tử được xử lý trong môi trường production" },
+          // TODO(Buck): xác nhận <2s và 0 sự cố tab-lock trước khi thêm lại
         ],
-        closing: "WeTax là dự án tôi học được rằng tối ưu frontend không chỉ là viết code nhanh hơn — mà là tìm đúng ranh giới hệ thống. Chuyển render PDF sang server chỉ là thay đổi 5 dòng phía frontend nhưng loại bỏ bottleneck đau nhất với người dùng. Việc tái cấu trúc và virtualization có nhiều dòng code hơn nhưng cùng một nhận thức: monolith không chậm vì JavaScript chậm, mà chậm vì ranh giới giữa các thành phần đặt sai chỗ.",
+        closing: "WeTax là dự án tôi học được rằng tối ưu frontend không chỉ là viết code nhanh hơn — mà là tìm đúng ranh giới hệ thống. Chuyển render PDF sang server loại bỏ bottleneck đau nhất với người dùng. Việc tái cấu trúc và virtualization có nhiều dòng code hơn nhưng cùng một nhận thức: monolith không chậm vì JavaScript chậm, mà chậm vì ranh giới giữa các thành phần đặt sai chỗ.",
       },
     },
   };
@@ -313,7 +309,7 @@ export default function WeTax() {
 
   return (
     <div>
-      <Header />
+      <Header activeId="projects" />
       <section className="pb-16 py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip">
         <motion.div className="my-8" variants={slideInFromBottom} initial="hidden" animate="visible">
           <h1 className="font-serif px-4 text-3xl md:text-5xl text-left tracking-wide mb-8">{c.title}</h1>
@@ -345,10 +341,10 @@ export default function WeTax() {
 
           {/* Problem */}
           <div className="my-12">
-            <h1 className="font-serif px-4 text-3xl md:text-5xl text-left tracking-wide mb-8">{c.problem.heading}</h1>
+            <h2 className="font-serif px-4 text-3xl md:text-5xl text-left tracking-wide mb-8">{c.problem.heading}</h2>
             {c.problem.sections.map((item, i) => (
               <div key={i} className={i > 0 ? "mt-8" : ""}>
-                <h2 className="font-serif px-4 text-xl md:text-3xl text-left tracking-wide mb-4">{item.title}</h2>
+                <h3 className="font-serif px-4 text-xl md:text-3xl text-left tracking-wide mb-4">{item.title}</h3>
                 <p className="text-white/60 px-4 text-lg md:text-xl">{item.body}</p>
               </div>
             ))}
@@ -358,11 +354,11 @@ export default function WeTax() {
 
           {/* Architecture */}
           <div className="my-12">
-            <h1 className="font-serif px-4 text-3xl md:text-5xl text-left tracking-wide mb-4">{c.architecture.heading}</h1>
+            <h2 className="font-serif px-4 text-3xl md:text-5xl text-left tracking-wide mb-4">{c.architecture.heading}</h2>
             <p className="text-white/60 px-4 text-lg md:text-xl mb-8">{c.architecture.intro}</p>
             {c.architecture.sections.map((item, i) => (
               <div key={i} className={i > 0 ? "mt-8" : ""}>
-                <h2 className="font-serif px-4 text-xl md:text-3xl text-left tracking-wide mb-4">{item.title}</h2>
+                <h3 className="font-serif px-4 text-xl md:text-3xl text-left tracking-wide mb-4">{item.title}</h3>
                 <p className="text-white/60 px-4 text-lg md:text-xl">{item.body}</p>
               </div>
             ))}
@@ -372,10 +368,10 @@ export default function WeTax() {
 
           {/* Async & Error Handling */}
           <div className="my-12">
-            <h1 className="font-serif px-4 text-3xl md:text-5xl text-left tracking-wide mb-8">{c.asyncError.heading}</h1>
+            <h2 className="font-serif px-4 text-3xl md:text-5xl text-left tracking-wide mb-8">{c.asyncError.heading}</h2>
             {c.asyncError.sections.map((item, i) => (
               <div key={i} className={i > 0 ? "mt-8" : ""}>
-                <h2 className="font-serif px-4 text-xl md:text-3xl text-left tracking-wide mb-4">{item.title}</h2>
+                <h3 className="font-serif px-4 text-xl md:text-3xl text-left tracking-wide mb-4">{item.title}</h3>
                 <p className="text-white/60 px-4 text-lg md:text-xl">{item.body}</p>
               </div>
             ))}
@@ -385,10 +381,10 @@ export default function WeTax() {
 
           {/* Performance */}
           <div className="my-12">
-            <h1 className="font-serif px-4 text-3xl md:text-5xl text-left tracking-wide mb-8">{c.performance.heading}</h1>
+            <h2 className="font-serif px-4 text-3xl md:text-5xl text-left tracking-wide mb-8">{c.performance.heading}</h2>
             {c.performance.sections.map((item, i) => (
               <div key={i} className={i > 0 ? "mt-8" : ""}>
-                <h2 className="font-serif px-4 text-xl md:text-3xl text-left tracking-wide mb-4">{item.title}</h2>
+                <h3 className="font-serif px-4 text-xl md:text-3xl text-left tracking-wide mb-4">{item.title}</h3>
                 <p className="text-white/60 px-4 text-lg md:text-xl">{item.body}</p>
               </div>
             ))}
@@ -398,7 +394,7 @@ export default function WeTax() {
 
           {/* Result */}
           <div className="my-12">
-            <h1 className="font-serif px-4 text-3xl md:text-5xl text-left tracking-wide mb-8">{c.result.heading}</h1>
+            <h2 className="font-serif px-4 text-3xl md:text-5xl text-left tracking-wide mb-8">{c.result.heading}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
               {c.result.items.map((item, i) => (
                 <div key={i} className="bg-white/5 border border-white/10 rounded-2xl px-6 py-5">

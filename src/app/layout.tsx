@@ -16,14 +16,14 @@ const calistoga = Calistoga({
 const siteUrl = "https://quyenvu04092000.github.io/web-portfolio";
 
 export const metadata: Metadata = {
-  title: "Vu Duc Quyen (Buck) · Senior Frontend Engineer",
+  title: "Vu Duc Quyen (Buck) · Frontend Engineer",
   description:
-    "Senior Frontend Engineer with 5+ years building React / Next.js + TypeScript applications. Currently owning frontend architecture for WeTax, a high-scale e-invoicing platform at Webcash Vietnam. Open to full-time remote roles.",
+    "Frontend Engineer with 5+ years building React / Next.js + TypeScript applications. Currently working on frontend architecture for WeTax, a high-scale e-invoicing platform at Webcash Vietnam. Open to full-time remote roles.",
   metadataBase: new URL(siteUrl),
   openGraph: {
-    title: "Vu Duc Quyen (Buck) · Senior Frontend Engineer",
+    title: "Vu Duc Quyen (Buck) · Frontend Engineer",
     description:
-      "Senior Frontend Engineer with 5+ years in React, Next.js & TypeScript. Fintech & e-invoicing specialist. Open to remote full-time roles.",
+      "Frontend Engineer with 5+ years in React, Next.js & TypeScript. Fintech & e-invoicing specialist. Open to remote full-time roles.",
     url: siteUrl,
     siteName: "Vu Duc Quyen Portfolio",
     type: "website",
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vu Duc Quyen (Buck) · Senior Frontend Engineer",
+    title: "Vu Duc Quyen (Buck) · Frontend Engineer",
     description:
-      "Senior Frontend Engineer — React, Next.js, TypeScript. Open to remote full-time roles.",
+      "Frontend Engineer — React, Next.js, TypeScript. Open to remote full-time roles.",
   },
   robots: {
     index: true,
@@ -46,9 +46,9 @@ const jsonLd = {
   "@type": "Person",
   name: "Vu Duc Quyen",
   alternateName: "Buck",
-  jobTitle: "Senior Frontend Engineer",
+  jobTitle: "Frontend Engineer",
   description:
-    "Senior Frontend Engineer with 5+ years building React / Next.js + TypeScript applications, specialising in fintech and e-invoicing platforms.",
+    "Frontend Engineer with 5+ years building React / Next.js + TypeScript applications, specialising in fintech and e-invoicing platforms.",
   url: siteUrl,
   email: "vuquyen.04092000@gmail.com",
   address: {

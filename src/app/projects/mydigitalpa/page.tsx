@@ -20,9 +20,9 @@ const data: ProjectDetailData = {
     "MydigitalPA is a native iPadOS app used by PSA International pilots to manage their daily operations: job tracking, vessel and port information, news, licence documents, and MQTT-driven real-time updates. I contributed to the existing Swift codebase built on MVVM + Coordinator, with incremental Realm sync for offline use and MQTTClient for live operational events.",
   whatIBuilt: [
     "Maintained and extended all major modules: dashboard, jobs, vessels and vessel detail, port map, news with PDF viewer, feedback and comments, incident reporting, settings, and onboarding.",
-    "Extended the jobs module with new job type views and updated field layouts matching backend schema changes.",
-    "Contributed to the MQTT messaging layer and connection handling.",
-    "Contributed to incremental Realm sync for offline data.",
+    "Extended the jobs module with new job type views.",
+    "Contributed to the MQTT messaging layer.",
+    "Contributed to Realm sync for offline data.",
     "Maintained the Google Maps integration with tile overlay and marker display for port zones.",
   ],
   prevProject: { label: "SFA · DigiSale", href: "/web-portfolio/projects/sfa" },

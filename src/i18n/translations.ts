@@ -214,7 +214,7 @@ export const translations = {
         {
           title: "VDental",
           description:
-            "Dental booking platform connecting US-based clients with Vietnamese clinics. Booking flows, appointment management, real-time chat, and VI/EN multi-language support.",
+            "Dental booking platform connecting US-based clients with Vietnamese clinics. Booking flows, appointment management, and VI/EN multi-language support.",
         },
         {
           title: "PSA-CMS",
@@ -481,7 +481,7 @@ export const translations = {
         {
           title: "VDental",
           description:
-            "Nền tảng đặt lịch nha khoa kết nối khách hàng Mỹ với phòng khám Việt Nam. Luồng đặt lịch, quản lý lịch hẹn, chat thời gian thực và hỗ trợ đa ngôn ngữ VI/EN.",
+            "Nền tảng đặt lịch nha khoa kết nối khách hàng Mỹ với phòng khám Việt Nam. Luồng đặt lịch, quản lý lịch hẹn và hỗ trợ đa ngôn ngữ VI/EN.",
         },
         {
           title: "PSA-CMS",

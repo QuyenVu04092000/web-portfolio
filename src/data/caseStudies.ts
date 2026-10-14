@@ -50,6 +50,6 @@ export const caseStudies: CaseStudyEntry[] = [
     techStack: "React · TypeScript · Redux · Custom Design System",
     summary: "Distributor Management System rebuilt with a custom in-house component library",
     context:
-      "DigiSale is a Distributor Management System rebuilt from scratch with a custom in-house component library at MLTech Soft.",
+      "DigiSale is a Distributor Management System with a custom in-house component library at MLTech Soft.",
   },
 ];

@@ -23,7 +23,7 @@ const data: ProjectDetailData = {
     "Contributed to the checklist editing screen — inline text editing and check/uncheck state.",
     "Contributed to the Charts-based result views: audit result comparison chart and acknowledgement summary chart.",
     "Contributed to navigation flow in the audit completion sequence.",
-    "Extended the auditees module with new fields added in a backend schema update.",
+    "Extended the auditees module with new fields.",
   ],
   prevProject: { label: "MydigitalPA", href: "/web-portfolio/projects/mydigitalpa" },
   nextProject: { label: "Career Guidance", href: "/web-portfolio/projects/career" },

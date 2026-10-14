@@ -5,20 +5,17 @@ import { useLang } from "@/i18n/LangContext";
 
 const footerLinks = [
   {
-    title: "Facebook",
-    href: "https://www.facebook.com/vuduc.quyen.75/",
-  },
-  {
-    title: "Instagram",
-    href: "https://www.instagram.com/vduc.quyen/",
-  },
-  {
     title: "LinkedIn",
     href: "https://www.linkedin.com/in/quyenvu040900/",
   },
   {
-    title: "Mobile Portfolio",
+    title: "GitHub",
+    // TODO(Buck): replace with your GitHub profile URL
     href: "#",
+  },
+  {
+    title: "Resume",
+    href: "https://drive.google.com/file/d/1qryyyJZdzNRRNqnZsxYsPJTUDYhjcKWg/view?usp=drive_link",
   },
 ];
 
@@ -26,17 +23,18 @@ export const Footer = () => {
   const { t } = useLang();
   return (
     <footer className="relative z-10 overflow-x-clip">
-      <div className="absolute h-[400px] w-[1600px] bottom-0 left-1/2 -translate-x-1/2 bg-emerald-300/30 [mask-image:radial-gradient(50%_50%_at_bottom_center,black,transparent)] -z-10 pointer-events-none"></div>
+      <div className="absolute h-[400px] w-[1600px] bottom-0 left-1/2 -translate-x-1/2 bg-emerald-300/30 [mask-image:radial-gradient(50%_50%_at_bottom_center,black,transparent)] -z-10 pointer-events-none" />
       <div className="container">
         <div className="border-t border-white/15 py-16 text-sm flex flex-col md:flex-row md:justify-between items-center gap-8">
           <div className="text-white/40">{t.footer.crafted}</div>
-          <nav className="flex flex-col md:flex-row items-center gap-8">
+          <nav aria-label="Social links" className="flex flex-col md:flex-row items-center gap-8">
             {footerLinks.map((link) => (
               <a
                 href={link.href}
-                target="_blank"
+                target={link.href === "#" ? undefined : "_blank"}
+                rel={link.href === "#" ? undefined : "noreferrer"}
                 key={link.title}
-                className="inline-flex items-center gap-1.5 cursor-pointer hover:underline"
+                className="inline-flex items-center gap-1.5 cursor-pointer hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/50 rounded"
               >
                 <span className="font-semibold">{link.title}</span>
                 <ArrowUpRightIcon className="size-4" />

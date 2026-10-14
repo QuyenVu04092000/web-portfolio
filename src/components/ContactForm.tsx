@@ -72,32 +72,6 @@ export const ContactForm = () => {
         </div>
       </div>
       <div className="flex flex-col gap-1.5">
-        <label htmlFor="budget" className="text-white/60 text-sm">
-          {f.budget}
-        </label>
-        <select
-          id="budget"
-          name="budget"
-          className="bg-white/5 border border-white/10 rounded-xl px-4 h-11 text-white text-sm focus:outline-none focus:border-emerald-300/50 transition-colors appearance-none"
-        >
-          <option value="" className="bg-gray-900">
-            {f.budgetPlaceholder}
-          </option>
-          <option value="<$500" className="bg-gray-900">
-            Under $500
-          </option>
-          <option value="$500-$1000" className="bg-gray-900">
-            $500 – $1,000
-          </option>
-          <option value="$1000-$3000" className="bg-gray-900">
-            $1,000 – $3,000
-          </option>
-          <option value="$3000+" className="bg-gray-900">
-            $3,000+
-          </option>
-        </select>
-      </div>
-      <div className="flex flex-col gap-1.5">
         <label htmlFor="message" className="text-white/60 text-sm">
           {f.message}
         </label>

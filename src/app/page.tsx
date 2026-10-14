@@ -8,7 +8,6 @@ import { SkillsSection } from "@/sections/Skills";
 import { StatsSection } from "@/sections/Stats";
 import { TestimonialsSection } from "@/sections/Testimonials";
 import { WeTaxFeatureSection } from "@/sections/WeTaxFeature";
-import { WorkExperience } from "@/sections/WorkExperience";
 import { StickyCtaBar } from "@/components/StickyCtaBar";
 
 export default function Home() {
@@ -25,14 +24,7 @@ export default function Home() {
         {/* 3. About (condensed) */}
         <AboutSection />
 
-        {/* 4. Experience (condensed timeline) */}
-        <section id="experience" aria-label="Work Experience">
-          <div className="container py-16 lg:py-24">
-            <WorkExperience />
-          </div>
-        </section>
-
-        {/* 5. WeTax featured case study */}
+        {/* 4. WeTax featured case study */}
         <WeTaxFeatureSection />
 
         {/* 6. Case studies grid + other projects */}

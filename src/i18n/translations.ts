@@ -86,11 +86,15 @@ export const translations = {
       groups: [
         {
           name: "Core",
-          items: ["React", "Next.js", "TypeScript", "JavaScript", "HTML", "CSS", "Tailwind CSS"],
+          items: ["React", "Next.js", "TypeScript", "JavaScript", "HTML", "CSS"],
+        },
+        {
+          name: "UI Libraries",
+          items: ["Tailwind CSS", "Material UI (MUI)", "Ant Design"],
         },
         {
           name: "State & Data",
-          items: ["React Query", "Zustand", "Redux", "Context API", "REST", "GraphQL", "WebSocket"],
+          items: ["React Query", "Zustand", "Redux", "Context API", "REST", "WebSocket"],
         },
         {
           name: "Quality & Performance",
@@ -99,14 +103,13 @@ export const translations = {
             "Lighthouse / Core Web Vitals",
             "Code Splitting",
             "Virtualization",
-            "Accessibility (a11y)",
           ],
         },
         // Testing group hidden (draft) until tool list is confirmed
         // TODO(Buck): uncomment and fill items once confirmed: { name: "Testing", items: ["Jest", "React Testing Library", "Playwright"] }
         {
           name: "Tooling",
-          items: ["Vite", "Webpack", "Git", "Docker"],
+          items: ["Webpack", "Git", "Docker"],
         },
         {
           name: "AI-Assisted Dev",
@@ -344,11 +347,15 @@ export const translations = {
       groups: [
         {
           name: "Core",
-          items: ["React", "Next.js", "TypeScript", "JavaScript", "HTML", "CSS", "Tailwind CSS"],
+          items: ["React", "Next.js", "TypeScript", "JavaScript", "HTML", "CSS"],
+        },
+        {
+          name: "UI Libraries",
+          items: ["Tailwind CSS", "Material UI (MUI)", "Ant Design"],
         },
         {
           name: "State & Data",
-          items: ["React Query", "Zustand", "Redux", "Context API", "REST", "GraphQL", "WebSocket"],
+          items: ["React Query", "Zustand", "Redux", "Context API", "REST", "WebSocket"],
         },
         {
           name: "Chất lượng & Hiệu suất",
@@ -357,14 +364,13 @@ export const translations = {
             "Lighthouse / Core Web Vitals",
             "Code Splitting",
             "Virtualization",
-            "Accessibility (a11y)",
           ],
         },
         // Testing group hidden (draft) until tool list is confirmed
         // TODO(Buck): uncomment once confirmed: { name: "Testing", items: [...] }
         {
           name: "Tooling",
-          items: ["Vite", "Webpack", "Git", "Docker"],
+          items: ["Webpack", "Git", "Docker"],
         },
         {
           name: "AI-Assisted Dev",

@@ -27,21 +27,25 @@ const portfolioMeta = [
   { company: "Webcash Vietnam", year: "2025", role: "Frontend Engineer", chips: ["Next.js", "TypeScript", "React Query", "Zustand", "WebSocket"], category: undefined },
   { company: "MLTech Soft", year: "2023", role: "Middle Frontend Engineer", chips: ["Next.js", "TypeScript", "Zustand", "VNPay", "socket.io"], category: "Payments" },
   { company: "MLTech Soft", year: "2024", role: "Middle Frontend Engineer", chips: ["React", "Next.js", "TypeScript", "i18n"], category: undefined },
-  { company: "MLTech Soft", year: "2023", role: "Junior Frontend Engineer", chips: ["React", "TypeScript", "REST API"], category: undefined },
+  { company: "MLTech Soft", year: "2023", role: "Middle Frontend Engineer", chips: ["React", "TypeScript", "REST API"], category: undefined },
 ];
 
-const mobileImages = [sfa, mydigitalpa, pilot_audit, career];
-const mobileLinks = [
-  "/web-portfolio/projects/sfa",
+const mobileImages = [sfa];
+const mobileLinks = ["/web-portfolio/projects/sfa"];
+const mobileMeta = [
+  { company: "MLTech Soft", year: "2024", role: "Middle Frontend Engineer", chips: ["React Native", "TypeScript", "Redux"] },
+];
+
+const earlierImages = [mydigitalpa, pilot_audit, career];
+const earlierLinks = [
   "/web-portfolio/projects/mydigitalpa",
   "/web-portfolio/projects/pilot_audit",
   "/web-portfolio/projects/career",
 ];
-const mobileMeta = [
-  { company: "MLTech Soft", year: "2024", role: "Middle Frontend Engineer", chips: ["React Native", "TypeScript", "Redux"] },
-  { company: "MLTech Soft", year: "2023", role: "Junior Frontend Engineer", chips: ["React Native", "TypeScript"] },
-  { company: "MLTech Soft", year: "2023", role: "Junior Frontend Engineer", chips: ["React Native", "TypeScript"] },
-  { company: "MLTech Soft", year: "2022", role: "Junior Frontend Engineer", chips: ["React Native", "TypeScript"] },
+const earlierMeta = [
+  { company: "PSA International", year: "2023", role: "Middle Frontend Engineer", chips: ["Swift", "PadOS", "MQTT"] },
+  { company: "PSA International", year: "2023", role: "Middle Frontend Engineer", chips: ["Swift", "PadOS", "MQTT"] },
+  { company: "LOF", year: "2022", role: "Junior Frontend Engineer", chips: ["Flutter", "BLoC/Cubit", "Socket.io"] },
 ];
 
 export default function Projects() {
@@ -113,6 +117,7 @@ export default function Projects() {
           </div>
         </div>
 
+        {/* Mobile — React Native */}
         <div className="py-16 lg:py-24">
           <div className="container">
             <SectionHeader eyebrow={p.mobileEyebrow} title={p.mobileTitle} description={p.mobileDescription} />
@@ -127,7 +132,7 @@ export default function Projects() {
                     <div className="md:col-span-1 lg:col-span-1">
                       <Image
                         src={mobileImages[projectIndex]}
-                        alt={project.title}
+                        alt={`${project.title} app screenshot`}
                         className="lg:mt-0 lg:h-full lg:w-auto rounded-xl md:h-full md:w-auto object-cover object-left-top bg-white"
                       />
                     </div>
@@ -160,6 +165,44 @@ export default function Projects() {
                       </div>
                     </div>
                   </div>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Earlier mobile work — Swift / Flutter */}
+        <div className="py-16 lg:py-24">
+          <div className="container">
+            <SectionHeader eyebrow={p.earlierEyebrow} title={p.earlierTitle} description={p.earlierDescription} />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+              {p.earlierProjects.map((project, projectIndex) => (
+                <Card key={project.title} className="px-6 py-6 flex flex-col gap-4">
+                  <div>
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-xs font-bold uppercase tracking-widest bg-gradient-to-r from-emerald-300 to-sky-400 bg-clip-text text-transparent">
+                        {earlierMeta[projectIndex].company}
+                      </span>
+                      <span className="text-white/40 text-xs">{earlierMeta[projectIndex].year}</span>
+                    </div>
+                    <p className="text-white/40 text-xs mb-2">{earlierMeta[projectIndex].role}</p>
+                    <h3 className="font-serif text-lg">{project.title}</h3>
+                    <p className="text-white/60 text-sm mt-2 leading-relaxed">{project.description}</p>
+                  </div>
+                  <div className="flex flex-wrap gap-1.5">
+                    {earlierMeta[projectIndex].chips.map((chip) => (
+                      <span key={chip} className="px-2.5 py-1 rounded-full text-xs font-medium border border-white/15 text-white/60 bg-white/5">
+                        {chip}
+                      </span>
+                    ))}
+                  </div>
+                  <a
+                    href={earlierLinks[projectIndex]}
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-white/70 hover:text-white transition-colors mt-auto focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/50 rounded"
+                  >
+                    {p.viewDetail}
+                    <ArrowUpRightIcon className="size-3.5" />
+                  </a>
                 </Card>
               ))}
             </div>

@@ -63,16 +63,16 @@ export const translations = {
         {
           title: "VDental",
           company: "MLTech Soft",
-          role: "Frontend Developer",
-          techChips: ["React", "Next.js", "TypeScript", "i18n"],
+          role: "Middle Frontend Engineer",
+          techChips: ["Next.js", "TypeScript", "Tailwind CSS", "i18n"],
           summary: "Rebuilt multi-step booking UI with VI/EN internationalization support.",
           link: "https://vdental.ai/vi",
         },
         {
           title: "PSA-CMS",
-          company: "MLTech Soft",
-          role: "Frontend Developer",
-          techChips: ["React", "TypeScript", "REST API"],
+          company: "PSA International",
+          role: "Middle Frontend Engineer",
+          techChips: ["React", "TypeScript", "Redux"],
           summary: "CMS dashboard covering news, vessels, and pilot records with role-based UI.",
           link: "https://psa-cms.mltechsoft.com",
         },
@@ -187,6 +187,9 @@ export const translations = {
       mobileEyebrow: "Mobile Apps",
       mobileTitle: "Mobile (React Native)",
       mobileDescription: "React Native applications I've developed.",
+      earlierEyebrow: "Earlier Mobile Work",
+      earlierTitle: "Swift & Flutter Projects",
+      earlierDescription: "Native iOS (Swift/PadOS) and Flutter apps built at MLTech Soft for PSA International and LOF.",
       viewDetail: "View Detail",
       projects: [
         {
@@ -212,24 +215,26 @@ export const translations = {
       ],
       mobileProjects: [
         {
-          title: "DigiSale Sales Force Automation (SFA)",
+          title: "DigiSale · SFA",
           description:
-            "Sales force automation app helping businesses manage activities, track performance, and improve sales efficiency.",
+            "Sales force automation app for field agents: visit check-in, order submission, product catalog, and performance reporting.",
         },
+      ],
+      earlierProjects: [
         {
           title: "MydigitalPA",
           description:
-            "App for pilots to manage license upgrades, job listings, news, and notifications. Admin panel for managing pilots, jobs, and alerts.",
+            "iPad app for PSA International pilots: license upgrade tracking, job assignments, news feed, and MQTT real-time notifications.",
         },
         {
           title: "Pilot Audit",
           description:
-            "App for pilots to view audit results, history, schedule, status, and details.",
+            "iPad app for PSA International pilots to track audit results, history, schedule, and status with live MQTT updates.",
         },
         {
-          title: "Career Guidance App",
+          title: "Career Guidance",
           description:
-            "A learning app where members practice skills, share knowledge, and grow professionally.",
+            "Flutter app for LOF: real-time chat with mentors, multiple-choice skill assessments, and a progress dashboard.",
         },
       ],
     },
@@ -316,16 +321,16 @@ export const translations = {
         {
           title: "VDental",
           company: "MLTech Soft",
-          role: "Frontend Developer",
-          techChips: ["React", "Next.js", "TypeScript", "i18n"],
+          role: "Middle Frontend Engineer",
+          techChips: ["Next.js", "TypeScript", "Tailwind CSS", "i18n"],
           summary: "Xây dựng lại luồng đặt lịch đa bước với hỗ trợ đa ngôn ngữ VI/EN.",
           link: "https://vdental.ai/vi",
         },
         {
           title: "PSA-CMS",
-          company: "MLTech Soft",
-          role: "Frontend Developer",
-          techChips: ["React", "TypeScript", "REST API"],
+          company: "PSA International",
+          role: "Middle Frontend Engineer",
+          techChips: ["React", "TypeScript", "Redux"],
           summary: "Dashboard CMS quản lý tin tức, tàu thuyền và hồ sơ phi công với phân quyền.",
           link: "https://psa-cms.mltechsoft.com",
         },
@@ -440,6 +445,9 @@ export const translations = {
       mobileEyebrow: "Ứng dụng di động",
       mobileTitle: "Mobile (React Native)",
       mobileDescription: "Các ứng dụng React Native tôi đã phát triển.",
+      earlierEyebrow: "Dự án mobile trước đây",
+      earlierTitle: "Dự án Swift & Flutter",
+      earlierDescription: "Ứng dụng iOS native (Swift/PadOS) và Flutter xây dựng tại MLTech Soft cho PSA International và LOF.",
       viewDetail: "Xem chi tiết",
       projects: [
         {
@@ -465,23 +473,26 @@ export const translations = {
       ],
       mobileProjects: [
         {
-          title: "DigiSale Sales Force Automation (SFA)",
+          title: "DigiSale · SFA",
           description:
-            "Ứng dụng tự động hóa bán hàng giúp doanh nghiệp quản lý hoạt động, theo dõi hiệu suất và cải thiện hiệu quả bán hàng.",
+            "Ứng dụng tự động hóa bán hàng cho nhân viên thực địa: check-in ghé thăm, đặt hàng, danh mục sản phẩm và báo cáo hiệu suất.",
         },
+      ],
+      earlierProjects: [
         {
           title: "MydigitalPA",
           description:
-            "Ứng dụng cho phi công quản lý nâng cấp giấy phép, công việc, tin tức và thông báo. Admin quản lý phi công, công việc và cảnh báo.",
+            "Ứng dụng iPad cho phi công PSA International: theo dõi nâng cấp giấy phép, công việc, bảng tin và thông báo MQTT thời gian thực.",
         },
         {
           title: "Pilot Audit",
-          description: "Ứng dụng cho phi công xem kết quả kiểm tra, lịch sử, lịch trình và chi tiết kiểm tra.",
+          description:
+            "Ứng dụng iPad cho phi công PSA International theo dõi kết quả kiểm tra, lịch sử, lịch trình và trạng thái với cập nhật MQTT.",
         },
         {
-          title: "Career Guidance App",
+          title: "Career Guidance",
           description:
-            "Ứng dụng học kỹ năng, giúp người dùng kết nối, chia sẻ kiến thức và phát triển sự nghiệp.",
+            "Ứng dụng Flutter cho LOF: chat thời gian thực với mentor, bài thi trắc nghiệm đánh giá kỹ năng và dashboard theo dõi tiến độ.",
         },
       ],
     },

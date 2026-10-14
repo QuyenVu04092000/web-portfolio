@@ -14,7 +14,7 @@ const ACTORS = [
 
 const MESSAGES = [
   { from: 64, to: 192, y: 65, label: "Submit checkout form", dashed: false },
-  { from: 192, to: 320, y: 98, label: "POST /order", dashed: false },
+  { from: 192, to: 320, y: 98, label: "Create order", dashed: false },
   { from: 320, to: 192, y: 130, label: "Order ID", dashed: true },
   { from: 320, to: 448, y: 188, label: "Offer order", dashed: false },
   { from: 448, to: 320, y: 222, label: "Accept", dashed: true },
@@ -268,10 +268,10 @@ function StatesTable() {
 
 function WhatNextList() {
   const items = [
-    "Generate and sign the VNPay payment URL on the backend so no merchant secret travels through the browser.",
-    "Treat the return URL as display-only; confirm payment status from the backend (VNPay IPN + signature verification) before showing success or clearing the basket.",
-    'Make "Pay" idempotent — disable while submitting, and reuse a pending order on retry rather than creating a duplicate.',
-    "Add tests for the checkout state machine, especially the timeout and cancellation branches.",
+    "Sign gateway requests server-side so no merchant credentials travel through the browser.",
+    "Treat return URLs as display-only; confirm payment status from the backend before showing success or clearing the basket.",
+    "Make payment submission idempotent — prevent duplicate orders on network retry.",
+    "Test timeout and cancellation branches explicitly in the checkout state machine.",
   ];
   return (
     <ul className="flex flex-col gap-3">

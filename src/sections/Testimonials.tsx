@@ -10,7 +10,7 @@ const testimonials = [
   {
     name: "Hoang Ngoc Tuan Khoa",
     role: "CTO, MLTech Soft",
-    avatar: "NK",
+    avatar: "HK",
     text: {
       en: "Quyen consistently delivers high-quality frontend work with great attention to detail. His ability to translate complex designs into performant React code is impressive. A reliable and proactive team member.",
       vi: "Quyen luôn hoàn thành công việc frontend chất lượng cao với sự chú ý đến từng chi tiết. Khả năng chuyển đổi thiết kế phức tạp thành code React hiệu suất cao của anh ấy thật ấn tượng. Một thành viên đáng tin cậy và chủ động.",
@@ -19,10 +19,10 @@ const testimonials = [
   {
     name: "Phan Thi Thanh Tuyen",
     role: "Product Manager, Webcash Vietnam",
-    avatar: "TT",
+    avatar: "PT",
     text: {
-      en: "Working with Quyen on WeTax was a great experience. He improved our PDF rendering performance by ~90% and refactored the invoice editor significantly — all while meeting tight deadlines.",
-      vi: "Làm việc với Quyen trong dự án WeTax là một trải nghiệm tuyệt vời. Anh ấy cải thiện hiệu suất render PDF lên ~90% và tái cấu trúc invoice editor đáng kể — tất cả trong khi vẫn đáp ứng deadline chặt chẽ.",
+      en: "Working with Quyen on WeTax was a great experience. He significantly reduced our PDF rendering time and refactored the invoice editor — all while meeting tight deadlines.",
+      vi: "Làm việc với Quyen trong dự án WeTax là một trải nghiệm tuyệt vời. Anh ấy giảm đáng kể thời gian render PDF và tái cấu trúc invoice editor — tất cả trong khi vẫn đáp ứng deadline chặt chẽ.",
     },
   },
 ];

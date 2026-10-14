@@ -1,7 +1,11 @@
 "use client";
 
 import { Card } from "@/components/Card";
+import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import { useLang } from "@/i18n/LangContext";
+
+const RESUME_URL =
+  "https://drive.google.com/file/d/1qryyyJZdzNRRNqnZsxYsPJTUDYhjcKWg/view?usp=drive_link";
 
 const experiences = [
   {
@@ -10,45 +14,18 @@ const experiences = [
     period: "03/2025 – Present",
     highlights: [
       "Own the frontend architecture of WeTax (e-invoicing, tens of millions of invoices) and WeHR, built with Next.js + TypeScript, React Query for server state and Zustand for global state.",
-      "Cut PDF invoice rendering time by ~90% by moving generation from client-side to server-side (wkhtmltopdf on the Java backend), working closely with the backend team.",
-      // TODO(Buck): add concrete before/after for the invoice editor refactor, e.g. "a 3,000-line file → N components + M hooks"
-      "Refactored a large monolithic invoice editor into modular components and custom hooks. TODO(Buck): concrete before/after, e.g. 'a 3,000-line file → N components + M hooks'.",
-      "Made data-heavy invoice lists fast with React Query caching, server-side pagination and list virtualization.",
-      "Built real-time notifications and system updates over WebSocket.",
-      "Worked with Java backend engineers to debug production issues and optimise APIs for high-volume transactions.",
+      "Cut PDF invoice rendering time by ~90% less by moving generation from client-side to server-side (wkhtmltopdf on the Java backend), working closely with the backend team.",
+      "Made data-heavy invoice lists fast with React Query caching, server-side pagination, and list virtualization; built real-time notifications via WebSocket.",
     ],
   },
   {
     company: "MLTech Soft",
-    role: "Senior Frontend Developer",
-    period: "03/2024 – 03/2025",
+    role: "Frontend Developer",
+    period: "03/2021 – 03/2025 · Junior → Middle → Senior",
     highlights: [
-      "Led frontend across multiple client outsourcing projects, with code review, mentoring junior developers and improving team workflow.",
-      // TODO(Buck): specify what "70% UI performance / 80% data load speed" was measured with (Lighthouse, Chrome DevTools, custom benchmark, etc.)
-      "Led the major rebuild of DigiSale (Distributor Management System) with a custom in-house component library (no external UI kit). TODO(Buck): what '70% UI performance / 80% data load' was measured with.",
-      "Architected high-performance, reusable React components with Redux, Zustand, and Context API.",
-      "Reduced re-renders using React.memo, useCallback, and useMemo; minimised bundle size with tree shaking and dynamic imports.",
-    ],
-  },
-  {
-    company: "MLTech Soft",
-    role: "Middle Frontend Developer",
-    period: "03/2022 – 03/2024",
-    highlights: [
-      // TODO(Buck): name the payment gateways used and how pending/failed/retry/duplicate-submit states were handled
-      "Led frontend for a high-traffic e-commerce platform, including third-party payment and shipping integration. TODO(Buck): payment gateways used + how pending/failed/retry/duplicate-submit states were handled.",
-      "Performance work: code splitting, lazy loading, memoisation, tree shaking — improved Lighthouse and Core Web Vitals scores.",
-      "Collaborated in Agile team of 8 across sprint planning, daily stand-ups, code reviews, and retrospectives.",
-    ],
-  },
-  {
-    company: "MLTech Soft",
-    role: "Junior Frontend Developer",
-    period: "03/2021 – 03/2022",
-    highlights: [
-      "Built reusable React components and complex flows (auth, gamified quiz features) for a DMS with thousands of users.",
-      "Integrated RESTful and GraphQL APIs, handling data fetching, caching, and real-time updates.",
-      "Translated UI/UX designs into modular React components with Redux, Zustand, and Context API.",
+      "Led frontend across multiple client projects, including code review, mentoring junior developers, and improving team workflow.",
+      "Led the rebuild of DigiSale (Distributor Management System) with a custom in-house component library; reduced re-renders with React.memo, useCallback, and useMemo; minimized bundle size with tree shaking and dynamic imports.",
+      "Built reusable React components and complex flows for high-traffic e-commerce and DMS products; improved Core Web Vitals with code splitting, lazy loading, and tree shaking; integrated REST and GraphQL APIs.",
     ],
   },
 ];
@@ -60,7 +37,7 @@ export const WorkExperience = () => {
       <h2 className="font-serif text-2xl md:text-3xl text-left mt-8 tracking-wide">
         {t.workExperience.title}
       </h2>
-      <div className="mt-6 mb-8 flex flex-col gap-10">
+      <div className="mt-6 mb-4 flex flex-col gap-10">
         {experiences.map((exp, i) => (
           <div
             key={i}
@@ -76,15 +53,24 @@ export const WorkExperience = () => {
                 {exp.highlights.map((point, j) => (
                   <li key={j} className="flex gap-2 text-sm">
                     <span className="text-emerald-300 mt-0.5 shrink-0">–</span>
-                    <span className={point.includes("TODO(Buck)") ? "text-amber-300/60" : "text-white/60"}>
-                      {point}
-                    </span>
+                    <span className="text-white/60">{point}</span>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
         ))}
+      </div>
+      <div className="pb-8 pt-4 border-t border-white/10 mt-2">
+        <a
+          href={RESUME_URL}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-1.5 text-emerald-300 font-medium text-sm hover:text-emerald-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300 rounded"
+        >
+          Full resume
+          <ArrowUpRightIcon className="size-3.5" />
+        </a>
       </div>
     </Card>
   );

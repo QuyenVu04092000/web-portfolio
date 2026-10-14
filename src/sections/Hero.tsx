@@ -129,7 +129,6 @@ export const HeroSection = () => {
           <div className="mt-1 h-7 flex items-center justify-center">
             <span className="bg-gradient-to-r from-emerald-300 to-sky-400 bg-clip-text text-transparent font-semibold text-base md:text-lg">
               {typed}
-              <span className="animate-pulse text-emerald-300">|</span>
             </span>
           </div>
           <p className="mt-4 text-white/60 md:text-lg">{t.hero.description}</p>
@@ -148,12 +147,8 @@ export const HeroSection = () => {
         <div className="flex flex-col sm:flex-row justify-center items-center mt-8 gap-3 flex-wrap">
           {/* View Case Study — primary */}
           <a
-            href="#wetax"
+            href="/web-portfolio/projects/wetax"
             className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-300 to-sky-400 text-gray-900 px-6 h-12 rounded-xl font-semibold hover:opacity-90 transition-opacity focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300"
-            onClick={(e) => {
-              e.preventDefault();
-              document.getElementById("wetax")?.scrollIntoView({ behavior: "smooth" });
-            }}
           >
             {t.hero.viewCaseStudy}
           </a>

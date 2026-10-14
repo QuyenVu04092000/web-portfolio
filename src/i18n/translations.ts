@@ -10,7 +10,7 @@ export const translations = {
       available: "Open to full-time · Remote-friendly",
       title: "Senior Frontend Engineer",
       subtitle: "React · Next.js · TypeScript",
-      roles: ["React Developer", "Next.js Developer", "TypeScript Engineer", "Frontend Architect"],
+      roles: ["Senior Frontend Engineer", "Next.js Engineer", "TypeScript Engineer", "Frontend Architect"],
       description:
         "I build production-grade React applications for high-volume business and financial workflows, from frontend architecture to performance and real-time UX.",
       viewCaseStudy: "View Case Study",
@@ -20,47 +20,56 @@ export const translations = {
       location: "Ho Chi Minh City · Open to remote / US-hours meetings",
     },
     stats: {
-      experience: "Years with React",
-      performance: "Faster PDF Rendering",
-      invoices: "E-invoices Supported",
-      promotion: "Promoted: Junior → Senior",
+      experience: "years with React",
+      performance: "less PDF rendering time",
+      invoices: "e-invoices supported",
+      promotion: "in 3 years at MLTech Soft",
     },
     projects: {
-      eyebrow: "Real-world Results",
+      eyebrow: "Selected Work",
       title: "Featured Projects",
       description: "Production systems I've shipped — from architecture to deployment.",
       visitSite: "Visit Live Site",
+      readCaseStudy: "Read case study",
       items: [
         {
+          title: "WeTax",
+          company: "Webcash Vietnam",
+          role: "Senior Frontend Developer",
+          techChips: ["Next.js", "TypeScript", "React Query", "Zustand", "WebSocket"],
+          summary: "High-scale e-invoicing platform for enterprise clients",
           results: [
-            "Reduced PDF rendering time by ~90% via server-side offloading (wkhtmltopdf)",
-            "Handles tens of millions of e-invoices in production",
+            "~90% less PDF rendering time via server-side offloading",
+            "Tens of millions of e-invoices in production",
             "Real-time status updates via WebSocket",
           ],
+          link: "/web-portfolio/projects/wetax",
+        },
+      ],
+      otherProjects: [
+        {
+          title: "VDental",
+          company: "MLTech Soft",
+          role: "Frontend Developer",
+          techChips: ["React", "Next.js", "TypeScript", "i18n"],
+          summary: "Rebuilt multi-step booking UI with VI/EN internationalization support.",
+          link: "https://vdental.ai/vi",
         },
         {
-          results: [
-            // TODO(Buck): replace with measurable technical metrics (Lighthouse score, LCP before/after)
-            "Rebuilt multi-step booking UI with VI/EN i18n support",
-            "TODO(Buck): Lighthouse score before/after optimisation",
-            "TODO(Buck): LCP improvement (e.g. from X s to Y s)",
-          ],
+          title: "Lothashop",
+          company: "MLTech Soft",
+          role: "Frontend Developer",
+          techChips: ["React", "TypeScript", "E-commerce"],
+          summary: "Built product catalog and checkout flow for 500+ SKUs.",
+          link: "https://www.lothashop.vn/",
         },
         {
-          results: [
-            // TODO(Buck): replace with measurable technical metrics
-            "Built product catalog and checkout flow for 500+ SKUs",
-            "TODO(Buck): performance metric (bundle size, Lighthouse, LCP)",
-            "TODO(Buck): specific technical contribution worth measuring",
-          ],
-        },
-        {
-          results: [
-            // TODO(Buck): replace with measurable technical metrics
-            "CMS dashboard covering news, vessels, and pilot records with role-based UI",
-            "TODO(Buck): Lighthouse score or Core Web Vitals improvement",
-            "TODO(Buck): specific technical metric",
-          ],
+          title: "PSA-CMS",
+          company: "MLTech Soft",
+          role: "Frontend Developer",
+          techChips: ["React", "TypeScript", "REST API"],
+          summary: "CMS dashboard covering news, vessels, and pilot records with role-based UI.",
+          link: "https://psa-cms.mltechsoft.com",
         },
       ],
     },
@@ -88,11 +97,8 @@ export const translations = {
             "Accessibility (a11y)",
           ],
         },
-        {
-          // TODO(Buck): list only testing tools you have actually used (e.g. Jest, React Testing Library, Playwright)
-          name: "Testing",
-          items: ["TODO(Buck): Jest / React Testing Library / Playwright — list only tools used"],
-        },
+        // Testing group hidden (draft) until tool list is confirmed
+        // TODO(Buck): uncomment and fill items once confirmed: { name: "Testing", items: ["Jest", "React Testing Library", "Playwright"] }
         {
           name: "Tooling",
           items: ["Vite", "Webpack", "Git", "Docker"],
@@ -102,17 +108,19 @@ export const translations = {
           items: ["Cursor", "Claude Code", "GitHub Copilot"],
         },
         {
-          // TODO(Buck): add English level / TOEIC score
+          // TODO(Buck): add English level / TOEIC score to show full entry
           name: "Languages",
-          items: ["Vietnamese (native)", "English — TODO(Buck): level / TOEIC score"],
+          items: ["Vietnamese (native)", "English"],
         },
       ],
     },
     about: {
       eyebrow: "About Me",
       title: "A Bit About Me",
+      descriptionShort:
+        "Senior Frontend Engineer with 5+ years building React/Next.js + TypeScript applications. Currently owning frontend architecture for WeTax, a high-scale e-invoicing platform at Webcash Vietnam. Previously led frontend for e-commerce and distributor-management products, including payment integration and mentoring.",
       description:
-        "Senior Frontend Engineer with 5+ years building React/Next.js + TypeScript applications. Currently owning frontend architecture for a high-scale e-invoicing platform at Webcash Vietnam: data fetching and caching with React Query, global state with Zustand, real-time updates via WebSocket. Previously led frontend for e-commerce and distributor-management products, including third-party payment integration, code review and mentoring. I care about clear component boundaries, predictable async state, and fast, accessible UIs.",
+        "Senior Frontend Engineer with 5+ years building React/Next.js + TypeScript applications. Currently owning frontend architecture for WeTax, a high-scale e-invoicing platform at Webcash Vietnam: data fetching and caching with React Query, global state with Zustand, real-time updates via WebSocket. Previously led frontend for e-commerce and distributor-management products at MLTech Soft, including third-party payment integration, code review, and mentoring junior developers. I care about clear component boundaries, predictable async state, and fast, accessible UIs.",
       reads: "My Reads",
       readsDesc: "Explore the books shaping my perspectives",
       toolbox: "My Toolbox",
@@ -250,7 +258,7 @@ export const translations = {
       available: "Tìm kiếm vị trí toàn thời gian · Remote",
       title: "Senior Frontend Engineer",
       subtitle: "React · Next.js · TypeScript",
-      roles: ["React Developer", "Next.js Developer", "TypeScript Engineer", "Frontend Architect"],
+      roles: ["Senior Frontend Engineer", "Next.js Engineer", "TypeScript Engineer", "Frontend Architect"],
       description:
         "Tôi xây dựng ứng dụng React production-grade cho nghiệp vụ tài chính và kinh doanh khối lượng lớn — từ kiến trúc frontend đến tối ưu hiệu suất và UX thời gian thực.",
       viewCaseStudy: "Xem Case Study",
@@ -260,44 +268,56 @@ export const translations = {
       location: "TP. Hồ Chí Minh · Sẵn sàng làm việc remote / giờ Mỹ",
     },
     stats: {
-      experience: "Năm với React",
-      performance: "Tăng tốc render PDF",
-      invoices: "Hóa đơn điện tử đã hỗ trợ",
-      promotion: "Thăng tiến: Junior → Senior",
+      experience: "năm với React",
+      performance: "giảm thời gian render PDF",
+      invoices: "hóa đơn điện tử đã hỗ trợ",
+      promotion: "trong 3 năm tại MLTech Soft",
     },
     projects: {
-      eyebrow: "Kết quả thực tế",
+      eyebrow: "Công việc đã làm",
       title: "Dự án nổi bật",
       description: "Các hệ thống production tôi đã ship — từ kiến trúc đến triển khai.",
       visitSite: "Xem trang web",
+      readCaseStudy: "Đọc case study",
       items: [
         {
+          title: "WeTax",
+          company: "Webcash Vietnam",
+          role: "Senior Frontend Developer",
+          techChips: ["Next.js", "TypeScript", "React Query", "Zustand", "WebSocket"],
+          summary: "Nền tảng hóa đơn điện tử quy mô lớn cho khách hàng doanh nghiệp",
           results: [
-            "Giảm thời gian render PDF ~90% bằng server-side offloading (wkhtmltopdf)",
-            "Xử lý hàng chục triệu hóa đơn điện tử trên môi trường production",
+            "Giảm ~90% thời gian render PDF bằng server-side offloading",
+            "Hàng chục triệu hóa đơn điện tử trong production",
             "Cập nhật trạng thái thời gian thực qua WebSocket",
           ],
+          link: "/web-portfolio/projects/wetax",
+        },
+      ],
+      otherProjects: [
+        {
+          title: "VDental",
+          company: "MLTech Soft",
+          role: "Frontend Developer",
+          techChips: ["React", "Next.js", "TypeScript", "i18n"],
+          summary: "Xây dựng lại luồng đặt lịch đa bước với hỗ trợ đa ngôn ngữ VI/EN.",
+          link: "https://vdental.ai/vi",
         },
         {
-          results: [
-            "Xây dựng lại luồng đặt lịch đa ngôn ngữ VI/EN",
-            "TODO(Buck): Lighthouse score trước/sau tối ưu",
-            "TODO(Buck): cải thiện LCP (ví dụ từ X giây xuống Y giây)",
-          ],
+          title: "Lothashop",
+          company: "MLTech Soft",
+          role: "Frontend Developer",
+          techChips: ["React", "TypeScript", "E-commerce"],
+          summary: "Xây dựng catalog sản phẩm và luồng checkout cho 500+ SKU.",
+          link: "https://www.lothashop.vn/",
         },
         {
-          results: [
-            "Xây dựng catalog sản phẩm và luồng checkout cho 500+ SKU",
-            "TODO(Buck): chỉ số hiệu suất (bundle size, Lighthouse, LCP)",
-            "TODO(Buck): đóng góp kỹ thuật cụ thể đáng đo lường",
-          ],
-        },
-        {
-          results: [
-            "Dashboard CMS quản lý tin tức, tàu thuyền và hồ sơ phi công với phân quyền",
-            "TODO(Buck): Lighthouse score hoặc cải thiện Core Web Vitals",
-            "TODO(Buck): chỉ số kỹ thuật cụ thể",
-          ],
+          title: "PSA-CMS",
+          company: "MLTech Soft",
+          role: "Frontend Developer",
+          techChips: ["React", "TypeScript", "REST API"],
+          summary: "Dashboard CMS quản lý tin tức, tàu thuyền và hồ sơ phi công với phân quyền.",
+          link: "https://psa-cms.mltechsoft.com",
         },
       ],
     },
@@ -325,10 +345,8 @@ export const translations = {
             "Accessibility (a11y)",
           ],
         },
-        {
-          name: "Testing",
-          items: ["TODO(Buck): Jest / React Testing Library / Playwright — chỉ liệt kê tools đã dùng"],
-        },
+        // Testing group hidden (draft) until tool list is confirmed
+        // TODO(Buck): uncomment once confirmed: { name: "Testing", items: [...] }
         {
           name: "Tooling",
           items: ["Vite", "Webpack", "Git", "Docker"],
@@ -338,16 +356,19 @@ export const translations = {
           items: ["Cursor", "Claude Code", "GitHub Copilot"],
         },
         {
+          // TODO(Buck): add English level / TOEIC score
           name: "Ngôn ngữ",
-          items: ["Tiếng Việt (bản ngữ)", "Tiếng Anh — TODO(Buck): trình độ / điểm TOEIC"],
+          items: ["Tiếng Việt (bản ngữ)", "Tiếng Anh"],
         },
       ],
     },
     about: {
       eyebrow: "Về tôi",
       title: "Một chút về tôi",
+      descriptionShort:
+        "Senior Frontend Engineer với 5+ năm xây dựng ứng dụng React/Next.js + TypeScript. Hiện đang sở hữu kiến trúc frontend cho WeTax, nền tảng hóa đơn điện tử quy mô lớn tại Webcash Vietnam. Trước đây dẫn đầu frontend cho e-commerce và hệ thống quản lý phân phối tại MLTech Soft, bao gồm tích hợp thanh toán và mentoring.",
       description:
-        "Senior Frontend Engineer với 5+ năm xây dựng ứng dụng React/Next.js + TypeScript. Hiện đang sở hữu kiến trúc frontend cho nền tảng hóa đơn điện tử quy mô lớn tại Webcash Vietnam: tìm nạp và cache dữ liệu với React Query, global state với Zustand, cập nhật thời gian thực qua WebSocket. Trước đây dẫn đầu frontend cho e-commerce và hệ thống quản lý phân phối, bao gồm tích hợp thanh toán, code review và mentoring. Tôi quan tâm đến ranh giới component rõ ràng, async state đoán trước được và UI nhanh, dễ tiếp cận.",
+        "Senior Frontend Engineer với 5+ năm xây dựng ứng dụng React/Next.js + TypeScript. Hiện đang sở hữu kiến trúc frontend cho WeTax, nền tảng hóa đơn điện tử quy mô lớn tại Webcash Vietnam: tìm nạp và cache dữ liệu với React Query, global state với Zustand, cập nhật thời gian thực qua WebSocket. Trước đây dẫn đầu frontend cho e-commerce và hệ thống quản lý phân phối tại MLTech Soft, bao gồm tích hợp thanh toán bên thứ ba, code review và mentoring junior developers. Tôi quan tâm đến ranh giới component rõ ràng, async state đoán trước được và UI nhanh, dễ tiếp cận.",
       reads: "Sách tôi đọc",
       readsDesc: "Những cuốn sách định hình góc nhìn của tôi",
       toolbox: "Công cụ của tôi",

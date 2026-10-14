@@ -8,8 +8,8 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 const stats = [
   { type: "counter", end: 5, suffix: "+", key: "experience" },
   { type: "counter", end: 90, suffix: "%", prefix: "~", key: "performance" },
-  { type: "text", value: "Tens of M", key: "invoices" },
-  { type: "text", value: "J → S", key: "promotion" },
+  { type: "text", value: "Tens of millions", key: "invoices" },
+  { type: "text", value: "Junior → Senior", key: "promotion" },
 ] as const;
 
 const Counter = ({ end, suffix, prefix }: { end: number; suffix: string; prefix?: string }) => {

@@ -20,15 +20,19 @@ interface CaseStudyData {
   role: string;
   timeline: string;
   techStack: string;
-  context?: string;
-  myRole?: string;
+  context?: ReactNode;
+  myRole?: ReactNode;
+  architectureHeading?: string;
   architectureDiagram?: ReactNode;
   architectureCaption?: string;
+  statesTable?: ReactNode;
   hardProblems?: SectionItem[];
   asyncAndErrors?: SectionItem[];
   performance?: SectionItem[];
   results?: ResultItem[];
-  whatNext?: string;
+  resultsNote?: string;
+  whatNextHeading?: string;
+  whatNext?: ReactNode;
   prevCase?: { label: string; href: string };
   nextCase?: { label: string; href: string };
 }
@@ -87,24 +91,30 @@ export function CaseStudyLayout({ data }: { data: CaseStudyData }) {
       <div className="container max-w-4xl py-16">
         {data.context && (
           <SectionBlock heading="Context">
-            <p className="text-white/60 text-sm md:text-base leading-relaxed">{data.context}</p>
+            <div className="text-white/60 text-sm md:text-base leading-relaxed">{data.context}</div>
           </SectionBlock>
         )}
 
         {data.myRole && (
           <SectionBlock heading="My role">
-            <p className="text-white/60 text-sm md:text-base leading-relaxed">{data.myRole}</p>
+            <div className="text-white/60 text-sm md:text-base leading-relaxed">{data.myRole}</div>
           </SectionBlock>
         )}
 
         {data.architectureDiagram && (
-          <SectionBlock heading="Architecture">
+          <SectionBlock heading={data.architectureHeading ?? "Architecture"}>
             {data.architectureCaption && (
               <p className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-4">
                 {data.architectureCaption}
               </p>
             )}
             {data.architectureDiagram}
+          </SectionBlock>
+        )}
+
+        {data.statesTable && (
+          <SectionBlock heading="Order & payment states">
+            {data.statesTable}
           </SectionBlock>
         )}
 
@@ -126,24 +136,29 @@ export function CaseStudyLayout({ data }: { data: CaseStudyData }) {
           </SectionBlock>
         )}
 
-        {data.results && data.results.length > 0 && (
+        {(data.results && data.results.length > 0 || data.resultsNote) && (
           <SectionBlock heading="Results">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {data.results.map((r) => (
-                <div key={r.label} className="bg-white/5 border border-white/10 rounded-2xl px-5 py-4">
-                  <p className="font-serif text-2xl md:text-3xl bg-gradient-to-r from-emerald-300 to-sky-400 bg-clip-text text-transparent">
-                    {r.value}
-                  </p>
-                  <p className="text-white/50 text-xs mt-1">{r.label}</p>
-                </div>
-              ))}
-            </div>
+            {data.results && data.results.length > 0 && (
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+                {data.results.map((r) => (
+                  <div key={r.label} className="bg-white/5 border border-white/10 rounded-2xl px-5 py-4">
+                    <p className="font-serif text-2xl md:text-3xl bg-gradient-to-r from-emerald-300 to-sky-400 bg-clip-text text-transparent">
+                      {r.value}
+                    </p>
+                    <p className="text-white/50 text-xs mt-1">{r.label}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+            {data.resultsNote && (
+              <p className="text-white/60 text-sm md:text-base leading-relaxed">{data.resultsNote}</p>
+            )}
           </SectionBlock>
         )}
 
         {data.whatNext && (
-          <SectionBlock heading="What I&apos;d do next">
-            <p className="text-white/60 text-sm md:text-base leading-relaxed">{data.whatNext}</p>
+          <SectionBlock heading={data.whatNextHeading ?? "What I’d do next"}>
+            <div className="text-white/60 text-sm md:text-base leading-relaxed">{data.whatNext}</div>
           </SectionBlock>
         )}
 

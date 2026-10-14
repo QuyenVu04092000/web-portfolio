@@ -45,6 +45,19 @@ export const translations = {
           ],
           link: "/web-portfolio/projects/wetax",
         },
+        {
+          title: "Lothashop",
+          company: "MLTech Soft",
+          role: "Middle Frontend Engineer",
+          techChips: ["Next.js", "TypeScript", "Zustand", "VNPay", "socket.io"],
+          summary: "VNPay checkout integration and real-time distributor matching for a dairy-products e-commerce platform.",
+          results: [
+            "3 delivery types × 2 payment methods in one checkout flow",
+            "Real-time distributor matching with 60 s timeout via socket.io",
+            "Shipped to production at lothashop.vn",
+          ],
+          link: "/web-portfolio/projects/lothashop",
+        },
       ],
       otherProjects: [
         {
@@ -54,14 +67,6 @@ export const translations = {
           techChips: ["React", "Next.js", "TypeScript", "i18n"],
           summary: "Rebuilt multi-step booking UI with VI/EN internationalization support.",
           link: "https://vdental.ai/vi",
-        },
-        {
-          title: "Lothashop",
-          company: "MLTech Soft",
-          role: "Frontend Developer",
-          techChips: ["React", "TypeScript", "E-commerce"],
-          summary: "Built product catalog and checkout flow for 500+ SKUs.",
-          link: "https://www.lothashop.vn/",
         },
         {
           title: "PSA-CMS",
@@ -190,14 +195,14 @@ export const translations = {
             "High-scale e-invoicing platform supporting tens of millions of invoices for enterprise clients. Features real-time invoice management, server-side PDF generation, and WebSocket-powered notifications.",
         },
         {
+          title: "Lothashop",
+          description:
+            "VNPay checkout integration with real-time distributor matching. Supports 3 delivery types, COD and VNPay payment, vouchers, Lothashop wallet, and guest checkout with automatic account registration.",
+        },
+        {
           title: "VDental",
           description:
             "Dental booking platform connecting US-based clients with Vietnamese clinics. Booking flows, appointment management, real-time chat, and VI/EN multi-language support.",
-        },
-        {
-          title: "Lothashop",
-          description:
-            "E-commerce app for product purchase, loyalty-point accumulation, and Lothamilk agent registration. Catalog, checkout, and promotions for 500+ SKUs.",
         },
         {
           title: "PSA-CMS",
@@ -293,6 +298,19 @@ export const translations = {
           ],
           link: "/web-portfolio/projects/wetax",
         },
+        {
+          title: "Lothashop",
+          company: "MLTech Soft",
+          role: "Middle Frontend Engineer",
+          techChips: ["Next.js", "TypeScript", "Zustand", "VNPay", "socket.io"],
+          summary: "Tích hợp thanh toán VNPay và ghép nối distributor thời gian thực cho nền tảng e-commerce sữa Lothamilk.",
+          results: [
+            "3 loại giao hàng × 2 phương thức thanh toán trong một luồng checkout",
+            "Ghép nối distributor thời gian thực với timeout 60 giây qua socket.io",
+            "Đã ra production tại lothashop.vn",
+          ],
+          link: "/web-portfolio/projects/lothashop",
+        },
       ],
       otherProjects: [
         {
@@ -302,14 +320,6 @@ export const translations = {
           techChips: ["React", "Next.js", "TypeScript", "i18n"],
           summary: "Xây dựng lại luồng đặt lịch đa bước với hỗ trợ đa ngôn ngữ VI/EN.",
           link: "https://vdental.ai/vi",
-        },
-        {
-          title: "Lothashop",
-          company: "MLTech Soft",
-          role: "Frontend Developer",
-          techChips: ["React", "TypeScript", "E-commerce"],
-          summary: "Xây dựng catalog sản phẩm và luồng checkout cho 500+ SKU.",
-          link: "https://www.lothashop.vn/",
         },
         {
           title: "PSA-CMS",
@@ -438,14 +448,14 @@ export const translations = {
             "Nền tảng hóa đơn điện tử quy mô lớn hỗ trợ hàng chục triệu hóa đơn cho khách hàng doanh nghiệp. Quản lý hóa đơn thời gian thực, tạo PDF server-side và thông báo qua WebSocket.",
         },
         {
+          title: "Lothashop",
+          description:
+            "Tích hợp thanh toán VNPay với ghép nối distributor thời gian thực. Hỗ trợ 3 loại giao hàng, COD và VNPay, voucher, ví Lothashop, và checkout khách với đăng ký tài khoản tự động.",
+        },
+        {
           title: "VDental",
           description:
             "Nền tảng đặt lịch nha khoa kết nối khách hàng Mỹ với phòng khám Việt Nam. Luồng đặt lịch, quản lý lịch hẹn, chat thời gian thực và hỗ trợ đa ngôn ngữ VI/EN.",
-        },
-        {
-          title: "Lothashop",
-          description:
-            "Ứng dụng e-commerce cho mua sắm, tích điểm thưởng và đăng ký đại lý Lothamilk. Catalog, checkout và khuyến mãi cho 500+ SKU.",
         },
         {
           title: "PSA-CMS",

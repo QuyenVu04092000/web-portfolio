@@ -3,15 +3,11 @@
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import { useLang } from "@/i18n/LangContext";
 
+// TODO(Buck): add real GitHub profile URL to show the GitHub link
 const footerLinks = [
   {
     title: "LinkedIn",
     href: "https://www.linkedin.com/in/quyenvu040900/",
-  },
-  {
-    title: "GitHub",
-    // TODO(Buck): replace with your GitHub profile URL
-    href: "#",
   },
   {
     title: "Resume",
@@ -31,8 +27,8 @@ export const Footer = () => {
             {footerLinks.map((link) => (
               <a
                 href={link.href}
-                target={link.href === "#" ? undefined : "_blank"}
-                rel={link.href === "#" ? undefined : "noreferrer"}
+                target="_blank"
+                rel="noreferrer"
                 key={link.title}
                 className="inline-flex items-center gap-1.5 cursor-pointer hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/50 rounded"
               >

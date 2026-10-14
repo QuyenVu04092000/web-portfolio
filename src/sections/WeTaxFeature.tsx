@@ -4,11 +4,10 @@ import { useLang } from "@/i18n/LangContext";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 
+// TODO(Buck): confirm < 2 s listing load and 0 tab-lock events before re-adding
 const metrics = [
-  { value: "~90%", label: "PDF rendering time saved" },
-  { value: "Tens of M", label: "E-invoices in production" },
-  { value: "< 2 s", label: "Listing load (was 10+ s)" },
-  { value: "0", label: "UI tab-lock events post-launch" },
+  { value: "~90%", label: "less PDF rendering time" },
+  { value: "Tens of millions", label: "e-invoices in production" },
 ];
 
 export const WeTaxFeatureSection = () => {

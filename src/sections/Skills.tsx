@@ -23,11 +23,7 @@ export const SkillsSection = () => {
                   {group.items.map((item) => (
                     <span
                       key={item}
-                      className={`px-3 py-1.5 rounded-full text-sm font-medium border transition-colors ${
-                        item.startsWith("TODO(Buck)")
-                          ? "border-amber-400/40 text-amber-300/60 bg-amber-400/5"
-                          : "border-white/15 text-white/80 bg-white/5 hover:bg-white/10"
-                      }`}
+                      className="px-3 py-1.5 rounded-full text-sm font-medium border border-white/15 text-white/80 bg-white/5 hover:bg-white/10 transition-colors"
                     >
                       {item}
                     </span>

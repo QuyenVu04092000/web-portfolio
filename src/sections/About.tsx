@@ -1,138 +1,30 @@
 "use client";
 
-import { Card } from "@/components/Card";
+import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import { SectionHeader } from "@/components/SectionHeader";
-import bookImage from "@/assets/images/book-cover.png";
-import Image from "next/image";
-import JavascriptIcon from "@/assets/icons/square-js.svg";
-import HTMLIcon from "@/assets/icons/html5.svg";
-import CssIcon from "@/assets/icons/css3.svg";
-import ReactIcon from "@/assets/icons/react.svg";
-import ChromeIcon from "@/assets/icons/chrome.svg";
-import GithubIcon from "@/assets/icons/github.svg";
-import NextjsIcon from "@/assets/icons/nextjs.svg";
-import TypeScriptIcon from "@/assets/icons/typescript.svg";
-import TailwindIcon from "@/assets/icons/tailwindcss.svg";
-import FigmaIcon from "@/assets/icons/figma.svg";
-import NodejsIcon from "@/assets/icons/nodejs.svg";
-import mapImage from "@/assets/images/map.png";
-import smileMemoji from "@/assets/images/memoji-smile.png";
-import { CardHeader } from "@/components/CardHeader";
-import { ToolboxItems } from "@/components/ToolboxItems";
-import { motion } from "framer-motion";
-import { useRef } from "react";
 import { useLang } from "@/i18n/LangContext";
 
-const toolboxItems = [
-  { title: "JavaScript", iconType: JavascriptIcon },
-  { title: "TypeScript", iconType: TypeScriptIcon },
-  { title: "React", iconType: ReactIcon },
-  { title: "Next.js", iconType: NextjsIcon },
-  { title: "Tailwind CSS", iconType: TailwindIcon },
-  { title: "HTML5", iconType: HTMLIcon },
-  { title: "CSS3", iconType: CssIcon },
-  { title: "Node.js", iconType: NodejsIcon },
-  { title: "Figma", iconType: FigmaIcon },
-  { title: "Github", iconType: GithubIcon },
-  { title: "Chrome DevTools", iconType: ChromeIcon },
-];
-
-const hobbiesData = [
-  { emoji: "🍺", left: "5%", top: "5%" },
-  { emoji: "🎮", left: "50%", top: "5%" },
-  { emoji: "✈️", left: "10%", top: "35%" },
-  { emoji: "🎵", left: "35%", top: "40%" },
-  { emoji: "🏋️", left: "70%", top: "45%" },
-  { emoji: "⚽", left: "5%", top: "65%" },
-  { emoji: "🏸", left: "45%", top: "70%" },
-];
-
 export const AboutSection = () => {
-  const constraintRef = useRef(null);
   const { t } = useLang();
-  const hobbies = hobbiesData.map((h, i) => ({ ...h, title: t.about.hobbies[i] }));
   return (
-    <section aria-label="About" className="pb-20 lg:py-28" id="about">
+    <section aria-label="About" className="py-16 lg:py-24" id="about">
       <div className="container">
         <SectionHeader
           eyebrow={t.about.eyebrow}
           title={t.about.title}
           description=""
         />
-
-        {/* Bio — prominently first */}
         <div className="mt-8 max-w-3xl">
           <p className="text-white/70 text-base md:text-lg leading-relaxed">
-            {t.about.description}
+            {t.about.descriptionShort}
           </p>
-        </div>
-
-        <div className="mt-16 flex flex-col gap-8">
-          {/* Row 1: Toolbox (main) + Reads */}
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3">
-            <Card className="h-[320px] md:col-span-3 lg:col-span-2">
-              <CardHeader
-                title={t.about.toolbox}
-                description={t.about.toolboxDesc}
-              />
-              <ToolboxItems
-                items={toolboxItems}
-                className=""
-                itemsWrapperClassName="animate-move-left [animation-duration:30s]"
-              />
-              <ToolboxItems
-                items={toolboxItems}
-                className="mt-6"
-                itemsWrapperClassName="animate-move-right [animation-duration:30s]"
-              />
-            </Card>
-            <Card className="h-[320px] md:col-span-2 lg:col-span-1">
-              <CardHeader
-                title={t.about.reads}
-                description={t.about.readsDesc}
-              />
-              <div className="w-40 mx-auto mt-2 md:mt-0">
-                <Image src={bookImage} alt="Book cover" />
-              </div>
-            </Card>
-          </div>
-
-          {/* Row 2: Map + Hobbies */}
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3">
-            <Card className="h-[320px] p-0 relative md:col-span-2 lg:col-span-1">
-              <Image
-                src={mapImage}
-                alt="Map of Ho Chi Minh City, Vietnam"
-                className="h-full w-full object-cover"
-              />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-20 rounded-full after:content-[''] after:absolute after:inset-0 after:outline after:outline-2 after:-outline-offset-2 after:rounded-full after:outline-gray-950/30">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-20 animate-ping [animation-duration:2s]" />
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-10" />
-                <Image src={smileMemoji} alt="Smiling memoji" className="size-20" />
-              </div>
-            </Card>
-            <Card className="h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2">
-              <CardHeader
-                className="px-6 pt-6"
-                title={t.about.beyond}
-                description={t.about.beyondDesc}
-              />
-              <div className="relative flex-1" ref={constraintRef}>
-                {hobbies.map((hobby) => (
-                  <motion.div
-                    key={hobby.title}
-                    className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute"
-                    style={{ left: hobby.left, top: hobby.top }}
-                    drag
-                    dragConstraints={constraintRef}
-                  >
-                    <span className="font-medium text-gray-950">{hobby.title}</span>
-                    <span aria-hidden="true">{hobby.emoji}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </Card>
-          </div>
+          <a
+            href="/web-portfolio/about"
+            className="inline-flex items-center gap-1.5 mt-5 text-emerald-300 font-medium hover:text-emerald-200 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300 rounded"
+          >
+            More about me
+            <ArrowUpRightIcon className="size-4" />
+          </a>
         </div>
       </div>
     </section>

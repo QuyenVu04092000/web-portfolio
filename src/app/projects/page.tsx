@@ -33,7 +33,7 @@ const portfolioMeta = [
 const mobileImages = [sfa];
 const mobileLinks = ["/web-portfolio/projects/sfa"];
 const mobileMeta = [
-  { company: "MLTech Soft", year: "2024", role: "Middle Frontend Engineer", chips: ["React Native", "TypeScript", "Redux"] },
+  { company: "MLTech Soft", year: "2024", role: "Middle Frontend Engineer", chips: ["React Native", "TypeScript", "Redux", "NativeWind"] },
 ];
 
 const earlierImages = [mydigitalpa, pilot_audit, career];

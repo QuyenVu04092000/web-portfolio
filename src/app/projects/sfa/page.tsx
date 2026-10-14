@@ -11,7 +11,7 @@ export default function SFA() {
         role: "Middle Frontend Engineer",
         timeline: "2024",
         platform: "Mobile · iOS & Android",
-        tech: "React Native · TypeScript · Redux",
+        tech: "React Native · TypeScript · Redux · NativeWind",
         overview:
           "Sales force automation mobile app (DigiSale) for field sales agents. Supports client visit tracking, order submission, and performance reporting.",
         whatIBuilt: [

@@ -44,7 +44,7 @@ export default function About() {
       <Header activeId="about" />
 
       {/* Bio / Intro */}
-      <div className="px-7 pt-32 md:pt-48 lg:pt-60 pb-8">
+      <div className="px-4 md:px-7 pt-32 md:pt-48 lg:pt-60 pb-8">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-5">
           {/* Portrait */}
           <div className="lg:col-span-2 flex justify-center lg:justify-start">
@@ -73,14 +73,14 @@ export default function About() {
       </div>
 
       {/* Work Experience */}
-      <div className="px-7 pb-8">
+      <div className="px-4 md:px-7 pb-8">
         <WorkExperience />
       </div>
 
       {/* Beyond the Code + Map */}
-      <div className="px-7 pb-8">
+      <div className="px-4 md:px-7 pb-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3">
-          <Card className="h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2">
+          <Card className="min-h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2">
             <CardHeader
               className="px-6 pt-6"
               title={a.beyond}
@@ -101,7 +101,7 @@ export default function About() {
               ))}
             </div>
           </Card>
-          <Card className="h-[320px] p-0 relative md:col-span-2 lg:col-span-1">
+          <Card className="min-h-[320px] p-0 relative md:col-span-2 lg:col-span-1">
             <Image
               src={mapImage}
               alt="Map"
@@ -122,7 +122,7 @@ export default function About() {
 
       {/* Scrolling avatar photos */}
       <div className="overflow-x-clip">
-        <div className="flex flex-none py-0.5 gap-6 pr-6 animate-move-left [animation-duration:20s] px-7 pb-32 md:pb-48 lg:pb-60 pt-8">
+        <div className="flex flex-none py-0.5 gap-6 pr-6 animate-move-left [animation-duration:20s] px-4 md:px-7 pb-12 md:pb-24 lg:pb-40 pt-8">
           {[...new Array(4)].fill(0).map((_, index) => (
             <Fragment key={index}>
               {images.map((item) => (

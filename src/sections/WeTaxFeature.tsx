@@ -40,7 +40,7 @@ export const WeTaxFeatureSection = () => {
         <ScrollReveal direction="up">
           <div className="bg-gray-800 border border-white/10 rounded-3xl overflow-hidden">
             {/* Header */}
-            <div className="px-8 pt-8 md:px-12 md:pt-12">
+            <div className="px-5 pt-7 md:px-12 md:pt-12">
               <span className="inline-block text-xs font-bold uppercase tracking-widest bg-gradient-to-r from-emerald-300 to-sky-400 bg-clip-text text-transparent mb-3">
                 {c.eyebrow}
               </span>
@@ -49,7 +49,7 @@ export const WeTaxFeatureSection = () => {
             </div>
 
             {/* Metrics */}
-            <div className="mt-8 px-8 md:px-12">
+            <div className="mt-8 px-5 md:px-12">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {metrics.map((m) => (
                   <div key={m.label} className="bg-white/5 border border-white/10 rounded-2xl px-5 py-4">
@@ -63,7 +63,7 @@ export const WeTaxFeatureSection = () => {
             </div>
 
             {/* Architecture diagram */}
-            <div className="mt-8 px-8 md:px-12">
+            <div className="mt-8 px-5 md:px-12">
               <p className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-4">
                 {c.diagramTitle}
               </p>
@@ -148,10 +148,10 @@ export const WeTaxFeatureSection = () => {
             </div>
 
             {/* CTA */}
-            <div className="px-8 py-8 md:px-12 md:py-10">
+            <div className="px-5 py-7 md:px-12 md:py-10">
               <a
                 href="/web-portfolio/projects/wetax"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-300 to-sky-400 text-gray-900 px-6 h-12 rounded-xl font-semibold hover:opacity-90 transition-opacity focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300"
+                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-gradient-to-r from-emerald-300 to-sky-400 text-gray-900 px-6 h-12 rounded-xl font-semibold hover:opacity-90 transition-opacity focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-300"
               >
                 <span>{c.cta}</span>
                 <ArrowUpRightIcon className="size-4" />

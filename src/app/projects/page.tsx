@@ -67,7 +67,7 @@ export default function Projects() {
               >
                 <div className="lg:grid lg:grid-cols-2 md:grid md:grid-cols-2 lg:gap-6 md:gap-6">
                   <div className="md:col-span-1 lg:col-span-1">
-                    <div className="relative w-full h-full">
+                    <div className="relative w-full min-h-[220px] md:min-h-0 md:h-full">
                       <Image
                         src={portfolioImages[projectIndex]}
                         alt={project.title}

@@ -55,7 +55,7 @@ export const ContactSection = () => {
             />
             <div className="flex flex-col lg:flex-row">
               {/* Left panel */}
-              <div className="lg:w-2/5 bg-gradient-to-r from-emerald-300 to-sky-400 p-10 flex flex-col justify-center rounded-t-3xl lg:rounded-l-3xl lg:rounded-tr-none">
+              <div className="lg:w-2/5 bg-gradient-to-r from-emerald-300 to-sky-400 p-6 md:p-10 flex flex-col justify-center rounded-t-3xl lg:rounded-l-3xl lg:rounded-tr-none">
                 <h2 className="font-serif text-2xl md:text-3xl text-gray-900">
                   {t.contact.title}
                 </h2>
@@ -74,7 +74,7 @@ export const ContactSection = () => {
                       <div className="bg-gray-900/20 rounded-lg p-2 shrink-0">
                         {link.icon}
                       </div>
-                      <span className="text-gray-900 text-sm font-medium group-hover:underline flex items-center gap-1">
+                      <span className="text-gray-900 text-sm font-medium group-hover:underline flex items-center gap-1 break-all">
                         {link.display}
                         {!link.href.startsWith("mailto") && <ArrowUpRightIcon className="size-3 opacity-60" />}
                       </span>

@@ -122,6 +122,11 @@ export const translations = {
       technologies: "Technologies and Tools",
       learnings: "Key Learnings and Challenges",
       conclusion: "Conclusion",
+      problem: "Problem",
+      architecture: "Architecture",
+      asyncErrorHandling: "Async & Error Handling",
+      performance: "Performance",
+      result: "Result",
     },
   },
   vi: {
@@ -247,6 +252,11 @@ export const translations = {
       technologies: "Công nghệ & Công cụ",
       learnings: "Kinh nghiệm & Thách thức",
       conclusion: "Kết luận",
+      problem: "Vấn đề",
+      architecture: "Kiến trúc",
+      asyncErrorHandling: "Async & Xử lý lỗi",
+      performance: "Hiệu suất",
+      result: "Kết quả",
     },
   },
 } as const;

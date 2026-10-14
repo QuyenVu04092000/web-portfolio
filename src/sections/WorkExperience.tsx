@@ -39,7 +39,7 @@ const experiences = [
 export const WorkExperience = () => {
   const { t } = useLang();
   return (
-    <Card className="px-8 flex-1 flex flex-col">
+    <Card className="px-4 md:px-8 flex-1 flex flex-col">
       <h2 className="font-serif text-2xl md:text-3xl text-left mt-8 tracking-wide">
         {t.workExperience.title}
       </h2>

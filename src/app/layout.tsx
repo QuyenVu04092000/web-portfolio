@@ -4,6 +4,7 @@ import "./globals.css";
 import { twMerge } from "tailwind-merge";
 import { LangProvider } from "@/i18n/LangContext";
 import { PageTransition } from "@/components/PageTransition";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const calistoga = Calistoga({
@@ -12,9 +13,51 @@ const calistoga = Calistoga({
   weight: ["400"],
 });
 
+const siteUrl = "https://quyenvu04092000.github.io/web-portfolio";
+
 export const metadata: Metadata = {
-  title: "My Portfolio",
-  description: "Created with the help of Frontend Tribe",
+  title: "Vu Duc Quyen (Buck) · Senior Frontend Engineer",
+  description:
+    "Senior Frontend Engineer with 5+ years building React / Next.js + TypeScript applications. Currently owning frontend architecture for WeTax, a high-scale e-invoicing platform at Webcash Vietnam. Open to full-time remote roles.",
+  metadataBase: new URL(siteUrl),
+  openGraph: {
+    title: "Vu Duc Quyen (Buck) · Senior Frontend Engineer",
+    description:
+      "Senior Frontend Engineer with 5+ years in React, Next.js & TypeScript. Fintech & e-invoicing specialist. Open to remote full-time roles.",
+    url: siteUrl,
+    siteName: "Vu Duc Quyen Portfolio",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Vu Duc Quyen (Buck) · Senior Frontend Engineer",
+    description:
+      "Senior Frontend Engineer — React, Next.js, TypeScript. Open to remote full-time roles.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Vu Duc Quyen",
+  alternateName: "Buck",
+  jobTitle: "Senior Frontend Engineer",
+  description:
+    "Senior Frontend Engineer with 5+ years building React / Next.js + TypeScript applications, specialising in fintech and e-invoicing platforms.",
+  url: siteUrl,
+  email: "vuquyen.04092000@gmail.com",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Ho Chi Minh City",
+    addressCountry: "VN",
+  },
+  sameAs: ["https://www.linkedin.com/in/quyenvu040900/"],
+  knowsAbout: ["React", "Next.js", "TypeScript", "Frontend Engineering", "Performance Optimisation"],
 };
 
 export default function RootLayout({
@@ -24,6 +67,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          id="json-ld"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={twMerge(
           inter.variable,

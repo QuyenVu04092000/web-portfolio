@@ -7,69 +7,147 @@ export const translations = {
       resume: "Resume",
     },
     hero: {
-      available: "Open to new opportunities",
-      title: "Frontend Engineer · React & TypeScript",
-      roles: ["React Developer", "Next.js Developer", "UI Engineer", "Frontend Engineer"],
-      description: "I build production-grade web applications with React & Next.js — 4+ years shipping responsive, accessible UIs at scale, currently in fintech & e-invoicing.",
+      available: "Open to full-time · Remote-friendly",
+      title: "Senior Frontend Engineer",
+      subtitle: "React · Next.js · TypeScript",
+      roles: ["React Developer", "Next.js Developer", "TypeScript Engineer", "Frontend Architect"],
+      description:
+        "I build production-grade React applications for high-volume business and financial workflows, from frontend architecture to performance and real-time UX.",
+      viewCaseStudy: "View Case Study",
+      downloadResume: "Download Resume",
       hireMe: "Get In Touch",
       seeWork: "See My Work",
+      location: "Ho Chi Minh City · Open to remote / US-hours meetings",
     },
     stats: {
-      experience: "Years Experience",
-      projects: "Projects Shipped",
-      clients: "Apps Delivered",
-      performance: "PDF Render Boost",
+      experience: "Years with React",
+      performance: "Faster PDF Rendering",
+      invoices: "E-invoices Supported",
+      promotion: "Promoted: Junior → Senior",
     },
     projects: {
       eyebrow: "Real-world Results",
       title: "Featured Projects",
-      description: "See how I transformed concepts into engaging digital experiences.",
+      description: "Production systems I've shipped — from architecture to deployment.",
       visitSite: "Visit Live Site",
       items: [
-        { results: ["Reduced PDF rendering time by ~90% via worker offloading", "Handles tens of millions of e-invoices in production", "Real-time status updates via WebSocket"] },
-        { results: ["Rebuilt booking UI — reduced appointment steps from 5 to 3", "Added VI/EN multi-language support with zero layout shifts", "Lighthouse performance score 88 on mobile after optimisation"] },
-        { results: ["Built product catalog and checkout flow for 500+ SKUs", "Implemented loyalty-point and agent-registration flows", "Fully responsive across mobile, tablet, and desktop"] },
-        { results: ["CMS dashboard covering news, vessels, and pilot records", "Role-based UI separating admin and pilot views", "REST API integration with real-time data refresh"] },
+        {
+          results: [
+            "Reduced PDF rendering time by ~90% via server-side offloading (wkhtmltopdf)",
+            "Handles tens of millions of e-invoices in production",
+            "Real-time status updates via WebSocket",
+          ],
+        },
+        {
+          results: [
+            // TODO(Buck): replace with measurable technical metrics (Lighthouse score, LCP before/after)
+            "Rebuilt multi-step booking UI with VI/EN i18n support",
+            "TODO(Buck): Lighthouse score before/after optimisation",
+            "TODO(Buck): LCP improvement (e.g. from X s to Y s)",
+          ],
+        },
+        {
+          results: [
+            // TODO(Buck): replace with measurable technical metrics
+            "Built product catalog and checkout flow for 500+ SKUs",
+            "TODO(Buck): performance metric (bundle size, Lighthouse, LCP)",
+            "TODO(Buck): specific technical contribution worth measuring",
+          ],
+        },
+        {
+          results: [
+            // TODO(Buck): replace with measurable technical metrics
+            "CMS dashboard covering news, vessels, and pilot records with role-based UI",
+            "TODO(Buck): Lighthouse score or Core Web Vitals improvement",
+            "TODO(Buck): specific technical metric",
+          ],
+        },
       ],
     },
-    services: {
-      eyebrow: "What I Do",
-      title: "Core Expertise",
-      description: "Production-grade frontend engineering across web — shipped at scale.",
-      cta: "Let's Connect",
-      items: [
-        { title: "React / Next.js Applications", description: "End-to-end frontend engineering with React and Next.js — component architecture, API integration, state management, and deployment.", tags: ["Next.js", "TypeScript", "React Query"] },
-        { title: "Large-Scale Web Platforms", description: "Shipped production systems handling millions of transactions — e-invoicing platforms, CMS dashboards, and enterprise portals built for reliability.", tags: ["REST APIs", "WebSocket", "Role-Based UI"] },
-        { title: "UI / Design Implementation", description: "Pixel-perfect implementation from Figma designs — responsive, accessible, and animated with Framer Motion and Tailwind CSS.", tags: ["Figma to Code", "Framer Motion", "Tailwind CSS"] },
-        { title: "Performance Optimisation", description: "Core Web Vitals auditing, LCP/CLS improvements, and Lighthouse score uplift — delivered ~90% PDF rendering gains on WeTax.", tags: ["Core Web Vitals", "Lighthouse", "Accessibility"] },
+    skills: {
+      eyebrow: "Technical Skills",
+      title: "What I Work With",
+      aiNote:
+        "I use AI tools to speed up implementation, but every change still goes through my own review, types and tests.",
+      groups: [
+        {
+          name: "Core",
+          items: ["React", "Next.js", "TypeScript", "JavaScript", "HTML", "CSS", "Tailwind CSS"],
+        },
+        {
+          name: "State & Data",
+          items: ["React Query", "Zustand", "Redux", "Context API", "REST", "GraphQL", "WebSocket"],
+        },
+        {
+          name: "Quality & Performance",
+          items: [
+            "Chrome DevTools",
+            "Lighthouse / Core Web Vitals",
+            "Code Splitting",
+            "Virtualization",
+            "Accessibility (a11y)",
+          ],
+        },
+        {
+          // TODO(Buck): list only testing tools you have actually used (e.g. Jest, React Testing Library, Playwright)
+          name: "Testing",
+          items: ["TODO(Buck): Jest / React Testing Library / Playwright — list only tools used"],
+        },
+        {
+          name: "Tooling",
+          items: ["Vite", "Webpack", "Git", "Docker"],
+        },
+        {
+          name: "AI-Assisted Dev",
+          items: ["Cursor", "Claude Code", "GitHub Copilot"],
+        },
+        {
+          // TODO(Buck): add English level / TOEIC score
+          name: "Languages",
+          items: ["Vietnamese (native)", "English — TODO(Buck): level / TOEIC score"],
+        },
       ],
     },
     about: {
       eyebrow: "About Me",
-      title: "A Glimpse Into My World",
-      description: "Learn more about who I am, what I do, and what inspires me.",
+      title: "A Bit About Me",
+      description:
+        "Senior Frontend Engineer with 5+ years building React/Next.js + TypeScript applications. Currently owning frontend architecture for a high-scale e-invoicing platform at Webcash Vietnam: data fetching and caching with React Query, global state with Zustand, real-time updates via WebSocket. Previously led frontend for e-commerce and distributor-management products, including third-party payment integration, code review and mentoring. I care about clear component boundaries, predictable async state, and fast, accessible UIs.",
       reads: "My Reads",
       readsDesc: "Explore the books shaping my perspectives",
       toolbox: "My Toolbox",
-      toolboxDesc: "Explore the technologies and tools I use to craft exceptional digital experiences.",
+      toolboxDesc: "Technologies and tools I work with every day.",
       beyond: "Beyond the Code",
-      beyondDesc: "Explore my interests and hobbies beyond the digital realm.",
+      beyondDesc: "Interests outside the screen.",
       hobbies: ["Beer", "Gaming", "Traveling", "Music", "Fitness", "Football", "Badminton"],
     },
     workExperience: {
       title: "Work Experience",
     },
     tape: {
-      words: ["Performant", "Accessible", "Secure", "Interactive", "Scalable", "User Friendly", "Responsive", "Maintainable", "Search Optimized", "Usable", "Reliable"],
+      words: [
+        "Performant",
+        "Accessible",
+        "Secure",
+        "Interactive",
+        "Scalable",
+        "User Friendly",
+        "Responsive",
+        "Maintainable",
+        "Search Optimized",
+        "Usable",
+        "Reliable",
+      ],
     },
     testimonials: {
       eyebrow: "Kind Words",
       title: "What People Say",
-      description: "Feedback from clients and colleagues I've had the pleasure of working with.",
+      description: "Feedback from colleagues I've had the pleasure of working with.",
     },
     contact: {
       title: "Let's connect",
-      description: "Open to full-time frontend roles. Send me a message and I'll get back to you within 24 hours.",
+      description:
+        "Open to full-time frontend roles. Send me a message and I'll get back to you within 24 hours.",
       replyTime: "Reply within 24 hours",
       available: "Open to full-time opportunities",
       form: {
@@ -87,27 +165,59 @@ export const translations = {
       },
     },
     footer: {
-      crafted: "Crafted with care by Quyen Vu",
+      crafted: "Crafted with care by Vu Duc Quyen (Buck)",
     },
     projectsPage: {
       eyebrow: "All Projects",
       title: "My Projects",
-      description: "Explore the wide range of projects I've worked on, showcasing my skills and experience.",
+      description: "Production systems and client projects I've shipped across web and mobile.",
       mobileEyebrow: "Other Projects",
       mobileTitle: "Mobile Projects",
-      mobileDescription: "Explore the mobile applications I've developed, demonstrating my expertise in mobile technologies.",
+      mobileDescription: "Mobile applications I've developed.",
       viewDetail: "View Detail",
       projects: [
-        { title: "WeTax", description: "High-scale e-invoicing platform supporting tens of millions of invoices for enterprise clients. Features real-time invoice management, PDF generation, and WebSocket-powered notifications." },
-        { title: "VDental", description: "VDental provides high quality dental services with a team of experienced doctors and modern equipment. The application helps users make appointments, advise on dental conditions and update the latest dental news." },
-        { title: "Lothashop", description: "Super smart application helps customers buy products, accumulate reward points and register as a Lothamilk Personal Agent. Customers directly buy Lothamilk products for their own consumption or sell to other consumers with many attractive promotions and vouchers." },
-        { title: "PSA-CMS", description: "Manage pilot information and manage content on the pilot's app including news, vessels,..." },
+        {
+          title: "WeTax",
+          description:
+            "High-scale e-invoicing platform supporting tens of millions of invoices for enterprise clients. Features real-time invoice management, server-side PDF generation, and WebSocket-powered notifications.",
+        },
+        {
+          title: "VDental",
+          description:
+            "Dental booking platform connecting US-based clients with Vietnamese clinics. Booking flows, appointment management, real-time chat, and VI/EN multi-language support.",
+        },
+        {
+          title: "Lothashop",
+          description:
+            "E-commerce app for product purchase, loyalty-point accumulation, and Lothamilk agent registration. Catalog, checkout, and promotions for 500+ SKUs.",
+        },
+        {
+          title: "PSA-CMS",
+          description:
+            "CMS dashboard for pilot management — news, vessels, and pilot records with role-based admin/pilot UI and REST API integration.",
+        },
       ],
       mobileProjects: [
-        { title: "DigiSale Sales Force Automation (SFA)", description: "DigiSale is a sales force automation application that helps businesses manage their sales activities, track sales performance, and improve sales efficiency." },
-        { title: "MydigitalPA", description: "App for pilots to manage license upgrading process, view jobs to be done, catch up news, receive notifications. It can used by Admin to manage pilots, manage jobs, manage news, send notifications." },
-        { title: "Pilot Audit", description: "App for pilots to view their audit results, view their audit history, view their audit schedule, view their audit status, view their audit details." },
-        { title: "Career Guidance App for LOF", description: "An app to develop a skill self-training that will enable users to connect and share knowledge, discover themselves and succeed professionally in the future." },
+        {
+          title: "DigiSale Sales Force Automation (SFA)",
+          description:
+            "Sales force automation app helping businesses manage activities, track performance, and improve sales efficiency.",
+        },
+        {
+          title: "MydigitalPA",
+          description:
+            "App for pilots to manage license upgrades, job listings, news, and notifications. Admin panel for managing pilots, jobs, and alerts.",
+        },
+        {
+          title: "Pilot Audit",
+          description:
+            "App for pilots to view audit results, history, schedule, status, and details.",
+        },
+        {
+          title: "Career Guidance App for LOF",
+          description:
+            "Skill self-training app enabling users to connect, share knowledge, and grow professionally.",
+        },
       ],
     },
     detailLabels: {
@@ -137,69 +247,142 @@ export const translations = {
       resume: "CV",
     },
     hero: {
-      available: "Đang tìm kiếm cơ hội mới",
-      title: "Frontend Engineer · React & TypeScript",
-      roles: ["React Developer", "Next.js Developer", "UI Engineer", "Frontend Engineer"],
-      description: "Tôi xây dựng ứng dụng web production-grade với React & Next.js — 4+ năm kinh nghiệm xây UI responsive, accessible ở quy mô lớn, hiện đang làm trong lĩnh vực fintech & hoá đơn điện tử.",
+      available: "Tìm kiếm vị trí toàn thời gian · Remote",
+      title: "Senior Frontend Engineer",
+      subtitle: "React · Next.js · TypeScript",
+      roles: ["React Developer", "Next.js Developer", "TypeScript Engineer", "Frontend Architect"],
+      description:
+        "Tôi xây dựng ứng dụng React production-grade cho nghiệp vụ tài chính và kinh doanh khối lượng lớn — từ kiến trúc frontend đến tối ưu hiệu suất và UX thời gian thực.",
+      viewCaseStudy: "Xem Case Study",
+      downloadResume: "Tải CV",
       hireMe: "Liên hệ",
       seeWork: "Xem dự án",
+      location: "TP. Hồ Chí Minh · Sẵn sàng làm việc remote / giờ Mỹ",
     },
     stats: {
-      experience: "Năm kinh nghiệm",
-      projects: "Dự án đã ship",
-      clients: "Ứng dụng đã giao",
+      experience: "Năm với React",
       performance: "Tăng tốc render PDF",
+      invoices: "Hóa đơn điện tử đã hỗ trợ",
+      promotion: "Thăng tiến: Junior → Senior",
     },
     projects: {
       eyebrow: "Kết quả thực tế",
       title: "Dự án nổi bật",
-      description: "Xem cách tôi biến ý tưởng thành những trải nghiệm kỹ thuật số hấp dẫn.",
+      description: "Các hệ thống production tôi đã ship — từ kiến trúc đến triển khai.",
       visitSite: "Xem trang web",
       items: [
-        { results: ["Giảm thời gian render PDF ~90% bằng worker offloading", "Xử lý hàng chục triệu hóa đơn điện tử trên môi trường production", "Cập nhật trạng thái thời gian thực qua WebSocket"] },
-        { results: ["Xây dựng lại luồng đặt lịch — giảm từ 5 bước xuống còn 3", "Hỗ trợ đa ngôn ngữ VI/EN không gây layout shift", "Lighthouse performance score 88 trên mobile sau tối ưu"] },
-        { results: ["Xây dựng catalog sản phẩm và luồng checkout cho 500+ SKU", "Triển khai tính năng tích điểm thưởng và đăng ký đại lý", "Responsive hoàn toàn trên mobile, tablet và desktop"] },
-        { results: ["Dashboard CMS quản lý tin tức, tàu thuyền và hồ sơ phi công", "UI phân quyền riêng biệt cho admin và phi công", "Tích hợp REST API với cập nhật dữ liệu thời gian thực"] },
+        {
+          results: [
+            "Giảm thời gian render PDF ~90% bằng server-side offloading (wkhtmltopdf)",
+            "Xử lý hàng chục triệu hóa đơn điện tử trên môi trường production",
+            "Cập nhật trạng thái thời gian thực qua WebSocket",
+          ],
+        },
+        {
+          results: [
+            "Xây dựng lại luồng đặt lịch đa ngôn ngữ VI/EN",
+            "TODO(Buck): Lighthouse score trước/sau tối ưu",
+            "TODO(Buck): cải thiện LCP (ví dụ từ X giây xuống Y giây)",
+          ],
+        },
+        {
+          results: [
+            "Xây dựng catalog sản phẩm và luồng checkout cho 500+ SKU",
+            "TODO(Buck): chỉ số hiệu suất (bundle size, Lighthouse, LCP)",
+            "TODO(Buck): đóng góp kỹ thuật cụ thể đáng đo lường",
+          ],
+        },
+        {
+          results: [
+            "Dashboard CMS quản lý tin tức, tàu thuyền và hồ sơ phi công với phân quyền",
+            "TODO(Buck): Lighthouse score hoặc cải thiện Core Web Vitals",
+            "TODO(Buck): chỉ số kỹ thuật cụ thể",
+          ],
+        },
       ],
     },
-    services: {
-      eyebrow: "Chuyên môn",
-      title: "Năng lực cốt lõi",
-      description: "Frontend engineering chất lượng production — xây dựng và vận hành ở quy mô lớn.",
-      cta: "Kết nối ngay",
-      items: [
-        { title: "Ứng dụng React / Next.js", description: "Xây dựng frontend end-to-end với React và Next.js — kiến trúc component, tích hợp API, quản lý state và triển khai.", tags: ["Next.js", "TypeScript", "React Query"] },
-        { title: "Nền tảng web quy mô lớn", description: "Đã ship các hệ thống production xử lý hàng triệu giao dịch — nền tảng hóa đơn điện tử, CMS dashboard và cổng thông tin doanh nghiệp.", tags: ["REST APIs", "WebSocket", "Role-Based UI"] },
-        { title: "Triển khai UI / Design", description: "Pixel-perfect từ Figma — responsive, accessible, và animation mượt mà với Framer Motion và Tailwind CSS.", tags: ["Figma to Code", "Framer Motion", "Tailwind CSS"] },
-        { title: "Tối ưu hiệu suất", description: "Audit Core Web Vitals, cải thiện LCP/CLS và nâng điểm Lighthouse — đạt ~90% tăng tốc render PDF trên WeTax.", tags: ["Core Web Vitals", "Lighthouse", "Accessibility"] },
+    skills: {
+      eyebrow: "Kỹ năng kỹ thuật",
+      title: "Công cụ tôi làm việc với",
+      aiNote:
+        "Tôi dùng công cụ AI để tăng tốc triển khai, nhưng mọi thay đổi vẫn qua review, types và tests của riêng tôi.",
+      groups: [
+        {
+          name: "Core",
+          items: ["React", "Next.js", "TypeScript", "JavaScript", "HTML", "CSS", "Tailwind CSS"],
+        },
+        {
+          name: "State & Data",
+          items: ["React Query", "Zustand", "Redux", "Context API", "REST", "GraphQL", "WebSocket"],
+        },
+        {
+          name: "Chất lượng & Hiệu suất",
+          items: [
+            "Chrome DevTools",
+            "Lighthouse / Core Web Vitals",
+            "Code Splitting",
+            "Virtualization",
+            "Accessibility (a11y)",
+          ],
+        },
+        {
+          name: "Testing",
+          items: ["TODO(Buck): Jest / React Testing Library / Playwright — chỉ liệt kê tools đã dùng"],
+        },
+        {
+          name: "Tooling",
+          items: ["Vite", "Webpack", "Git", "Docker"],
+        },
+        {
+          name: "AI-Assisted Dev",
+          items: ["Cursor", "Claude Code", "GitHub Copilot"],
+        },
+        {
+          name: "Ngôn ngữ",
+          items: ["Tiếng Việt (bản ngữ)", "Tiếng Anh — TODO(Buck): trình độ / điểm TOEIC"],
+        },
       ],
     },
     about: {
       eyebrow: "Về tôi",
-      title: "Một góc nhìn về thế giới của tôi",
-      description: "Tìm hiểu thêm về tôi, những gì tôi làm và những gì truyền cảm hứng cho tôi.",
+      title: "Một chút về tôi",
+      description:
+        "Senior Frontend Engineer với 5+ năm xây dựng ứng dụng React/Next.js + TypeScript. Hiện đang sở hữu kiến trúc frontend cho nền tảng hóa đơn điện tử quy mô lớn tại Webcash Vietnam: tìm nạp và cache dữ liệu với React Query, global state với Zustand, cập nhật thời gian thực qua WebSocket. Trước đây dẫn đầu frontend cho e-commerce và hệ thống quản lý phân phối, bao gồm tích hợp thanh toán, code review và mentoring. Tôi quan tâm đến ranh giới component rõ ràng, async state đoán trước được và UI nhanh, dễ tiếp cận.",
       reads: "Sách tôi đọc",
       readsDesc: "Những cuốn sách định hình góc nhìn của tôi",
       toolbox: "Công cụ của tôi",
-      toolboxDesc: "Các công nghệ và công cụ tôi dùng để tạo ra những trải nghiệm kỹ thuật số xuất sắc.",
+      toolboxDesc: "Các công nghệ và công cụ tôi dùng hàng ngày.",
       beyond: "Ngoài lập trình",
-      beyondDesc: "Sở thích và đam mê của tôi ngoài thế giới kỹ thuật số.",
+      beyondDesc: "Sở thích ngoài màn hình.",
       hobbies: ["Bia", "Gaming", "Du lịch", "Âm nhạc", "Thể hình", "Bóng đá", "Cầu lông"],
     },
     workExperience: {
       title: "Kinh nghiệm làm việc",
     },
     tape: {
-      words: ["Hiệu suất cao", "Dễ tiếp cận", "Bảo mật", "Tương tác", "Mở rộng được", "Thân thiện người dùng", "Responsive", "Dễ bảo trì", "Tối ưu SEO", "Khả dụng", "Đáng tin cậy"],
+      words: [
+        "Hiệu suất cao",
+        "Dễ tiếp cận",
+        "Bảo mật",
+        "Tương tác",
+        "Mở rộng được",
+        "Thân thiện người dùng",
+        "Responsive",
+        "Dễ bảo trì",
+        "Tối ưu SEO",
+        "Khả dụng",
+        "Đáng tin cậy",
+      ],
     },
     testimonials: {
       eyebrow: "Nhận xét",
       title: "Mọi người nói gì",
-      description: "Phản hồi từ khách hàng và đồng nghiệp tôi đã có cơ hội làm việc cùng.",
+      description: "Phản hồi từ đồng nghiệp tôi đã có cơ hội làm việc cùng.",
     },
     contact: {
       title: "Kết nối với tôi",
-      description: "Đang tìm kiếm vị trí frontend toàn thời gian. Gửi tin nhắn và tôi sẽ phản hồi trong vòng 24 giờ.",
+      description:
+        "Đang tìm kiếm vị trí frontend toàn thời gian. Gửi tin nhắn và tôi sẽ phản hồi trong vòng 24 giờ.",
       replyTime: "Phản hồi trong 24 giờ",
       available: "Sẵn sàng cho vị trí toàn thời gian",
       form: {
@@ -217,27 +400,58 @@ export const translations = {
       },
     },
     footer: {
-      crafted: "Được tạo ra với tâm huyết bởi Quyen Vu",
+      crafted: "Được tạo ra với tâm huyết bởi Vu Duc Quyen (Buck)",
     },
     projectsPage: {
       eyebrow: "Tất cả dự án",
       title: "Dự án của tôi",
-      description: "Khám phá các dự án tôi đã thực hiện, thể hiện kỹ năng và kinh nghiệm của tôi.",
+      description: "Các hệ thống production và dự án khách hàng tôi đã ship.",
       mobileEyebrow: "Dự án khác",
       mobileTitle: "Ứng dụng di động",
-      mobileDescription: "Khám phá các ứng dụng di động tôi đã phát triển, thể hiện chuyên môn của tôi.",
+      mobileDescription: "Các ứng dụng di động tôi đã phát triển.",
       viewDetail: "Xem chi tiết",
       projects: [
-        { title: "WeTax", description: "Nền tảng hóa đơn điện tử quy mô lớn hỗ trợ hàng chục triệu hóa đơn cho khách hàng doanh nghiệp. Tính năng quản lý hóa đơn thời gian thực, tạo PDF và thông báo qua WebSocket." },
-        { title: "VDental", description: "VDental cung cấp dịch vụ nha khoa chất lượng cao với đội ngũ bác sĩ giàu kinh nghiệm và trang thiết bị hiện đại. Ứng dụng giúp người dùng đặt lịch, tư vấn tình trạng răng và cập nhật tin tức nha khoa mới nhất." },
-        { title: "Lothashop", description: "Ứng dụng mua sắm thông minh giúp khách hàng mua sản phẩm, tích lũy điểm thưởng và đăng ký làm đại lý cá nhân Lothamilk. Khách hàng mua sản phẩm để tiêu dùng hoặc bán lại với nhiều ưu đãi và voucher hấp dẫn." },
-        { title: "PSA-CMS", description: "Quản lý thông tin phi công và quản lý nội dung trên ứng dụng của phi công bao gồm tin tức, tàu thuyền,..." },
+        {
+          title: "WeTax",
+          description:
+            "Nền tảng hóa đơn điện tử quy mô lớn hỗ trợ hàng chục triệu hóa đơn cho khách hàng doanh nghiệp. Quản lý hóa đơn thời gian thực, tạo PDF server-side và thông báo qua WebSocket.",
+        },
+        {
+          title: "VDental",
+          description:
+            "Nền tảng đặt lịch nha khoa kết nối khách hàng Mỹ với phòng khám Việt Nam. Luồng đặt lịch, quản lý lịch hẹn, chat thời gian thực và hỗ trợ đa ngôn ngữ VI/EN.",
+        },
+        {
+          title: "Lothashop",
+          description:
+            "Ứng dụng e-commerce cho mua sắm, tích điểm thưởng và đăng ký đại lý Lothamilk. Catalog, checkout và khuyến mãi cho 500+ SKU.",
+        },
+        {
+          title: "PSA-CMS",
+          description:
+            "Dashboard CMS quản lý phi công — tin tức, tàu thuyền, hồ sơ với UI phân quyền admin/phi công và tích hợp REST API.",
+        },
       ],
       mobileProjects: [
-        { title: "DigiSale Sales Force Automation (SFA)", description: "DigiSale là ứng dụng tự động hóa lực lượng bán hàng giúp doanh nghiệp quản lý hoạt động bán hàng, theo dõi hiệu suất và cải thiện hiệu quả bán hàng." },
-        { title: "MydigitalPA", description: "Ứng dụng cho phi công quản lý quy trình nâng cấp giấy phép, xem công việc cần làm, cập nhật tin tức, nhận thông báo. Admin có thể quản lý phi công, công việc, tin tức và gửi thông báo." },
-        { title: "Pilot Audit", description: "Ứng dụng cho phi công xem kết quả kiểm tra, lịch sử kiểm tra, lịch trình kiểm tra, trạng thái và chi tiết kiểm tra." },
-        { title: "Career Guidance App for LOF", description: "Ứng dụng phát triển kỹ năng tự đào tạo, giúp người dùng kết nối, chia sẻ kiến thức, khám phá bản thân và thành công trong sự nghiệp." },
+        {
+          title: "DigiSale Sales Force Automation (SFA)",
+          description:
+            "Ứng dụng tự động hóa bán hàng giúp doanh nghiệp quản lý hoạt động, theo dõi hiệu suất và cải thiện hiệu quả bán hàng.",
+        },
+        {
+          title: "MydigitalPA",
+          description:
+            "Ứng dụng cho phi công quản lý nâng cấp giấy phép, công việc, tin tức và thông báo. Admin quản lý phi công, công việc và cảnh báo.",
+        },
+        {
+          title: "Pilot Audit",
+          description: "Ứng dụng cho phi công xem kết quả kiểm tra, lịch sử, lịch trình và chi tiết kiểm tra.",
+        },
+        {
+          title: "Career Guidance App for LOF",
+          description:
+            "Ứng dụng tự đào tạo kỹ năng, giúp người dùng kết nối, chia sẻ kiến thức và phát triển sự nghiệp.",
+        },
       ],
     },
     detailLabels: {

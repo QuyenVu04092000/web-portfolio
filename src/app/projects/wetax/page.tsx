@@ -61,7 +61,7 @@ export default function WeTax() {
             body: (
               <>
                 Every API call goes through <span className="text-white">React Query</span>. Query keys are structured as{" "}
-                <code className="text-emerald-300 bg-white/5 px-1.5 py-0.5 rounded text-sm">['invoices', filters]</code> so that filtering, pagination, and sorting parameters produce cache-isolated queries without manual invalidation logic. Background refetching keeps listing pages fresh without a spinner on every visit.
+                <code className="text-emerald-300 bg-white/5 px-1.5 py-0.5 rounded text-sm">{`['invoices', filters]`}</code> so that filtering, pagination, and sorting parameters produce cache-isolated queries without manual invalidation logic. Background refetching keeps listing pages fresh without a spinner on every visit.
               </>
             ),
           },
@@ -206,7 +206,7 @@ export default function WeTax() {
             body: (
               <>
                 Mọi API call đều đi qua <span className="text-white">React Query</span>. Query key được cấu trúc dạng{" "}
-                <code className="text-emerald-300 bg-white/5 px-1.5 py-0.5 rounded text-sm">['invoices', filters]</code> để filter, pagination và sort tạo ra cache riêng biệt mà không cần logic invalidation thủ công. Background refetching giữ trang danh sách luôn mới mà không cần spinner mỗi lần truy cập.
+                <code className="text-emerald-300 bg-white/5 px-1.5 py-0.5 rounded text-sm">{`['invoices', filters]`}</code> để filter, pagination và sort tạo ra cache riêng biệt mà không cần logic invalidation thủ công. Background refetching giữ trang danh sách luôn mới mà không cần spinner mỗi lần truy cập.
               </>
             ),
           },

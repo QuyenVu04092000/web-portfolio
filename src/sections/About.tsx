@@ -52,24 +52,24 @@ export const AboutSection = () => {
   const { t } = useLang();
   const hobbies = hobbiesData.map((h, i) => ({ ...h, title: t.about.hobbies[i] }));
   return (
-    <div className="pb-20 lg:py-28">
+    <section aria-label="About" className="pb-20 lg:py-28" id="about">
       <div className="container">
         <SectionHeader
           eyebrow={t.about.eyebrow}
           title={t.about.title}
-          description={t.about.description}
+          description=""
         />
-        <div className="mt-20 flex flex-col gap-8">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3 ">
-            <Card className="h-[320px] md:col-span-2 lg:col-span-1">
-              <CardHeader
-                title={t.about.reads}
-                description={t.about.readsDesc}
-              />
-              <div className="w-40 mx-auto mt-2 md:mt-0">
-                <Image src={bookImage} alt="Book Cover" />
-              </div>
-            </Card>
+
+        {/* Bio — prominently first */}
+        <div className="mt-8 max-w-3xl">
+          <p className="text-white/70 text-base md:text-lg leading-relaxed">
+            {t.about.description}
+          </p>
+        </div>
+
+        <div className="mt-16 flex flex-col gap-8">
+          {/* Row 1: Toolbox (main) + Reads */}
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3">
             <Card className="h-[320px] md:col-span-3 lg:col-span-2">
               <CardHeader
                 title={t.about.toolbox}
@@ -86,8 +86,31 @@ export const AboutSection = () => {
                 itemsWrapperClassName="animate-move-right [animation-duration:30s]"
               />
             </Card>
+            <Card className="h-[320px] md:col-span-2 lg:col-span-1">
+              <CardHeader
+                title={t.about.reads}
+                description={t.about.readsDesc}
+              />
+              <div className="w-40 mx-auto mt-2 md:mt-0">
+                <Image src={bookImage} alt="Book cover" />
+              </div>
+            </Card>
           </div>
+
+          {/* Row 2: Map + Hobbies */}
           <div className="grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3">
+            <Card className="h-[320px] p-0 relative md:col-span-2 lg:col-span-1">
+              <Image
+                src={mapImage}
+                alt="Map of Ho Chi Minh City, Vietnam"
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-20 rounded-full after:content-[''] after:absolute after:inset-0 after:outline after:outline-2 after:-outline-offset-2 after:rounded-full after:outline-gray-950/30">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-20 animate-ping [animation-duration:2s]" />
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-10" />
+                <Image src={smileMemoji} alt="Smiling memoji" className="size-20" />
+              </div>
+            </Card>
             <Card className="h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2">
               <CardHeader
                 className="px-6 pt-6"
@@ -99,44 +122,19 @@ export const AboutSection = () => {
                   <motion.div
                     key={hobby.title}
                     className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute"
-                    style={{
-                      left: hobby.left,
-                      top: hobby.top,
-                    }}
+                    style={{ left: hobby.left, top: hobby.top }}
                     drag
                     dragConstraints={constraintRef}
                   >
-                    <span className="font-medium text-gray-950">
-                      {hobby.title}
-                    </span>
-                    <span>{hobby.emoji}</span>
+                    <span className="font-medium text-gray-950">{hobby.title}</span>
+                    <span aria-hidden="true">{hobby.emoji}</span>
                   </motion.div>
                 ))}
-              </div>
-            </Card>
-            <Card className="h-[320px] p-0 relative md:col-span-2 lg:col-span-1">
-              <Image
-                src={mapImage}
-                alt="Map"
-                className="h-full w-full object-cover "
-              />
-              <div
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-20 rounded-full after:content-['']
-            after:absolute after:inset-0 after:outline after:outline-2 after:-outline-offset-2 after:rounded-full
-            after:outline-gray-950/30"
-              >
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-20 animate-ping [animation-duration:2s]"></div>
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 -z-10"></div>
-                <Image
-                  src={smileMemoji}
-                  alt="Smiling Memoji"
-                  className="size-20"
-                />
               </div>
             </Card>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

@@ -16,18 +16,18 @@ import pilot_audit from "@/assets/images/pilot_audit.png";
 import { SectionHeader } from "@/components/SectionHeader";
 import { useLang } from "@/i18n/LangContext";
 
-const portfolioImages = [wetax, vdental, lothashop, psa];
+const portfolioImages = [wetax, lothashop, vdental, psa];
 const portfolioLinks = [
   "/web-portfolio/projects/wetax",
-  "/web-portfolio/projects/vdental",
   "/web-portfolio/projects/lothashop",
+  "/web-portfolio/projects/vdental",
   "/web-portfolio/projects/psa",
 ];
 const portfolioMeta = [
-  { company: "Webcash Vietnam", year: "2025", role: "Frontend Engineer", chips: ["Next.js", "TypeScript", "React Query", "Zustand", "WebSocket"] },
-  { company: "MLTech Soft", year: "2024", role: "Middle Frontend Engineer", chips: ["React", "Next.js", "TypeScript", "i18n"] },
-  { company: "MLTech Soft", year: "2023", role: "Middle Frontend Engineer", chips: ["React", "TypeScript", "E-commerce"] },
-  { company: "MLTech Soft", year: "2023", role: "Junior Frontend Engineer", chips: ["React", "TypeScript", "REST API"] },
+  { company: "Webcash Vietnam", year: "2025", role: "Frontend Engineer", chips: ["Next.js", "TypeScript", "React Query", "Zustand", "WebSocket"], category: undefined },
+  { company: "MLTech Soft", year: "2023", role: "Middle Frontend Engineer", chips: ["Next.js", "TypeScript", "Zustand", "VNPay", "socket.io"], category: "Payments" },
+  { company: "MLTech Soft", year: "2024", role: "Middle Frontend Engineer", chips: ["React", "Next.js", "TypeScript", "i18n"], category: undefined },
+  { company: "MLTech Soft", year: "2023", role: "Junior Frontend Engineer", chips: ["React", "TypeScript", "REST API"], category: undefined },
 ];
 
 const mobileImages = [sfa, mydigitalpa, pilot_audit, career];
@@ -75,10 +75,17 @@ export default function Projects() {
                   <div className="md:col-span-1 lg:col-span-1">
                     <div className="flex flex-col justify-between h-full">
                       <div>
-                        <div className="bg-gradient-to-r from-emerald-300 to-sky-400 inline-flex gap-2 font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text">
-                          <span>{portfolioMeta[projectIndex].company}</span>
-                          <span>&bull;</span>
-                          <span>{portfolioMeta[projectIndex].year}</span>
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <div className="bg-gradient-to-r from-emerald-300 to-sky-400 inline-flex gap-2 font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text">
+                            <span>{portfolioMeta[projectIndex].company}</span>
+                            <span>&bull;</span>
+                            <span>{portfolioMeta[projectIndex].year}</span>
+                          </div>
+                          {portfolioMeta[projectIndex].category && (
+                            <span className="text-xs font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-300/10 text-emerald-300 border border-emerald-300/20">
+                              {portfolioMeta[projectIndex].category}
+                            </span>
+                          )}
                         </div>
                         <p className="text-white/50 text-xs mt-1">{portfolioMeta[projectIndex].role}</p>
                         <h2 className="font-serif text-2xl mt-2 md:text-4xl md:mt-3">{project.title}</h2>

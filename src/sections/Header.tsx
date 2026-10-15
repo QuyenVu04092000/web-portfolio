@@ -15,7 +15,7 @@ export const Header = ({ activeId }: { activeId?: string }) => {
     {
       id: "resume",
       label: t.nav.resume,
-      href: "https://drive.google.com/file/d/1qryyyJZdzNRRNqnZsxYsPJTUDYhjcKWg/view?usp=drive_link",
+      href: "https://drive.google.com/file/d/1TWGtoodo8mgchMXgbPqhY9QfHWRKqbZt/view?usp=sharing",
     },
   ];
 

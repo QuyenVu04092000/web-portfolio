@@ -5,7 +5,7 @@ import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import { useLang } from "@/i18n/LangContext";
 
 const RESUME_URL =
-  "https://drive.google.com/file/d/1qryyyJZdzNRRNqnZsxYsPJTUDYhjcKWg/view?usp=drive_link";
+  "https://drive.google.com/file/d/1TWGtoodo8mgchMXgbPqhY9QfHWRKqbZt/view?usp=sharing";
 
 const experiences = [
   {

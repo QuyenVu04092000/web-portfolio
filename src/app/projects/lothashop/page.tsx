@@ -231,7 +231,7 @@ const data: ProjectDetailData = {
   timeline: "2023",
   platform: "Web",
   summary: "E-commerce platform for Lothamilk dairy products, covering B2C orders, dealer accounts, three delivery types, and VNPay integration.",
-  tech: "Next.js 12 · TypeScript · MUI · Zustand · Formik + Yup · axios · socket.io-client · crypto-js",
+  tech: "Next.js 12 · TypeScript · MUI · Zustand · Formik + Yup · axios · socket.io-client",
   techChips: ["Next.js", "TypeScript", "MUI", "Zustand", "Formik", "socket.io", "VNPay"],
   coverImage: lothashop,
   coverImageAlt: "Lothashop e-commerce storefront",

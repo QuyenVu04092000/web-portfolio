@@ -17,7 +17,6 @@ const experiences = [
       "Own the frontend architecture of WeTax (e-invoicing platform) and WeHR (HR management), built with Next.js + TypeScript.",
       "Cut PDF invoice rendering time ~90% by moving generation from client-side to server-side (wkhtmltopdf on the Java backend) — worked closely with the backend team on API design and pipeline integration.",
       "Optimized data-heavy invoice list views with React Query server-state caching, server-side pagination, and list virtualization; added real-time invoice status notifications via WebSocket.",
-      "Designed WeHR state architecture using Zustand for global state and React Query for server state.",
     ],
   },
   {

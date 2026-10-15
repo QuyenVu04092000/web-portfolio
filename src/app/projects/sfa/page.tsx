@@ -15,13 +15,13 @@ const data: ProjectDetailData = {
   coverImage: sfa,
   coverImageAlt: "DigiSale field sales app",
   overview:
-    "DigiSale is a React Native sales force automation app used by field reps at distributor companies. The app covers the full daily workflow: check-in, route management, client visits with photo evidence, order submission with promotion rules, and trade marketing registration. I built the app end-to-end using Expo 51 + Expo Router.",
+    "DigiSale is a React Native sales force automation app used by field reps at distributor companies. The app covers the full daily workflow: check-in, route management, client visits with photo evidence, order submission with promotion rules, and trade marketing registration.",
   whatIBuilt: [
     "Home dashboard — KPI cards (sales index, visit count, product completion rate), attendance check-in with date/time tracking, daily summary.",
     "Routes module — daily route list, route detail with assigned clients, exchange and transfer route support.",
     "Clients module — client list and detail view, create client with address selection via bottom-sheet map; visit flow: Start visit → mission cards (tasks required per visit) → photo evidence capture (camera + gallery) → complete visit, with guard modal preventing accidental mid-visit exit.",
-    "Orders module — product catalog with category filtering, cart management, order creation on behalf of another customer, promotion-eligible products highlighted inline, order list with status tracking.",
-    "Trade marketing module — promotions and accumulation programs list and detail, display registration with camera upload (form + photo, Yup validation, multipart upload), customer tier progress tracking.",
+    "Orders module — product catalog, order creation on behalf of another customer, promotion-eligible products highlighted inline, order list with status tracking.",
+    "Trade marketing module — promotions and accumulation programs list and detail, display registration with camera upload (form + photo, Yup validation), customer tier progress tracking.",
   ],
   technicalHighlights: [
     {

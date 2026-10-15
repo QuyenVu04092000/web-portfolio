@@ -24,16 +24,16 @@ const portfolioLinks = [
   "/web-portfolio/projects/psa",
 ];
 const portfolioMeta = [
-  { company: "Webcash Vietnam", year: "2025", role: "Frontend Engineer", chips: ["Next.js", "TypeScript", "React Query", "Zustand", "WebSocket"], category: undefined },
-  { company: "MLTech Soft", year: "2023", role: "Middle Frontend Engineer", chips: ["Next.js", "TypeScript", "Zustand", "VNPay", "socket.io"], category: "Payments" },
-  { company: "MLTech Soft", year: "2024", role: "Middle Frontend Engineer", chips: ["React", "Next.js", "TypeScript", "i18n"], category: undefined },
-  { company: "MLTech Soft", year: "2023", role: "Middle Frontend Engineer", chips: ["React", "TypeScript", "REST API"], category: undefined },
+  { company: "Webcash Vietnam", year: "2025", role: "Senior Frontend Developer", chips: ["Next.js", "TypeScript", "React Query", "Zustand", "WebSocket"], category: undefined },
+  { company: "MLTech Soft", year: "2023", role: "Middle Frontend Developer", chips: ["Next.js", "TypeScript", "Zustand", "VNPay", "socket.io"], category: "Payments" },
+  { company: "MLTech Soft", year: "2024", role: "Senior Frontend Developer", chips: ["Next.js", "TypeScript", "Tailwind CSS", "i18n"], category: undefined },
+  { company: "MLTech Soft", year: "2023", role: "Middle Frontend Developer", chips: ["React", "JavaScript", "Redux", "Highcharts"], category: undefined },
 ];
 
 const mobileImages = [sfa];
 const mobileLinks = ["/web-portfolio/projects/sfa"];
 const mobileMeta = [
-  { company: "MLTech Soft", year: "2024", role: "Middle Frontend Engineer", chips: ["React Native", "TypeScript", "Redux", "NativeWind"] },
+  { company: "MLTech Soft", year: "2024", role: "Senior Frontend Developer", chips: ["React Native", "Expo", "TypeScript", "NativeWind", "Zustand"] },
 ];
 
 const earlierImages = [mydigitalpa, pilot_audit, career];
@@ -43,9 +43,9 @@ const earlierLinks = [
   "/web-portfolio/projects/career",
 ];
 const earlierMeta = [
-  { company: "PSA International", year: "2023", role: "Middle Frontend Engineer", chips: ["Swift", "PadOS", "MQTT"] },
-  { company: "PSA International", year: "2023", role: "Middle Frontend Engineer", chips: ["Swift", "PadOS", "MQTT"] },
-  { company: "LOF", year: "2022", role: "Junior Frontend Engineer", chips: ["Flutter", "BLoC/Cubit", "Socket.io"] },
+  { company: "PSA International", year: "2023", role: "Middle Frontend Developer", chips: ["Swift", "iPadOS", "MQTT"] },
+  { company: "PSA International", year: "2023", role: "Middle Frontend Developer", chips: ["Swift", "iPadOS", "MQTT"] },
+  { company: "LOF", year: "2022", role: "Junior Frontend Developer", chips: ["Flutter", "BLoC/Cubit", "Socket.io"] },
 ];
 
 export default function Projects() {

@@ -79,7 +79,7 @@ export const translations = {
           title: "DigiSale DMS",
           company: "MLTech Soft",
           role: "Senior Frontend Developer",
-          techChips: ["React", "TypeScript"],
+          techChips: [],
           summary: "Led frontend of a major update using an in-house reusable component set.",
         },
       ],
@@ -134,7 +134,7 @@ export const translations = {
       descriptionShort:
         "Frontend Engineer with 5+ years building React/Next.js + TypeScript applications. Currently working on frontend architecture for WeTax, a high-scale e-invoicing platform at Webcash Vietnam. Previously led frontend for e-commerce and distributor-management products, including payment integration and mentoring.",
       description:
-        "Frontend Engineer with 5+ years building React/Next.js + TypeScript applications. Currently working on the frontend architecture of WeTax, a high-scale e-invoicing platform at Webcash Vietnam: data fetching and caching with React Query, global state with Zustand, real-time updates via WebSocket. Previously led frontend for e-commerce and distributor-management products at MLTech Soft, including third-party payment integration, code review, and mentoring junior developers. I care about clear component boundaries, predictable async state, and fast, accessible UIs.",
+        "Frontend Engineer with 5+ years building React/Next.js + TypeScript applications. Currently working on the frontend architecture of WeTax, a high-scale e-invoicing platform at Webcash Vietnam: data fetching and caching with React Query, global state with Zustand, real-time updates via WebSocket. Previously led frontend for e-commerce and distributor-management products at MLTech Soft, including third-party payment integration, code review, and mentoring junior developers. I care about clear component boundaries, predictable async state, and fast UIs.",
       reads: "My Reads",
       readsDesc: "Explore the books shaping my perspectives",
       toolbox: "My Toolbox",
@@ -346,7 +346,7 @@ export const translations = {
           title: "DigiSale DMS",
           company: "MLTech Soft",
           role: "Senior Frontend Developer",
-          techChips: ["React", "TypeScript"],
+          techChips: [],
           summary: "Dẫn dắt frontend cho bản cập nhật lớn sử dụng bộ component tái sử dụng nội bộ.",
         },
       ],
@@ -401,7 +401,7 @@ export const translations = {
       descriptionShort:
         "Frontend Engineer với 5+ năm xây dựng ứng dụng React/Next.js + TypeScript. Hiện đang phụ trách kiến trúc frontend cho WeTax, nền tảng hóa đơn điện tử quy mô lớn tại Webcash Vietnam. Trước đây dẫn đầu frontend cho e-commerce và hệ thống quản lý phân phối tại MLTech Soft, bao gồm tích hợp thanh toán và mentoring.",
       description:
-        "Frontend Engineer với 5+ năm xây dựng ứng dụng React/Next.js + TypeScript. Hiện đang phụ trách kiến trúc frontend của WeTax, nền tảng hóa đơn điện tử quy mô lớn tại Webcash Vietnam: tìm nạp và cache dữ liệu với React Query, global state với Zustand, cập nhật thời gian thực qua WebSocket. Trước đây dẫn đầu frontend cho e-commerce và hệ thống quản lý phân phối tại MLTech Soft, bao gồm tích hợp thanh toán bên thứ ba, code review và mentoring junior developers. Tôi quan tâm đến ranh giới component rõ ràng, async state đoán trước được và UI nhanh, dễ tiếp cận.",
+        "Frontend Engineer với 5+ năm xây dựng ứng dụng React/Next.js + TypeScript. Hiện đang phụ trách kiến trúc frontend của WeTax, nền tảng hóa đơn điện tử quy mô lớn tại Webcash Vietnam: tìm nạp và cache dữ liệu với React Query, global state với Zustand, cập nhật thời gian thực qua WebSocket. Trước đây dẫn đầu frontend cho e-commerce và hệ thống quản lý phân phối tại MLTech Soft, bao gồm tích hợp thanh toán bên thứ ba, code review và mentoring junior developers. Tôi quan tâm đến ranh giới component rõ ràng, async state đoán trước được và UI nhanh.",
       reads: "Sách tôi đọc",
       readsDesc: "Những cuốn sách định hình góc nhìn của tôi",
       toolbox: "Công cụ của tôi",
